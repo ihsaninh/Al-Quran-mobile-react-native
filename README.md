@@ -43,7 +43,7 @@
 </div>
 
 ## Testing
-If you want test the application, you can install it directly by download the app on this <a href="https://drive.google.com/open?id=1C3ENT5F9Ed-5xvaKMnAtww4uzQ4vxvhu">link</a>
+If you want test the application, you can install it directly by download the app on this <a href="https://drive.google.com/open?id=1nvTa4cJ1huyLHZ7ke7CCKQDnMBX8hoo9">link</a>
 
 
 ## Contributors
