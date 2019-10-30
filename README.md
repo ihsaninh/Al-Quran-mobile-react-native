@@ -5,6 +5,7 @@
 - [Features](#features)
 - [Requirements](#requirements)
 - [Screenshots](#screenshots)
+- [Testing](#testing)
 - [Contributors](#contributors)
 
 
@@ -37,9 +38,12 @@
 
 ## Screenshoot
 <div align="center">
-    <img width="200" src="https://github.com/ihsaninh/Al-Quran-Mobile-React-Native/blob/master/Screenshot_1572402504.png">   
-    <img width="200" src="https://github.com/ihsaninh/Al-Quran-Mobile-React-Native/blob/master/Screenshot_1572402559.png">    
+    <img width="300" src="https://github.com/ihsaninh/Al-Quran-Mobile-React-Native/blob/master/Screenshot_1572402504.png">   
+    <img width="300" src="https://github.com/ihsaninh/Al-Quran-Mobile-React-Native/blob/master/Screenshot_1572402559.png">    
 </div>
+
+## Testing
+If you want test the application, you can install it directly by download the app on this <a href="https://drive.google.com/open?id=1C3ENT5F9Ed-5xvaKMnAtww4uzQ4vxvhu">link</a>
 
 
 ## Contributors
