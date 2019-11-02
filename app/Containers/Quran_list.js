@@ -21,6 +21,26 @@ class QuranList extends Component {
     };
   }
 
+  static navigationOptions = ({ navigation }) => {
+    return {
+      gesturesEnabled: true,
+      title: 'Al-Quran Mobile',
+      headerStyle: {
+        backgroundColor: '#EA3C64',
+      },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      },
+      headerLeft: (
+        // eslint-disable-next-line react-native/no-inline-styles
+        <View style={{ marginLeft: 20 }}>
+          <Icon name="book" size={30} color="#fff" />
+        </View>
+      ),
+    };
+  };
+
   componentDidMount() {
     this.getDataQuran();
   }
