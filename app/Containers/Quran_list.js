@@ -11,6 +11,8 @@ import {
 import axios from 'axios';
 import CardView from 'react-native-cardview';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import { Colors } from '../Utils/Colors';
+import { quranList } from '../Utils/EndPoints';
 
 class QuranList extends Component {
   constructor(props) {
@@ -26,16 +28,15 @@ class QuranList extends Component {
       gesturesEnabled: true,
       title: 'Al-Quran Mobile',
       headerStyle: {
-        backgroundColor: '#EA3C64',
+        backgroundColor: Colors.primary,
       },
-      headerTintColor: '#fff',
+      headerTintColor: Colors.white,
       headerTitleStyle: {
         fontWeight: 'bold',
       },
       headerLeft: (
-        // eslint-disable-next-line react-native/no-inline-styles
-        <View style={{ marginLeft: 20 }}>
-          <Icon name="book" size={30} color="#fff" />
+        <View style={Styles.headerTitleText}>
+          <Icon name="book" size={30} color={Colors.white} />
         </View>
       ),
     };
@@ -47,7 +48,7 @@ class QuranList extends Component {
 
   getDataQuran = () => {
     axios
-      .get('https://quran.kemenag.go.id/index.php/api/v1/surat')
+      .get(quranList)
       .then(res => {
         const listQuran = res.data.data;
         this.setState({
@@ -116,7 +117,10 @@ class QuranList extends Component {
     const { listQuran, refreshing } = this.state;
     return (
       <View>
-        <StatusBar backgroundColor="#B02B4B" barStyle="light-content" />
+        <StatusBar
+          backgroundColor={Colors.statusbar}
+          barStyle="light-content"
+        />
         <FlatList
           data={listQuran}
           keyExtractor={(list, index) => index.toString()}
@@ -157,14 +161,14 @@ const Styles = StyleSheet.create({
     height: 50,
     width: 50,
     borderRadius: 100,
-    backgroundColor: '#EA3C64',
+    backgroundColor: Colors.primary,
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: 25,
     marginLeft: 10,
   },
   textNumber: {
-    color: '#fff',
+    color: Colors.white,
     fontSize: 18,
   },
   descTitle: {
@@ -178,6 +182,9 @@ const Styles = StyleSheet.create({
   },
   expandIconStyle: {
     paddingTop: 35,
+  },
+  headerTitleText: {
+    marginLeft: 20,
   },
 });
 

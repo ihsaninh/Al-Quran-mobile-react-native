@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Text, View, FlatList, RefreshControl, StyleSheet } from 'react-native';
 import axios from 'axios';
 import CardView from 'react-native-cardview';
+import { Colors } from '../Utils/Colors';
+import { quranDetail } from '../Utils/EndPoints';
 
 class QuranList extends Component {
   constructor(props) {
@@ -12,11 +14,17 @@ class QuranList extends Component {
     };
   }
 
-  static navigationOptions = ({ navigation }) => {
-    const suratName = navigation.state.params.dataSurah.surat_name;
-    const suratArabic = navigation.state.params.dataSurah.surat_text;
-    const suratTranslate = navigation.state.params.dataSurah.surat_terjemahan;
-    const countAyat = navigation.state.params.dataSurah.count_ayat;
+  static navigationOptions = ({
+    navigation: {
+      state: {
+        params: { dataSurah },
+      },
+    },
+  }) => {
+    const suratName = dataSurah.surat_name;
+    const suratArabic = dataSurah.surat_text;
+    const suratTranslate = dataSurah.surat_terjemahan;
+    const countAyat = dataSurah.count_ayat;
     return {
       headerTitle: (
         <View>
@@ -29,9 +37,9 @@ class QuranList extends Component {
         </View>
       ),
       headerStyle: {
-        backgroundColor: '#EA3C64',
+        backgroundColor: Colors.primary,
       },
-      headerTintColor: '#fff',
+      headerTintColor: Colors.white,
       headerTitleStyle: {
         fontWeight: 'bold',
       },
@@ -43,13 +51,11 @@ class QuranList extends Component {
   }
 
   renderDetailSurah = () => {
-    const { navigation } = this.props;
-    const surah_id = navigation.state.params.dataSurah.id;
-    const jml_ayat = navigation.state.params.dataSurah.count_ayat;
+    const { dataSurah } = this.props.navigation.state.params;
+    const surah_id = dataSurah.id;
+    const jml_ayat = dataSurah.count_ayat;
     axios
-      .get(
-        `https://quran.kemenag.go.id/index.php/api/v1/ayatweb/${surah_id}/0/0/${jml_ayat}`,
-      )
+      .get(quranDetail(surah_id, jml_ayat))
       .then(res => {
         const detailSurah = res.data.data;
         this.setState({
@@ -129,7 +135,7 @@ const Styles = StyleSheet.create({
     height: 50,
     width: 50,
     borderRadius: 100,
-    backgroundColor: '#EA3C64',
+    backgroundColor: Colors.primary,
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: 25,
@@ -137,7 +143,7 @@ const Styles = StyleSheet.create({
     marginBottom: 10,
   },
   textNumber: {
-    color: '#fff',
+    color: Colors.white,
     fontSize: 18,
   },
   descTextRight: {
@@ -151,15 +157,15 @@ const Styles = StyleSheet.create({
     fontSize: 15,
     paddingVertical: 10,
     paddingRight: 10,
-    color: '#37474f',
+    color: Colors.grey,
   },
   headerTitle: {
-    color: '#fff',
+    color: Colors.white,
     fontSize: 20,
     fontWeight: 'bold',
   },
   headerSubtitle: {
-    color: '#fff',
+    color: Colors.white,
     fontWeight: '600',
   },
 });
