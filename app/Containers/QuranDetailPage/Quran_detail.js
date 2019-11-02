@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Text, View, FlatList, RefreshControl, StyleSheet } from 'react-native';
+import { Text, View, FlatList, RefreshControl } from 'react-native';
 import axios from 'axios';
 import CardView from 'react-native-cardview';
+import { Styles } from './Quran_detail.styles';
 import { Colors } from '../../Utils/Colors';
 import { quranDetail } from '../../Utils/EndPoints';
 
@@ -114,60 +115,5 @@ class QuranList extends Component {
     );
   }
 }
-
-const Styles = StyleSheet.create({
-  CardStyle: {
-    height: 'auto',
-    margin: 10,
-  },
-  cardContainer: {
-    flex: 1,
-    flexDirection: 'row',
-  },
-  numberCircleContainer: {
-    flex: 0.8,
-  },
-  descContainer: {
-    flex: 3,
-    flexDirection: 'column',
-  },
-  NumberCircle: {
-    height: 50,
-    width: 50,
-    borderRadius: 100,
-    backgroundColor: Colors.primary,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 25,
-    marginLeft: 10,
-    marginBottom: 10,
-  },
-  textNumber: {
-    color: Colors.white,
-    fontSize: 18,
-  },
-  descTextRight: {
-    textAlign: 'right',
-    paddingTop: 10,
-    paddingRight: 10,
-    fontWeight: 'bold',
-    fontSize: 20,
-  },
-  descTextLeft: {
-    fontSize: 15,
-    paddingVertical: 10,
-    paddingRight: 10,
-    color: Colors.grey,
-  },
-  headerTitle: {
-    color: Colors.white,
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  headerSubtitle: {
-    color: Colors.white,
-    fontWeight: '600',
-  },
-});
 
 export default QuranList;
