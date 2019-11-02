@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Text, View, FlatList, RefreshControl, StyleSheet } from 'react-native';
 import axios from 'axios';
 import CardView from 'react-native-cardview';
-import { Colors } from '../Utils/Colors';
-import { quranDetail } from '../Utils/EndPoints';
+import { Colors } from '../../Utils/Colors';
+import { quranDetail } from '../../Utils/EndPoints';
 
 class QuranList extends Component {
   constructor(props) {

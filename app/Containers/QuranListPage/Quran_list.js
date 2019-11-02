@@ -11,8 +11,8 @@ import {
 import axios from 'axios';
 import CardView from 'react-native-cardview';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import { Colors } from '../Utils/Colors';
-import { quranList } from '../Utils/EndPoints';
+import { Colors } from '../../Utils/Colors';
+import { quranList } from '../../Utils/EndPoints';
 
 class QuranList extends Component {
   constructor(props) {
