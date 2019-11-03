@@ -42,6 +42,7 @@
 		5691B012E19E4792869941A1 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D549358AFA194642AAD88D57 /* Zocial.ttf */; };
 		81A0D6276B1D4B759474DC79 /* hafs.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3135EC7F84784C209AC9AEFD /* hafs.ttf */; };
 		94EECF31F48D4FA48D015864 /* arabic-font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DEC96AAB83948518A61E001 /* arabic-font.ttf */; };
+		3EE6B80D93EE48DA843BCA36 /* bismillah.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8768E64F16C54FF4AFD37943 /* bismillah.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +113,7 @@
 		D549358AFA194642AAD88D57 /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		3135EC7F84784C209AC9AEFD /* hafs.ttf */ = {isa = PBXFileReference; name = "hafs.ttf"; path = "../app/Assets/Fonts/hafs.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		8DEC96AAB83948518A61E001 /* arabic-font.ttf */ = {isa = PBXFileReference; name = "arabic-font.ttf"; path = "../app/Assets/Fonts/arabic-font.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8768E64F16C54FF4AFD37943 /* bismillah.ttf */ = {isa = PBXFileReference; name = "bismillah.ttf"; path = "../app/Assets/Fonts/bismillah.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +272,7 @@
 				D549358AFA194642AAD88D57 /* Zocial.ttf */,
 				3135EC7F84784C209AC9AEFD /* hafs.ttf */,
 				8DEC96AAB83948518A61E001 /* arabic-font.ttf */,
+				8768E64F16C54FF4AFD37943 /* bismillah.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				5691B012E19E4792869941A1 /* Zocial.ttf in Resources */,
 				81A0D6276B1D4B759474DC79 /* hafs.ttf in Resources */,
 				94EECF31F48D4FA48D015864 /* arabic-font.ttf in Resources */,
+				3EE6B80D93EE48DA843BCA36 /* bismillah.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

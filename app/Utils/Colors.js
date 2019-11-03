@@ -1,8 +1,8 @@
 const Colors = {
-  primary: '#EA3C64',
+  primary: '#1abc9c',
   white: '#fff',
   grey: '#37474f',
-  statusbar: '#B02B4B',
+  statusbar: '#16a085',
 };
 
 export { Colors };

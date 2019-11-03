@@ -6,6 +6,7 @@ import CardView from 'react-native-cardview';
 import { Styles } from './Quran_detail.styles';
 import { Colors } from '../../Utils/Colors';
 import { quranDetail } from '../../Utils/EndPoints';
+import Basmallah from '../../Components/BasmallahComponent/Basmallah';
 
 class QuranList extends Component {
   constructor(props) {
@@ -101,11 +102,21 @@ class QuranList extends Component {
 
   render() {
     const { detailSurah, refreshing } = this.state;
+    const {
+      navigation: {
+        state: {
+          params: { dataSurah },
+        },
+      },
+    } = this.props;
     return (
       <View>
         <FlatList
+          ListHeaderComponent={
+            dataSurah.id === 1 || dataSurah.id === 9 ? null : Basmallah
+          }
           data={detailSurah}
-          keyExtractor={(list, index) => index.toString()}
+          keyExtractor={(item, index) => index.toString()}
           showsHorizontalScrollIndicator={false}
           renderItem={this.renderCardContent}
           refreshControl={
