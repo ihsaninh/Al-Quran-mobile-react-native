@@ -51,21 +51,20 @@ class QuranList extends Component {
     this.renderDetailSurah();
   }
 
-  renderDetailSurah = () => {
+  renderDetailSurah = async () => {
     const { dataSurah } = this.props.navigation.state.params;
     const surah_id = dataSurah.id;
     const jml_ayat = dataSurah.count_ayat;
-    axios
-      .get(quranDetail(surah_id, jml_ayat))
-      .then(res => {
-        const detailSurah = res.data.data;
-        this.setState({
-          detailSurah,
-        });
-      })
-      .catch(error => {
-        throw error;
+
+    try {
+      const res = await axios.get(quranDetail(surah_id, jml_ayat));
+      const detailSurah = res.data.data;
+      this.setState({
+        detailSurah,
       });
+    } catch (error) {
+      throw error;
+    }
   };
 
   onRefresh = () => {

@@ -46,18 +46,16 @@ class QuranList extends Component {
     this.getDataQuran();
   }
 
-  getDataQuran = () => {
-    axios
-      .get(quranList)
-      .then(res => {
-        const listQuran = res.data.data;
-        this.setState({
-          listQuran,
-        });
-      })
-      .catch(error => {
-        throw error;
+  getDataQuran = async () => {
+    try {
+      const res = await axios.get(quranList);
+      const listQuran = res.data.data;
+      this.setState({
+        listQuran,
       });
+    } catch (error) {
+      throw error;
+    }
   };
 
   goToDetailpage = dataSurah => () => {
