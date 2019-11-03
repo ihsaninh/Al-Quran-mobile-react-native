@@ -9,7 +9,7 @@ const Styles = StyleSheet.create({
     textAlign: 'center',
     paddingVertical: 10,
     paddingRight: 10,
-    fontSize: 25,
+    fontSize: 30,
     fontFamily: 'arabic-font',
   },
 });

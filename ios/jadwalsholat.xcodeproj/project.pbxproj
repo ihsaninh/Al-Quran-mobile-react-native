@@ -43,6 +43,7 @@
 		81A0D6276B1D4B759474DC79 /* hafs.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3135EC7F84784C209AC9AEFD /* hafs.ttf */; };
 		94EECF31F48D4FA48D015864 /* arabic-font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DEC96AAB83948518A61E001 /* arabic-font.ttf */; };
 		3EE6B80D93EE48DA843BCA36 /* bismillah.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8768E64F16C54FF4AFD37943 /* bismillah.ttf */; };
+		34F4FA44C1754A2CB286048A /* LPMQ.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5BEE59F0B0AA478CBA1A2682 /* LPMQ.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,7 @@
 		3135EC7F84784C209AC9AEFD /* hafs.ttf */ = {isa = PBXFileReference; name = "hafs.ttf"; path = "../app/Assets/Fonts/hafs.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		8DEC96AAB83948518A61E001 /* arabic-font.ttf */ = {isa = PBXFileReference; name = "arabic-font.ttf"; path = "../app/Assets/Fonts/arabic-font.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		8768E64F16C54FF4AFD37943 /* bismillah.ttf */ = {isa = PBXFileReference; name = "bismillah.ttf"; path = "../app/Assets/Fonts/bismillah.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5BEE59F0B0AA478CBA1A2682 /* LPMQ.ttf */ = {isa = PBXFileReference; name = "LPMQ.ttf"; path = "../app/Assets/Fonts/LPMQ.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,6 +275,7 @@
 				3135EC7F84784C209AC9AEFD /* hafs.ttf */,
 				8DEC96AAB83948518A61E001 /* arabic-font.ttf */,
 				8768E64F16C54FF4AFD37943 /* bismillah.ttf */,
+				5BEE59F0B0AA478CBA1A2682 /* LPMQ.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 				81A0D6276B1D4B759474DC79 /* hafs.ttf in Resources */,
 				94EECF31F48D4FA48D015864 /* arabic-font.ttf in Resources */,
 				3EE6B80D93EE48DA843BCA36 /* bismillah.ttf in Resources */,
+				34F4FA44C1754A2CB286048A /* LPMQ.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

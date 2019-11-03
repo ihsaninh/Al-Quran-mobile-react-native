@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import axios from 'axios';
 import CardView from 'react-native-cardview';
-import HTML from 'react-native-render-html';
 import { Styles } from './Basmallah.styles';
 import { quranBasmallah } from '../../Utils/EndPoints';
 

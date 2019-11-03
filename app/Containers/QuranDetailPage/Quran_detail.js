@@ -3,6 +3,7 @@ import { Text, View, FlatList, RefreshControl } from 'react-native';
 import axios from 'axios';
 import HTML from 'react-native-render-html';
 import CardView from 'react-native-cardview';
+import Loading from '../../Components/LoadingComponent/Loading';
 import { Styles } from './Quran_detail.styles';
 import { Colors } from '../../Utils/Colors';
 import { quranDetail } from '../../Utils/EndPoints';
@@ -14,6 +15,7 @@ class QuranList extends Component {
     this.state = {
       detailSurah: [],
       refreshing: false,
+      isLoading: false,
     };
   }
 
@@ -59,10 +61,14 @@ class QuranList extends Component {
     const jml_ayat = dataSurah.count_ayat;
 
     try {
+      this.setState({
+        isLoading: true,
+      });
       const res = await axios.get(quranDetail(surah_id, jml_ayat));
       const detailSurah = res.data.data;
       this.setState({
         detailSurah,
+        isLoading: false,
       });
     } catch (error) {
       throw error;
@@ -101,7 +107,7 @@ class QuranList extends Component {
   };
 
   render() {
-    const { detailSurah, refreshing } = this.state;
+    const { detailSurah, refreshing, isLoading } = this.state;
     const {
       navigation: {
         state: {
@@ -109,25 +115,29 @@ class QuranList extends Component {
         },
       },
     } = this.props;
-    return (
-      <View>
-        <FlatList
-          ListHeaderComponent={
-            dataSurah.id === 1 || dataSurah.id === 9 ? null : Basmallah
-          }
-          data={detailSurah}
-          keyExtractor={(item, index) => index.toString()}
-          showsHorizontalScrollIndicator={false}
-          renderItem={this.renderCardContent}
-          refreshControl={
-            <RefreshControl
-              refreshing={refreshing}
-              onRefresh={this.onRefresh}
-            />
-          }
-        />
-      </View>
-    );
+    if (isLoading) {
+      return <Loading />;
+    } else {
+      return (
+        <View>
+          <FlatList
+            ListHeaderComponent={
+              dataSurah.id === 1 || dataSurah.id === 9 ? null : Basmallah
+            }
+            data={detailSurah}
+            keyExtractor={(item, index) => index.toString()}
+            showsHorizontalScrollIndicator={false}
+            renderItem={this.renderCardContent}
+            refreshControl={
+              <RefreshControl
+                refreshing={refreshing}
+                onRefresh={this.onRefresh}
+              />
+            }
+          />
+        </View>
+      );
+    }
   }
 }
 
