@@ -36,14 +36,17 @@ const Styles = StyleSheet.create({
     textAlign: 'right',
     paddingTop: 10,
     paddingRight: 10,
-    fontWeight: 'bold',
-    fontSize: 20,
+    fontSize: 25,
+    fontFamily: 'arabic-font',
   },
-  descTextLeft: {
-    fontSize: 15,
+  descTextLeftContainer: {
     paddingVertical: 10,
     paddingRight: 10,
+  },
+  descTextLeft: {
     color: Colors.grey,
+    fontSize: 14,
+    lineHeight: 25,
   },
   headerTitle: {
     color: Colors.white,

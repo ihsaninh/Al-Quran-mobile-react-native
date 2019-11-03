@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Text, View, FlatList, RefreshControl } from 'react-native';
 import axios from 'axios';
+import HTML from 'react-native-render-html';
 import CardView from 'react-native-cardview';
 import { Styles } from './Quran_detail.styles';
 import { Colors } from '../../Utils/Colors';
@@ -87,7 +88,11 @@ class QuranList extends Component {
           </View>
           <View style={Styles.descContainer}>
             <Text style={Styles.descTextRight}>{item.aya_text}</Text>
-            <Text style={Styles.descTextLeft}>{item.translation_aya_text}</Text>
+            <HTML
+              html={item.translation_aya_text}
+              containerStyle={Styles.descTextLeftContainer}
+              baseFontStyle={Styles.descTextLeft}
+            />
           </View>
         </View>
       </CardView>
