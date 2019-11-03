@@ -115,29 +115,28 @@ class QuranList extends Component {
         },
       },
     } = this.props;
-    if (isLoading) {
-      return <Loading />;
-    } else {
-      return (
-        <View>
-          <FlatList
-            ListHeaderComponent={
-              dataSurah.id === 1 || dataSurah.id === 9 ? null : Basmallah
-            }
-            data={detailSurah}
-            keyExtractor={(item, index) => index.toString()}
-            showsHorizontalScrollIndicator={false}
-            renderItem={this.renderCardContent}
-            refreshControl={
-              <RefreshControl
-                refreshing={refreshing}
-                onRefresh={this.onRefresh}
-              />
-            }
-          />
-        </View>
-      );
-    }
+
+    return isLoading ? (
+      <Loading />
+    ) : (
+      <View>
+        <FlatList
+          ListHeaderComponent={
+            dataSurah.id === 1 || dataSurah.id === 9 ? null : Basmallah
+          }
+          data={detailSurah}
+          keyExtractor={(item, index) => index.toString()}
+          showsHorizontalScrollIndicator={false}
+          renderItem={this.renderCardContent}
+          refreshControl={
+            <RefreshControl
+              refreshing={refreshing}
+              onRefresh={this.onRefresh}
+            />
+          }
+        />
+      </View>
+    );
   }
 }
 

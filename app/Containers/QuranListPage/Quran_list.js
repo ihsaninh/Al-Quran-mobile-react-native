@@ -10,6 +10,7 @@ import {
 import axios from 'axios';
 import CardView from 'react-native-cardview';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import Loading from '../../Components/LoadingComponent/Loading';
 import { Styles } from './Quran_list.styles';
 import { Colors } from '../../Utils/Colors';
 import { quranList } from '../../Utils/EndPoints';
@@ -20,6 +21,7 @@ class QuranList extends Component {
     this.state = {
       listQuran: [],
       refreshing: false,
+      isLoading: false,
     };
   }
 
@@ -47,11 +49,13 @@ class QuranList extends Component {
   }
 
   getDataQuran = async () => {
+    this.setState({ isLoading: true });
     try {
       const res = await axios.get(quranList);
       const listQuran = res.data.data;
       this.setState({
         listQuran,
+        isLoading: false,
       });
     } catch (error) {
       throw error;
@@ -112,8 +116,10 @@ class QuranList extends Component {
   };
 
   render() {
-    const { listQuran, refreshing } = this.state;
-    return (
+    const { listQuran, refreshing, isLoading } = this.state;
+    return isLoading ? (
+      <Loading />
+    ) : (
       <View>
         <StatusBar
           backgroundColor={Colors.statusbar}
