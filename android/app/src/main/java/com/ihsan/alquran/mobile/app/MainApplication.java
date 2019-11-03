@@ -1,4 +1,4 @@
-package com.jadwalsholat;
+package com.ihsan.alquran.mobile.app;
 
 import android.app.Application;
 import android.content.Context;

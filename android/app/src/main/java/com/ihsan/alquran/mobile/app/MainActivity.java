@@ -1,4 +1,4 @@
-package com.jadwalsholat;
+package com.ihsan.alquran.mobile.app;
 
 import com.facebook.react.ReactActivity;
 
@@ -10,6 +10,6 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "jadwalsholat";
+    return "AlQuranMobile";
   }
 }

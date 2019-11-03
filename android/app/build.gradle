@@ -129,7 +129,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.jadwalsholat"
+        applicationId "com.ihsan.alquran.mobile.app"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
