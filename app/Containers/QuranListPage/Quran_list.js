@@ -1,15 +1,9 @@
 import React, { Component } from 'react';
-import {
-  Text,
-  View,
-  StatusBar,
-  TouchableOpacity,
-  FlatList,
-  RefreshControl,
-} from 'react-native';
+import { Text, View, TouchableOpacity, FlatList } from 'react-native';
 import axios from 'axios';
 import CardView from 'react-native-cardview';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+
 import Loading from '../../Components/LoadingComponent/Loading';
 import { Styles } from './Quran_list.styles';
 import { Colors } from '../../Utils/Colors';
@@ -61,6 +55,8 @@ class QuranList extends Component {
       throw error;
     }
   };
+
+  keyExtractor = (list, index) => index.toString();
 
   goToDetailpage = dataSurah => () => {
     const {
@@ -117,25 +113,18 @@ class QuranList extends Component {
 
   render() {
     const { listQuran, refreshing, isLoading } = this.state;
+
     return isLoading ? (
       <Loading />
     ) : (
       <View>
-        <StatusBar
-          backgroundColor={Colors.statusbar}
-          barStyle="light-content"
-        />
         <FlatList
           data={listQuran}
-          keyExtractor={(list, index) => index.toString()}
+          keyExtractor={this.keyExtractor}
           showsHorizontalScrollIndicator={false}
           renderItem={this.renderCardContent}
-          refreshControl={
-            <RefreshControl
-              refreshing={refreshing}
-              onRefresh={this.onRefresh}
-            />
-          }
+          refreshing={refreshing}
+          onRefresh={this.onRefresh}
         />
       </View>
     );

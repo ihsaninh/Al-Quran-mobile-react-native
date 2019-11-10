@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Text, View, FlatList, RefreshControl } from 'react-native';
+import { Text, View, FlatList } from 'react-native';
 import axios from 'axios';
 import HTML from 'react-native-render-html';
 import CardView from 'react-native-cardview';
+
 import Loading from '../../Components/LoadingComponent/Loading';
 import { Styles } from './Quran_detail.styles';
 import { Colors } from '../../Utils/Colors';
@@ -75,6 +76,8 @@ class QuranList extends Component {
     }
   };
 
+  keyExtractor = (item, index) => index.toString();
+
   onRefresh = () => {
     this.setState({ refreshing: true }, () => this.renderDetailSurah());
     setTimeout(() => this.setState({ refreshing: false }), 1000);
@@ -106,34 +109,26 @@ class QuranList extends Component {
     );
   };
 
+  listHeader = () => {
+    const { dataSurah } = this.props.navigation.state.params;
+    return dataSurah.id === 1 || dataSurah.id === 9 ? null : Basmallah;
+  };
+
   render() {
     const { detailSurah, refreshing, isLoading } = this.state;
-    const {
-      navigation: {
-        state: {
-          params: { dataSurah },
-        },
-      },
-    } = this.props;
 
     return isLoading ? (
       <Loading />
     ) : (
       <View>
         <FlatList
-          ListHeaderComponent={
-            dataSurah.id === 1 || dataSurah.id === 9 ? null : Basmallah
-          }
+          ListHeaderComponent={this.listHeader}
           data={detailSurah}
-          keyExtractor={(item, index) => index.toString()}
+          keyExtractor={this.keyExtractor}
           showsHorizontalScrollIndicator={false}
           renderItem={this.renderCardContent}
-          refreshControl={
-            <RefreshControl
-              refreshing={refreshing}
-              onRefresh={this.onRefresh}
-            />
-          }
+          refreshing={refreshing}
+          onRefresh={this.onRefresh}
         />
       </View>
     );

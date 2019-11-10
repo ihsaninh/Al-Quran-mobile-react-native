@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import CardView from 'react-native-cardview';
+
 import { Styles } from './Basmallah.styles';
 
 class Basmallah extends Component {
