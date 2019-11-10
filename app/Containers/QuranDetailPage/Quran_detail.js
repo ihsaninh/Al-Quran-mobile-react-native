@@ -109,9 +109,14 @@ class QuranList extends Component {
     );
   };
 
-  listHeader = () => {
+  listHeaderComponent = () => {
     const { dataSurah } = this.props.navigation.state.params;
-    return dataSurah.id === 1 || dataSurah.id === 9 ? null : Basmallah;
+
+    if (dataSurah.id === 1 || dataSurah.id === 9) {
+      return null;
+    }
+
+    return <Basmallah />;
   };
 
   render() {
@@ -122,7 +127,7 @@ class QuranList extends Component {
     ) : (
       <View>
         <FlatList
-          ListHeaderComponent={this.listHeader}
+          ListHeaderComponent={this.listHeaderComponent}
           data={detailSurah}
           keyExtractor={this.keyExtractor}
           showsHorizontalScrollIndicator={false}
