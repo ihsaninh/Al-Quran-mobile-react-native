@@ -1,33 +1,15 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
-import axios from 'axios';
 import CardView from 'react-native-cardview';
 import { Styles } from './Basmallah.styles';
-import { quranBasmallah } from '../../Utils/EndPoints';
 
 class Basmallah extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: '',
+      data: require('../../Data/Basmallah.json'),
     };
   }
-
-  componentDidMount() {
-    this.renderBasmallah();
-  }
-
-  renderBasmallah = async () => {
-    try {
-      const res = await axios.get(quranBasmallah);
-      const data = res.data.data[0];
-      this.setState({
-        data,
-      });
-    } catch (error) {
-      throw error;
-    }
-  };
 
   render() {
     const { data } = this.state;
@@ -38,7 +20,7 @@ class Basmallah extends Component {
         cornerRadius={5}
         style={Styles.CardStyle}>
         <View>
-          <Text style={Styles.descTextArabic}>{data.aya_text}</Text>
+          <Text style={Styles.descTextArabic}>{data.ayat_arab}</Text>
         </View>
       </CardView>
     );
