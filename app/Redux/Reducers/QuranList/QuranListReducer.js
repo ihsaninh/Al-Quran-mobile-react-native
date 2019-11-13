@@ -1,0 +1,42 @@
+import {
+  REQ_QURAN_LIST,
+  REQ_QURAN_LIST_SUCCESS,
+  REQ_QURAN_LIST_FAILURE,
+} from '../../Actions/';
+
+const initialState = {
+  actionStatus: '',
+  data: {},
+  error: '',
+  loading: false,
+};
+
+const QuranList = (state = initialState, action) => {
+  switch (action.type) {
+    case REQ_QURAN_LIST:
+      return {
+        ...state,
+        actionStatus: REQ_QURAN_LIST,
+        error: '',
+        loading: true,
+      };
+    case REQ_QURAN_LIST_SUCCESS:
+      return {
+        ...state,
+        actionStatus: REQ_QURAN_LIST_SUCCESS,
+        data: action.payload,
+        loading: false,
+      };
+    case REQ_QURAN_LIST_FAILURE:
+      return {
+        ...state,
+        actionStatus: REQ_QURAN_LIST_FAILURE,
+        error: action.error,
+        loading: false,
+      };
+    default:
+      return { ...state };
+  }
+};
+
+export { QuranList };

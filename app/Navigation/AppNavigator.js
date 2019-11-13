@@ -1,7 +1,7 @@
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
-import QuranList from '../Containers/QuranListPage/Quran_list';
+import QuranList from '../Containers/QuranListPage/QuranList.container';
 import QuranDetail from '../Containers/QuranDetailPage/Quran_detail';
 
 const AppStack = createStackNavigator(

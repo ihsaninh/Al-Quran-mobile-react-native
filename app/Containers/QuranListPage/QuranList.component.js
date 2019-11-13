@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import { Text, View, TouchableOpacity, FlatList } from 'react-native';
-import axios from 'axios';
 import CardView from 'react-native-cardview';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import Loading from '../../Components/LoadingComponent/Loading';
-import { Styles } from './Quran_list.styles';
+import { Styles } from './QuranList.style';
 import { Colors } from '../../Utils/Colors';
-import { quranList } from '../../Utils/EndPoints';
 
 class QuranList extends Component {
   constructor(props) {
@@ -43,17 +41,8 @@ class QuranList extends Component {
   }
 
   getDataQuran = async () => {
-    this.setState({ isLoading: true });
-    try {
-      const res = await axios.get(quranList);
-      const listQuran = res.data.data;
-      this.setState({
-        listQuran,
-        isLoading: false,
-      });
-    } catch (error) {
-      throw error;
-    }
+    const { getQuranList } = this.props;
+    await getQuranList();
   };
 
   keyExtractor = (list, index) => index.toString();
@@ -112,14 +101,15 @@ class QuranList extends Component {
   };
 
   render() {
-    const { listQuran, refreshing, isLoading } = this.state;
+    const { refreshing, isLoading } = this.state;
+    const { dataQuran } = this.props;
 
     return isLoading ? (
       <Loading />
     ) : (
       <View>
         <FlatList
-          data={listQuran}
+          data={dataQuran}
           keyExtractor={this.keyExtractor}
           showsHorizontalScrollIndicator={false}
           renderItem={this.renderCardContent}

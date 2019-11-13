@@ -6,6 +6,7 @@ import CardView from 'react-native-cardview';
 
 import Loading from '../../Components/LoadingComponent/Loading';
 import { Styles } from './Quran_detail.styles';
+import { Constants } from '../../Utils/Constants';
 import { Colors } from '../../Utils/Colors';
 import { quranDetail } from '../../Utils/EndPoints';
 import Basmallah from '../../Components/BasmallahComponent/Basmallah';
@@ -83,6 +84,19 @@ class QuranList extends Component {
     setTimeout(() => this.setState({ refreshing: false }), 1000);
   };
 
+  listHeaderComponent = () => {
+    const { dataSurah } = this.props.navigation.state.params;
+
+    switch (dataSurah) {
+      case Constants.DATA_SURAH.AL_FATIHAH:
+        return null;
+      case Constants.DATA_SURAH.AL_TAUBAH:
+        return null;
+      default:
+        return <Basmallah />;
+    }
+  };
+
   renderCardContent = ({ item }) => {
     return (
       <CardView
@@ -107,16 +121,6 @@ class QuranList extends Component {
         </View>
       </CardView>
     );
-  };
-
-  listHeaderComponent = () => {
-    const { dataSurah } = this.props.navigation.state.params;
-
-    if (dataSurah.id === 1 || dataSurah.id === 9) {
-      return null;
-    }
-
-    return <Basmallah />;
   };
 
   render() {
