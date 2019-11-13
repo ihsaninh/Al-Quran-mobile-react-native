@@ -1,20 +1,14 @@
 import React, { Component } from 'react';
-import { Text, View, TouchableOpacity, FlatList } from 'react-native';
-import CardView from 'react-native-cardview';
+import { View, FlatList } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import Loading from '../../Components/LoadingComponent/Loading';
-import { Styles } from './QuranList.style';
+import CardSurahList from '../../Components/CardSurahList/CardSurahList.component';
 import { Colors } from '../../Utils/Colors';
+import { Routes } from '../../Navigation/Routes';
+import { Styles } from './QuranList.style';
 
 class QuranList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      refreshing: false,
-    };
-  }
-
   static navigationOptions = ({ navigation }) => {
     return {
       gesturesEnabled: true,
@@ -46,61 +40,25 @@ class QuranList extends Component {
   keyExtractor = (list, index) => index.toString();
 
   goToDetailpage = dataSurah => () => {
-    const {
-      navigation: { navigate },
-    } = this.props;
-    navigate('QuranDetail', {
-      dataSurah,
-    });
-  };
-
-  onRefresh = () => {
-    this.setState({ refreshing: true }, () => this.getDataQuran());
-    setTimeout(() => this.setState({ refreshing: false }), 1000);
+    const { navigation } = this.props;
+    navigation.navigate(Routes.QuranDetail, { dataSurah });
   };
 
   renderCardContent = ({ item }) => {
     return (
-      <TouchableOpacity onPress={this.goToDetailpage(item)} activeOpacity={0.6}>
-        <CardView
-          cardElevation={2}
-          cardMaxElevation={2}
-          cornerRadius={5}
-          style={Styles.CardStyle}>
-          <View style={Styles.cardContainer}>
-            <View style={Styles.numberCircleContainer}>
-              <View style={Styles.NumberCircle}>
-                <Text style={Styles.textNumber}>{item.id}</Text>
-              </View>
-            </View>
-            <View style={Styles.descContainer}>
-              <Text style={Styles.descTitle}>
-                {item.surat_name} ({item.surat_text})
-              </Text>
-              <Text style={Styles.descSubTitle}>
-                Terjemahan: {item.surat_terjemahan}
-              </Text>
-              <Text style={Styles.descSubTitle}>
-                Jumlah Ayat: {item.count_ayat}
-              </Text>
-            </View>
-            <View style={Styles.goToDetailContainer}>
-              <Icon
-                name="keyboard-arrow-right"
-                size={30}
-                color="grey"
-                style={Styles.expandIconStyle}
-              />
-            </View>
-          </View>
-        </CardView>
-      </TouchableOpacity>
+      <CardSurahList
+        surahNumber={item?.id}
+        surahText={item?.surat_text}
+        surahName={item?.surat_name}
+        surahMean={item?.surat_terjemahan}
+        surahAyat={item?.count_ayat}
+        onPress={this.goToDetailpage(item)}
+      />
     );
   };
 
   render() {
-    const { refreshing } = this.state;
-    const { dataQuran, isLoading } = this.props;
+    const { dataQuran, isLoading, refreshing } = this.props;
 
     return isLoading ? (
       <Loading />
@@ -112,7 +70,7 @@ class QuranList extends Component {
           showsHorizontalScrollIndicator={false}
           renderItem={this.renderCardContent}
           refreshing={refreshing}
-          onRefresh={this.onRefresh}
+          onRefresh={this.getDataQuran}
         />
       </View>
     );

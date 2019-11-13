@@ -6,6 +6,7 @@ import { getQuranList } from '../../Redux/Actions/QuranList/QuranList';
 const mapStateToProps = state => ({
   dataQuran: state.quranList.data,
   isLoading: state.quranList.loading,
+  refreshing: state.quranList.refreshing,
 });
 
 const mapDispatchToProps = dispatch => ({
