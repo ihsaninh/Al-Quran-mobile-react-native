@@ -11,9 +11,7 @@ class QuranList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      listQuran: [],
       refreshing: false,
-      isLoading: false,
     };
   }
 
@@ -101,8 +99,8 @@ class QuranList extends Component {
   };
 
   render() {
-    const { refreshing, isLoading } = this.state;
-    const { dataQuran } = this.props;
+    const { refreshing } = this.state;
+    const { dataQuran, isLoading } = this.props;
 
     return isLoading ? (
       <Loading />
