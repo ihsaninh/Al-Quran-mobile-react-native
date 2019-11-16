@@ -9,8 +9,8 @@ const CardAyatList = props => {
   const { ayatNumber, ayatText, ayatTranslate } = props;
   return (
     <CardView
-      cardElevation={2}
-      cardMaxElevation={2}
+      cardElevation={0}
+      cardMaxElevation={0}
       cornerRadius={5}
       style={Styles.CardStyle}>
       <View style={Styles.cardContainer}>

@@ -5,6 +5,7 @@ import get from 'lodash/get';
 import { Basmallah } from '../../Components/Basmallah/Basmallah.component';
 import { Loading } from '../../Components/Loading/Loading.component';
 import { CardAyatList } from '../../Components/CardAyatList/CardAyatList.component';
+import { Separator } from '../../Components/Separator/Separator.component';
 import { Constants } from '../../Utils/Constants';
 import { keyExtractor } from '../../Utils/Helper';
 import { Styles } from './QuranDetail.style';
@@ -98,6 +99,7 @@ class QuranDetail extends Component {
         renderItem={this.renderCardContent}
         refreshing={refreshing}
         onRefresh={this.renderDetailSurah}
+        ItemSeparatorComponent={Separator}
       />
     );
   }

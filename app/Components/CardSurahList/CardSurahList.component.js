@@ -17,8 +17,8 @@ const CardSurahList = props => {
   return (
     <TouchableOpacity onPress={onPress} activeOpacity={0.6}>
       <CardView
-        cardElevation={2}
-        cardMaxElevation={2}
+        cardElevation={0}
+        cardMaxElevation={0}
         cornerRadius={5}
         style={Styles.CardStyle}>
         <View style={Styles.cardContainer}>

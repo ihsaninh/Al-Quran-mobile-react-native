@@ -38,8 +38,9 @@
 
 ## Screenshoot
 <div align="center">
-    <img width="300" src="https://github.com/ihsaninh/Al-Quran-Mobile-React-Native/blob/master/Screenshot_1572402504.png">   
-    <img width="300" src="https://github.com/ihsaninh/Al-Quran-Mobile-React-Native/blob/master/Screenshot_1572402559.png">    
+    <img width="300" src="https://github.com/ihsaninh/Al-Quran-Mobile-React-Native/blob/master/ss1.jpg">   
+    <img width="300" src="https://github.com/ihsaninh/Al-Quran-Mobile-React-Native/blob/master/ss2.jpg">  
+    <img width="300" src="https://github.com/ihsaninh/Al-Quran-Mobile-React-Native/blob/master/ss3.jpg">    
 </div>
 
 ## Testing

@@ -3,6 +3,7 @@ import { FlatList } from 'react-native';
 
 import { Loading } from '../../Components/Loading/Loading.component';
 import { CardSurahList } from '../../Components/CardSurahList/CardSurahList.component';
+import { Separator } from '../../Components/Separator/Separator.component';
 import { Routes } from '../../Navigation/Routes';
 import { keyExtractor } from '../../Utils/Helper';
 
@@ -47,6 +48,7 @@ class QuranList extends Component {
         renderItem={this.renderCardContent}
         refreshing={refreshing}
         onRefresh={this.getDataQuran}
+        ItemSeparatorComponent={Separator}
       />
     );
   }

@@ -12,26 +12,28 @@ const Styles = StyleSheet.create({
     flexDirection: 'row',
   },
   numberCircleContainer: {
-    flex: 0.8,
+    flex: 0.75,
   },
   descContainer: {
     flex: 3,
     flexDirection: 'column',
+    justifyContent: 'center',
   },
   NumberCircle: {
-    height: 50,
-    width: 50,
+    height: 45,
+    width: 45,
     borderRadius: 100,
     backgroundColor: Colors.primary,
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: 25,
-    marginLeft: 10,
+    marginLeft: 5,
     marginBottom: 10,
   },
   textNumber: {
     color: Colors.white,
     fontSize: 18,
+    fontWeight: '700',
   },
   descTextRight: {
     textAlign: 'right',

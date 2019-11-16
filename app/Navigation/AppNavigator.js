@@ -25,20 +25,26 @@ const AppStack = createStackNavigator(
     },
     QuranDetail: {
       screen: QuranDetail,
+      navigationOptions: {
+        headerStyle: {
+          backgroundColor: Colors.primary,
+          elevation: 0,
+        },
+      },
     },
   },
   {
     defaultNavigationOptions: {
       headerStyle: {
         backgroundColor: Colors.primary,
+        elevation: 0,
       },
       headerTintColor: Colors.white,
       headerTitleStyle: {
         fontWeight: 'bold',
       },
     },
-    swipeEnabled: false,
-    transitionConfig: () => fromRight(),
+    transitionConfig: () => fromRight(600),
   },
 );
 
