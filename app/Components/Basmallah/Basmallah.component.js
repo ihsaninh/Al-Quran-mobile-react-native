@@ -28,4 +28,4 @@ class Basmallah extends Component {
   }
 }
 
-export default Basmallah;
+export { Basmallah };

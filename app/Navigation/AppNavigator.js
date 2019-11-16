@@ -6,8 +6,9 @@ import { createStackNavigator } from 'react-navigation-stack';
 
 import { Colors } from '../Utils/Colors';
 import { Styles } from './AppNavigator.style';
+import { fromRight } from '../Utils/Transition';
 import QuranList from '../Containers/QuranListPage/QuranList.container';
-import QuranDetail from '../Containers/QuranDetailPage/Quran_detail';
+import QuranDetail from '../Containers/QuranDetailPage/QuranDetail.container';
 
 const AppStack = createStackNavigator(
   {
@@ -28,8 +29,6 @@ const AppStack = createStackNavigator(
   },
   {
     defaultNavigationOptions: {
-      initialRouteName: QuranList,
-      resetOnBlur: true,
       headerStyle: {
         backgroundColor: Colors.primary,
       },
@@ -38,6 +37,8 @@ const AppStack = createStackNavigator(
         fontWeight: 'bold',
       },
     },
+    swipeEnabled: false,
+    transitionConfig: () => fromRight(),
   },
 );
 

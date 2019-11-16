@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { FlatList } from 'react-native';
 
-import Loading from '../../Components/LoadingComponent/Loading';
-import CardSurahList from '../../Components/CardSurahList/CardSurahList.component';
+import { Loading } from '../../Components/Loading/Loading.component';
+import { CardSurahList } from '../../Components/CardSurahList/CardSurahList.component';
 import { Routes } from '../../Navigation/Routes';
 import { keyExtractor } from '../../Utils/Helper';
 
