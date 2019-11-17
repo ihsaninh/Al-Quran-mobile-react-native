@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 import { Colors } from '../../Utils/Colors';
+import { FontType } from '../../Themes/Fonts';
 
 const Styles = StyleSheet.create({
   CardStyle: {
@@ -37,17 +38,18 @@ const Styles = StyleSheet.create({
   textNumber: {
     color: Colors.white,
     fontSize: 18,
-    fontWeight: '700',
+    fontFamily: FontType.semiBold,
   },
   descTitle: {
-    fontSize: 17,
-    fontWeight: 'bold',
+    fontSize: 16,
     paddingTop: 10,
+    fontFamily: FontType.semiBold,
   },
   descSubTitle: {
-    fontSize: 14,
+    fontSize: 13,
     paddingTop: 5,
     color: Colors.grey,
+    fontFamily: FontType.regular,
   },
   expandIconStyle: {
     paddingTop: 5,

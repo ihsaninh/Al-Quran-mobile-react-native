@@ -49,6 +49,7 @@ class QuranList extends Component {
         refreshing={refreshing}
         onRefresh={this.getDataQuran}
         ItemSeparatorComponent={Separator}
+        showsVerticalScrollIndicator={false}
       />
     );
   }

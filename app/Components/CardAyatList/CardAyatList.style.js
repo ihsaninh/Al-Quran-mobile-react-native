@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 import { Colors } from '../../Utils/Colors';
+import { FontType } from '../../Themes/Fonts';
 
 const Styles = StyleSheet.create({
   CardStyle: {
@@ -33,14 +34,14 @@ const Styles = StyleSheet.create({
   textNumber: {
     color: Colors.white,
     fontSize: 18,
-    fontWeight: '700',
+    fontFamily: FontType.semiBold,
   },
   descTextRight: {
     textAlign: 'right',
     paddingTop: 10,
     paddingRight: 10,
-    fontSize: 25,
-    fontFamily: 'arabic-font',
+    fontSize: 26,
+    fontFamily: FontType.arabic,
   },
   descTextLeftContainer: {
     paddingVertical: 10,
@@ -50,6 +51,7 @@ const Styles = StyleSheet.create({
     color: Colors.grey,
     fontSize: 14,
     lineHeight: 25,
+    fontFamily: FontType.regular,
   },
 });
 

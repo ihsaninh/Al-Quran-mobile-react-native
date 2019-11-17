@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 import { Colors } from '../../Utils/Colors';
+import { FontType } from '../../Themes/Fonts';
 
 const Styles = StyleSheet.create({
   CardStyle: {
@@ -52,11 +53,12 @@ const Styles = StyleSheet.create({
   headerTitle: {
     color: Colors.white,
     fontSize: 20,
-    fontWeight: 'bold',
+    // fontWeight: 'bold',
+    fontFamily: FontType.semiBold,
   },
   headerSubtitle: {
     color: Colors.white,
-    fontWeight: '600',
+    fontFamily: FontType.regular,
   },
 });
 

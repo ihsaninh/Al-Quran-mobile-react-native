@@ -100,6 +100,7 @@ class QuranDetail extends Component {
         refreshing={refreshing}
         onRefresh={this.renderDetailSurah}
         ItemSeparatorComponent={Separator}
+        showsVerticalScrollIndicator={false}
       />
     );
   }
