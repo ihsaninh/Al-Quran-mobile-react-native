@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
-import { Colors } from '../Utils/Colors';
+import { Colors } from '../Themes/Colors';
 import { Styles } from './AppNavigator.style';
 import { fromRight } from '../Utils/Transition';
 import QuranList from '../Containers/QuranListPage/QuranList.container';

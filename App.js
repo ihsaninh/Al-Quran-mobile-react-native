@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { Provider } from 'react-redux';
 import { StatusBar } from 'react-native';
 
-import { Colors } from './app/Utils/Colors';
+import { Colors } from './app/Themes/Colors';
 import AppNavigator from './app/Navigation/AppNavigator';
 import { store } from './app/Redux/CreateStore';
 
