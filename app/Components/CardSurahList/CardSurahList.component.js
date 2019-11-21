@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
-import CardView from 'react-native-cardview';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import { Styles } from './CardSurahList.style';
@@ -16,11 +15,7 @@ const CardSurahList = props => {
   } = props;
   return (
     <TouchableOpacity onPress={onPress} activeOpacity={0.6}>
-      <CardView
-        cardElevation={0}
-        cardMaxElevation={0}
-        cornerRadius={5}
-        style={Styles.CardStyle}>
+      <View style={Styles.CardStyle}>
         <View style={Styles.cardContainer}>
           <View style={Styles.numberCircleContainer}>
             <View style={Styles.NumberCircle}>
@@ -50,7 +45,7 @@ const CardSurahList = props => {
             />
           </View>
         </View>
-      </CardView>
+      </View>
     </TouchableOpacity>
   );
 };

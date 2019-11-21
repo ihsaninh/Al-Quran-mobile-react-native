@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import CardView from 'react-native-cardview';
 import HTML from 'react-native-render-html';
 
 import { Styles } from './CardAyatList.style';
@@ -8,11 +7,7 @@ import { Styles } from './CardAyatList.style';
 const CardAyatList = props => {
   const { ayatNumber, ayatText, ayatTranslate } = props;
   return (
-    <CardView
-      cardElevation={0}
-      cardMaxElevation={0}
-      cornerRadius={5}
-      style={Styles.CardStyle}>
+    <View style={Styles.CardStyle}>
       <View style={Styles.cardContainer}>
         <View style={Styles.numberCircleContainer}>
           <View style={Styles.NumberCircle}>
@@ -28,7 +23,7 @@ const CardAyatList = props => {
           />
         </View>
       </View>
-    </CardView>
+    </View>
   );
 };
 
