@@ -28,11 +28,18 @@ const CardSurahList = props => {
             </View>
           </View>
           <View style={Styles.descContainer}>
-            <Text style={Styles.descTitle}>
-              {surahName} ({surahText})
+            <View style={Styles.descSurah}>
+              <Text style={Styles.descTitle}>{surahName}</Text>
+              <Text style={Styles.bracketLeft}>(</Text>
+              <Text style={Styles.descArab}>{surahText}</Text>
+              <Text style={Styles.bracketRight}>)</Text>
+            </View>
+            <Text style={Styles.descSubTitleTranslate}>
+              Terjemahan: {surahMean}
             </Text>
-            <Text style={Styles.descSubTitle}>Terjemahan: {surahMean}</Text>
-            <Text style={Styles.descSubTitle}>Jumlah Ayat: {surahAyat}</Text>
+            <Text style={Styles.descSubTitleAyat}>
+              Jumlah Ayat: {surahAyat}
+            </Text>
           </View>
           <View style={Styles.goToDetailContainer}>
             <Icon

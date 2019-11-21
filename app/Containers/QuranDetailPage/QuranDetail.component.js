@@ -92,15 +92,14 @@ class QuranDetail extends Component {
       <Loading />
     ) : (
       <FlatList
-        ListHeaderComponent={this.listHeaderComponent}
         data={dataAyat}
         keyExtractor={keyExtractor}
-        showsHorizontalScrollIndicator={false}
         renderItem={this.renderCardContent}
         refreshing={refreshing}
         onRefresh={this.renderDetailSurah}
         ItemSeparatorComponent={Separator}
         showsVerticalScrollIndicator={false}
+        ListHeaderComponent={this.listHeaderComponent}
       />
     );
   }

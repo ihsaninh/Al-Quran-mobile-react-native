@@ -11,6 +11,10 @@ const Constants = {
     CREATED: 201,
     INTERNAL_SERVER_ERROR: 500,
   },
+  BASE_DIMENSIONS: {
+    BASE_WIDTH: 360,
+    BASE_HEIGHT: 640,
+  },
 };
 
 export { Constants };

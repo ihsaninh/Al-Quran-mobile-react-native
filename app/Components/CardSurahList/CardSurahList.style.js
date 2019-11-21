@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-import { Colors } from '../../Utils/Colors';
+import { Colors } from '../../Themes/Colors';
 import { FontType } from '../../Themes/Fonts';
 
 const Styles = StyleSheet.create({
@@ -40,14 +40,40 @@ const Styles = StyleSheet.create({
     fontSize: 18,
     fontFamily: FontType.semiBold,
   },
+  descSurah: {
+    flexDirection: 'row',
+  },
   descTitle: {
     fontSize: 16,
     paddingTop: 10,
     fontFamily: FontType.semiBold,
   },
-  descSubTitle: {
+  bracketLeft: {
+    paddingTop: 10,
+    paddingLeft: 5,
+    fontSize: 16,
+    fontFamily: FontType.regular,
+  },
+  bracketRight: {
+    paddingTop: 10,
+    fontSize: 16,
+    fontFamily: FontType.regular,
+  },
+  descArab: {
+    fontSize: 19,
+    paddingTop: 5,
+    paddingLeft: 5,
+    fontFamily: FontType.arabic,
+  },
+  descSubTitleTranslate: {
     fontSize: 13,
     paddingTop: 5,
+    color: Colors.grey,
+    fontFamily: FontType.regular,
+  },
+  descSubTitleAyat: {
+    fontSize: 13,
+    paddingTop: 8,
     color: Colors.grey,
     fontFamily: FontType.regular,
   },

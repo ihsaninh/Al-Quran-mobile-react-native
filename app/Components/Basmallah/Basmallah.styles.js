@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { FontType } from '../../Themes/Fonts';
 
 const Styles = StyleSheet.create({
   CardStyle: {
@@ -9,7 +10,7 @@ const Styles = StyleSheet.create({
     paddingVertical: 10,
     paddingRight: 10,
     fontSize: 30,
-    fontFamily: 'arabic-font',
+    fontFamily: FontType.arabic,
   },
 });
 

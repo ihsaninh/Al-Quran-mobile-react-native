@@ -40,8 +40,9 @@ const Styles = StyleSheet.create({
     textAlign: 'right',
     paddingTop: 10,
     paddingRight: 10,
-    fontSize: 26,
+    fontSize: 27,
     fontFamily: FontType.arabic,
+    lineHeight: 55,
   },
   descTextLeftContainer: {
     paddingVertical: 10,
@@ -50,7 +51,7 @@ const Styles = StyleSheet.create({
   descTextLeft: {
     color: Colors.grey,
     fontSize: 14,
-    lineHeight: 25,
+    lineHeight: 30,
     fontFamily: FontType.regular,
   },
 });

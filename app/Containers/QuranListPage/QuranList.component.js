@@ -44,7 +44,6 @@ class QuranList extends Component {
       <FlatList
         data={dataQuran}
         keyExtractor={keyExtractor}
-        showsHorizontalScrollIndicator={false}
         renderItem={this.renderCardContent}
         refreshing={refreshing}
         onRefresh={this.getDataQuran}

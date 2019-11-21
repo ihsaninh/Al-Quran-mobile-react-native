@@ -9,7 +9,11 @@ import { store } from './app/Redux/CreateStore';
 const App = () => {
   return (
     <Fragment>
-      <StatusBar backgroundColor={Colors.statusbar} barStyle="light-content" />
+      <StatusBar
+        backgroundColor={Colors.statusbar}
+        barStyle="light-content"
+        animated
+      />
       <Provider store={store}>
         <AppNavigator />
       </Provider>
