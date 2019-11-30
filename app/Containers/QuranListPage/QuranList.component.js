@@ -17,20 +17,20 @@ class QuranList extends Component {
     await getQuranList();
   };
 
-  goToDetailpage = dataSurah => () => {
+  goToDetailpage = data => () => {
     const { navigation } = this.props;
-    navigation.navigate(Routes.QuranDetail, { dataSurah });
+    navigation.navigate(Routes.QuranDetail, { data });
   };
 
-  renderCardContent = ({ item }) => {
+  renderCardContent = ({ data }) => {
     return (
       <CardSurahList
-        surahNumber={item?.id}
-        surahText={item?.surat_text}
-        surahName={item?.surat_name}
-        surahMean={item?.surat_terjemahan}
-        surahAyat={item?.count_ayat}
-        onPress={this.goToDetailpage(item)}
+        surahNumber={data?.id}
+        surahText={data?.surat_text}
+        surahName={data?.surat_name}
+        surahMean={data?.surat_terjemahan}
+        surahAyat={data?.count_ayat}
+        onPress={this.goToDetailpage(data)}
       />
     );
   };
