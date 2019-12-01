@@ -2,7 +2,7 @@ import {
   REQ_QURAN_DETAIL,
   REQ_QURAN_DETAIL_SUCCESS,
   REQ_QURAN_DETAIL_FAILURE,
-} from '../../Actions/';
+} from '../../Actions/Types';
 
 const initialState = {
   actionStatus: '',

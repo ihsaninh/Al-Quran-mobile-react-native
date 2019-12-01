@@ -2,7 +2,7 @@ import {
   REQ_QURAN_LIST,
   REQ_QURAN_LIST_SUCCESS,
   REQ_QURAN_LIST_FAILURE,
-} from '..';
+} from '../Types';
 import axios from 'axios';
 import { quranList } from '../../../Utils/EndPoints';
 import { Constants } from '../../../Utils/Constants';
