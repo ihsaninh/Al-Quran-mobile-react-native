@@ -39,7 +39,7 @@ const QuranList = (state = initialState, action) => {
         refreshing: false,
       };
     default:
-      return { ...state };
+      return state;
   }
 };
 
