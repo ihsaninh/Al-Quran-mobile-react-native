@@ -6,7 +6,7 @@ import { Routes } from '../../Navigation/Routes';
 import { resetNavigationTo } from '../../Utils/Navigations';
 
 class SplashScreenPage extends Component {
-  async componentDidMount() {
+  componentDidMount() {
     return this.redirectPage();
   }
 

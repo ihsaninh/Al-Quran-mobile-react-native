@@ -1,8 +1,8 @@
 const Colors = {
-  primary: '#22a6b3',
+  primary: '#6EA533',
   white: '#fff',
   grey: '#596c75',
-  statusbar: '#1e919c',
+  statusbar: '#4f7526',
   separator: '#f0f0f0',
 };
 
