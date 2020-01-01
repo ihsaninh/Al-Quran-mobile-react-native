@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { FlatList } from 'react-native';
+import SplashScreen from 'react-native-splash-screen';
 
 import { Loading } from '../../Components/Loading/Loading.component';
 import { CardSurahList } from '../../Components/CardSurahList/CardSurahList.component';
@@ -9,6 +10,7 @@ import { keyExtractor } from '../../Utils/Helper';
 
 class QuranList extends Component {
   componentDidMount() {
+    SplashScreen.hide();
     this.getDataQuran();
   }
 

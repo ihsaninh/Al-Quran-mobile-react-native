@@ -9,9 +9,13 @@ import { Styles } from './AppNavigator.style';
 import { fromRight } from '../Utils/Transition';
 import QuranList from '../Containers/QuranListPage/QuranList.container';
 import QuranDetail from '../Containers/QuranDetailPage/QuranDetail.container';
+import SplashScreen from '../Containers/SplashScreenPage/SplashScreen.component';
 
 const AppStack = createStackNavigator(
   {
+    SplashScreen: {
+      screen: SplashScreen,
+    },
     QuranList: {
       screen: QuranList,
       navigationOptions: {
