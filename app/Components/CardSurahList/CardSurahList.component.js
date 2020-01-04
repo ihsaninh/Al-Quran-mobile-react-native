@@ -14,7 +14,7 @@ const CardSurahList = props => {
     surahAyat,
   } = props;
   return (
-    <TouchableOpacity onPress={onPress} activeOpacity={0.6}>
+    <TouchableOpacity onPress={onPress} activeOpacity={0.4}>
       <View style={Styles.CardStyle}>
         <View style={Styles.cardContainer}>
           <View style={Styles.numberCircleContainer}>
