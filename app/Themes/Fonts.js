@@ -4,7 +4,13 @@ const FontType = {
   italic: 'OpenSans-Italic',
   semiBold: 'OpenSans-SemiBold',
   bold: 'OpenSans-Bold',
-  arabic: 'arabic-font',
+  arabic: 'LPMQ',
 };
 
-export { FontType };
+const FontWeight = {
+  bold: 'bold',
+  semiBold: 500,
+  regular: 400,
+};
+
+export { FontType, FontWeight };
