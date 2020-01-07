@@ -4,21 +4,29 @@ import { View } from 'react-native';
 import { Styles } from './SplashScreen.style';
 import { Routes } from '../../Navigation/Routes';
 import { resetNavigationTo } from '../../Utils/Navigations';
+import { isNetworkConnected } from '../../Utils/Helper';
 
 class SplashScreenPage extends Component {
   componentDidMount() {
-    return this.redirectPage();
+    this.redirectPage();
   }
 
   redirectPage = () => {
     this.navigate(Routes.QuranList);
   };
 
-  navigate = screen => {
+  navigate = async screen => {
     const { navigation } = this.props;
 
     const resetNavigation = resetNavigationTo(screen);
-    return navigation.dispatch(resetNavigation);
+    try {
+      await isNetworkConnected();
+      setTimeout(() => {
+        navigation.dispatch(resetNavigation);
+      }, 1000);
+    } catch (error) {
+      alert('offline');
+    }
   };
 
   render() {
