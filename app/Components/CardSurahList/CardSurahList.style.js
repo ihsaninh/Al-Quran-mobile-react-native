@@ -29,14 +29,16 @@ const Styles = StyleSheet.create({
   NumberCircle: {
     height: 45,
     width: 45,
+    borderColor: Colors.separator,
+    borderWidth: 2,
     borderRadius: 100,
-    backgroundColor: Colors.primary,
+    backgroundColor: Colors.white,
     justifyContent: 'center',
     marginLeft: 10,
     alignItems: 'center',
   },
   textNumber: {
-    color: Colors.white,
+    color: Colors.grey,
     fontSize: 18,
     fontFamily: FontType.semiBold,
   },

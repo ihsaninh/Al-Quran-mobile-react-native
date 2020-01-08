@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { View, Alert, BackHandler } from 'react-native';
 
 import { Styles } from './SplashScreen.style';
 import { Routes } from '../../Navigation/Routes';
@@ -25,7 +25,12 @@ class SplashScreenPage extends Component {
         navigation.dispatch(resetNavigation);
       }, 1000);
     } catch (error) {
-      alert('offline');
+      Alert.alert(
+        'Peringatan',
+        'Nampaknya Anda sedang offline, mohon nyalakan data seluler untuk melanjutkan.',
+        [{ text: 'OK', onPress: () => BackHandler.exitApp() }],
+        { cancelable: false },
+      );
     }
   };
 

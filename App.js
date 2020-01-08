@@ -10,8 +10,8 @@ const App = () => {
   return (
     <Fragment>
       <StatusBar
-        backgroundColor={Colors.statusbar}
-        barStyle="light-content"
+        backgroundColor={Colors.white}
+        barStyle="dark-content"
         animated
       />
       <Provider store={store}>

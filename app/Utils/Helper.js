@@ -1,4 +1,4 @@
-import { Dimensions, Platform } from 'react-native';
+import { Dimensions } from 'react-native';
 import NetInfo from '@react-native-community/netinfo';
 
 import { Constants } from '../Utils/Constants';
