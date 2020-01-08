@@ -6,14 +6,19 @@ import { Colors } from '../Themes/Colors';
 import { Strings } from '../Utils/Strings';
 import { fromRight } from '../Utils/Transition';
 import { HeaderComponent } from '../Components/HeaderSurahList/HeaderSurahList.component';
+import { HeaderSurahDetail } from '../Components/HeaderSurahDetail/HeaderSurahDetail.component';
 import QuranList from '../Containers/QuranListPage/QuranList.container';
 import QuranDetail from '../Containers/QuranDetailPage/QuranDetail.container';
 import SplashScreen from '../Containers/SplashScreenPage/SplashScreen.component';
+import AboutPage from '../Containers/AboutPage/AboutPage.component';
 
 const AppStack = createStackNavigator(
   {
     SplashScreen: {
       screen: SplashScreen,
+    },
+    AboutPage: {
+      screen: AboutPage,
     },
     QuranList: {
       screen: QuranList,
@@ -26,17 +31,15 @@ const AppStack = createStackNavigator(
     QuranDetail: {
       screen: QuranDetail,
       navigationOptions: {
-        headerStyle: {
-          backgroundColor: Colors.primary,
-          elevation: 0,
-        },
+        // header: props => <HeaderSurahDetail {...props} />,
       },
     },
   },
   {
     defaultNavigationOptions: {
       headerStyle: {
-        backgroundColor: Colors.primary,
+        borderBottomWidth: 0.5,
+        borderBottomColor: Colors.iron,
         elevation: 0,
       },
       headerTintColor: Colors.white,

@@ -31,7 +31,7 @@ const Styles = StyleSheet.create({
     marginBottom: 10,
   },
   textNumber: {
-    color: Colors.white,
+    color: Colors.black,
     fontSize: 18,
   },
   descTextRight: {
@@ -51,13 +51,12 @@ const Styles = StyleSheet.create({
     lineHeight: 25,
   },
   headerTitle: {
-    color: Colors.white,
+    color: Colors.black,
     fontSize: 20,
-    // fontWeight: 'bold',
     fontFamily: FontType.semiBold,
   },
   headerSubtitle: {
-    color: Colors.white,
+    color: Colors.black,
     fontFamily: FontType.regular,
   },
 });
