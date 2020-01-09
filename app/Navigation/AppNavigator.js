@@ -6,11 +6,11 @@ import { Colors } from '../Themes/Colors';
 import { Strings } from '../Utils/Strings';
 import { fromRight } from '../Utils/Transition';
 import { HeaderComponent } from '../Components/HeaderSurahList/HeaderSurahList.component';
-import { HeaderSurahDetail } from '../Components/HeaderSurahDetail/HeaderSurahDetail.component';
 import QuranList from '../Containers/QuranListPage/QuranList.container';
 import QuranDetail from '../Containers/QuranDetailPage/QuranDetail.container';
 import SplashScreen from '../Containers/SplashScreenPage/SplashScreen.component';
 import AboutPage from '../Containers/AboutPage/AboutPage.component';
+import { FontType, FontWeight } from '../Themes/Fonts';
 
 const AppStack = createStackNavigator(
   {
@@ -19,6 +19,14 @@ const AppStack = createStackNavigator(
     },
     AboutPage: {
       screen: AboutPage,
+      navigationOptions: {
+        title: 'Tentang Aplikasi',
+        headerTitleStyle: {
+          fontFamily: FontType.semiBold,
+          fontSize: 18,
+          marginLeft: 0,
+        },
+      },
     },
     QuranList: {
       screen: QuranList,
@@ -30,9 +38,7 @@ const AppStack = createStackNavigator(
     },
     QuranDetail: {
       screen: QuranDetail,
-      navigationOptions: {
-        // header: props => <HeaderSurahDetail {...props} />,
-      },
+      navigationOptions: {},
     },
   },
   {
@@ -42,10 +48,7 @@ const AppStack = createStackNavigator(
         borderBottomColor: Colors.iron,
         elevation: 0,
       },
-      headerTintColor: Colors.white,
-      headerTitleStyle: {
-        fontWeight: 'bold',
-      },
+      headerTintColor: Colors.black,
     },
     transitionConfig: () => fromRight(600),
   },

@@ -34,10 +34,6 @@ class QuranDetail extends Component {
           </Text>
         </View>
       ),
-      headerTintColor: Colors.black,
-      headerTitleStyle: {
-        fontWeight: 'bold',
-      },
     };
   };
 

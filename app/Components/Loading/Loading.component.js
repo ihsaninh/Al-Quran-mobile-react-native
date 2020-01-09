@@ -6,7 +6,7 @@ import { Colors } from '../../Themes/Colors';
 const Loading = () => {
   return (
     <View style={Styles.loading}>
-      <ActivityIndicator size={50} color={Colors.primary} />
+      <ActivityIndicator size={50} color={Colors.grey} />
     </View>
   );
 };
