@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { View, Text, FlatList } from 'react-native';
 import get from 'lodash/get';
 
@@ -10,38 +10,13 @@ import { Constants } from '../../Utils/Constants';
 import { keyExtractor } from '../../Utils/Helper';
 import { Styles } from './QuranDetail.style';
 
-class QuranDetail extends Component {
-  static navigationOptions = ({
-    navigation: {
-      state: {
-        params: { dataSurah },
-      },
-    },
-  }) => {
-    const suratName = dataSurah.surat_name;
-    const suratArabic = dataSurah.surat_text;
-    const suratTranslate = dataSurah.surat_terjemahan;
-    const countAyat = dataSurah.count_ayat;
-    return {
-      headerTitle: (
-        <View>
-          <Text style={Styles.headerTitle}>
-            {suratName} ({suratArabic})
-          </Text>
-          <Text style={Styles.headerSubtitle}>
-            {suratTranslate} - {countAyat} Ayat
-          </Text>
-        </View>
-      ),
-    };
-  };
+const QuranDetail = props => {
+  useEffect(() => {
+    renderDetailSurah();
+  }, [renderDetailSurah]);
 
-  componentDidMount() {
-    this.renderDetailSurah();
-  }
-
-  renderDetailSurah = async () => {
-    const { getDetailQuran, navigation } = this.props;
+  const renderDetailSurah = useCallback(async () => {
+    const { getDetailQuran, navigation } = props;
     const surahId = get(navigation, 'state.params.dataSurah.id', '');
     const countAyat = get(navigation, 'state.params.dataSurah.count_ayat', '');
 
@@ -51,10 +26,10 @@ class QuranDetail extends Component {
     };
 
     await getDetailQuran(payload);
-  };
+  }, [props]);
 
-  listHeaderComponent = () => {
-    const { navigation } = this.props;
+  const listHeaderComponent = () => {
+    const { navigation } = props;
     const surahId = get(navigation, 'state.params.dataSurah.id', '');
 
     switch (surahId) {
@@ -67,7 +42,7 @@ class QuranDetail extends Component {
     }
   };
 
-  renderCardContent = ({ item }) => {
+  const renderCardContent = ({ item }) => {
     return (
       <CardAyatList
         ayatNumber={item?.aya_number}
@@ -77,24 +52,47 @@ class QuranDetail extends Component {
     );
   };
 
-  render() {
-    const { dataAyat, refreshing, isLoading } = this.props;
+  const { dataAyat, refreshing, isLoading } = props;
 
-    return isLoading ? (
-      <Loading />
-    ) : (
-      <FlatList
-        data={dataAyat}
-        keyExtractor={keyExtractor}
-        renderItem={this.renderCardContent}
-        refreshing={refreshing}
-        onRefresh={this.renderDetailSurah}
-        ItemSeparatorComponent={Separator}
-        showsVerticalScrollIndicator={false}
-        ListHeaderComponent={this.listHeaderComponent}
-      />
-    );
-  }
-}
+  return isLoading ? (
+    <Loading />
+  ) : (
+    <FlatList
+      data={dataAyat}
+      keyExtractor={keyExtractor}
+      renderItem={renderCardContent}
+      refreshing={refreshing}
+      onRefresh={renderDetailSurah}
+      ItemSeparatorComponent={Separator}
+      showsVerticalScrollIndicator={false}
+      ListHeaderComponent={listHeaderComponent}
+    />
+  );
+};
+
+QuranDetail.navigationOptions = ({
+  navigation: {
+    state: {
+      params: { dataSurah },
+    },
+  },
+}) => {
+  const suratName = dataSurah.surat_name;
+  const suratArabic = dataSurah.surat_text;
+  const suratTranslate = dataSurah.surat_terjemahan;
+  const countAyat = dataSurah.count_ayat;
+  return {
+    headerTitle: (
+      <View>
+        <Text style={Styles.headerTitle}>
+          {suratName} ({suratArabic})
+        </Text>
+        <Text style={Styles.headerSubtitle}>
+          {suratTranslate} - {countAyat} Ayat
+        </Text>
+      </View>
+    ),
+  };
+};
 
 export default QuranDetail;
