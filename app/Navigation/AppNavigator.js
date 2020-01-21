@@ -10,7 +10,7 @@ import QuranList from '../Containers/QuranListPage/QuranList.container';
 import QuranDetail from '../Containers/QuranDetailPage/QuranDetail.container';
 import SplashScreen from '../Containers/SplashScreenPage/SplashScreen.component';
 import AboutPage from '../Containers/AboutPage/AboutPage.component';
-import { FontType, FontWeight } from '../Themes/Fonts';
+import { FontType } from '../Themes/Fonts';
 
 const AppStack = createStackNavigator(
   {

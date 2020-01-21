@@ -9,7 +9,6 @@ import { Separator } from '../../Components/Separator/Separator.component';
 import { Constants } from '../../Utils/Constants';
 import { keyExtractor } from '../../Utils/Helper';
 import { Styles } from './QuranDetail.style';
-import { Colors } from '../../Themes/Colors';
 
 class QuranDetail extends Component {
   static navigationOptions = ({

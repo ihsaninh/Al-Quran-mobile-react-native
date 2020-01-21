@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text } from 'react-native';
+import { TouchableRipple } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Menu, { MenuItem, MenuDivider } from 'react-native-material-menu';
 
@@ -23,9 +24,9 @@ class HeaderComponent extends Component {
 
   renderButton = () => {
     return (
-      <TouchableOpacity onPress={this.showMenu}>
+      <TouchableRipple onPress={this.showMenu}>
         <Icon name="more-vert" size={25} color="black" />
-      </TouchableOpacity>
+      </TouchableRipple>
     );
   };
 
@@ -40,7 +41,7 @@ class HeaderComponent extends Component {
     return (
       <View style={[Styles.headerContainer, Styles.headerWhite]}>
         <Text style={Styles.title}>{title}</Text>
-        <TouchableOpacity onPress={this.navigateToQuest}>
+        <TouchableRipple onPress={this.navigateToQuest}>
           <View style={Styles.viewRowPoint}>
             <Menu
               ref={this.setMenuRef}
@@ -51,7 +52,7 @@ class HeaderComponent extends Component {
               <MenuDivider />
             </Menu>
           </View>
-        </TouchableOpacity>
+        </TouchableRipple>
       </View>
     );
   }

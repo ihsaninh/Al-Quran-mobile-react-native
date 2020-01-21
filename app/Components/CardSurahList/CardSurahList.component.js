@@ -1,6 +1,7 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import { TouchableRipple } from 'react-native-paper';
 
 import { Styles } from './CardSurahList.style';
 
@@ -14,7 +15,7 @@ const CardSurahList = props => {
     surahAyat,
   } = props;
   return (
-    <TouchableOpacity onPress={onPress} activeOpacity={0.4}>
+    <TouchableRipple onPress={onPress} rippleColor="rgba(0, 0, 0, .05)">
       <View style={Styles.CardStyle}>
         <View style={Styles.cardContainer}>
           <View style={Styles.numberCircleContainer}>
@@ -46,7 +47,7 @@ const CardSurahList = props => {
           </View>
         </View>
       </View>
-    </TouchableOpacity>
+    </TouchableRipple>
   );
 };
 
