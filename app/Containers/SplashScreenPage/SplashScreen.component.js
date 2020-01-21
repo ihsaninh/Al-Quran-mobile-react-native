@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { View, Alert, BackHandler } from 'react-native';
 
 import { Styles } from './SplashScreen.style';
@@ -6,37 +6,38 @@ import { Routes } from '../../Navigation/Routes';
 import { resetNavigationTo } from '../../Utils/Navigations';
 import { isNetworkConnected } from '../../Utils/Helper';
 
-class SplashScreenPage extends Component {
-  componentDidMount() {
-    this.redirectPage();
-  }
+const SplashScreenPage = props => {
+  useEffect(() => {
+    redirectPage();
+  }, [redirectPage]);
 
-  redirectPage = () => {
-    this.navigate(Routes.QuranList);
-  };
+  const redirectPage = useCallback(() => {
+    navigate(Routes.QuranList);
+  }, [navigate]);
 
-  navigate = async screen => {
-    const { navigation } = this.props;
+  const navigate = useCallback(
+    async screen => {
+      const { navigation } = props;
 
-    const resetNavigation = resetNavigationTo(screen);
-    try {
-      await isNetworkConnected();
-      setTimeout(() => {
-        navigation.dispatch(resetNavigation);
-      }, 1000);
-    } catch (error) {
-      Alert.alert(
-        'Peringatan',
-        'Nampaknya Anda sedang offline, mohon nyalakan data seluler untuk melanjutkan.',
-        [{ text: 'OK', onPress: () => BackHandler.exitApp() }],
-        { cancelable: false },
-      );
-    }
-  };
+      const resetNavigation = resetNavigationTo(screen);
+      try {
+        await isNetworkConnected();
+        setTimeout(() => {
+          navigation.dispatch(resetNavigation);
+        }, 1000);
+      } catch (error) {
+        Alert.alert(
+          'Peringatan',
+          'Nampaknya Anda sedang offline, mohon nyalakan data seluler untuk melanjutkan.',
+          [{ text: 'OK', onPress: () => BackHandler.exitApp() }],
+          { cancelable: false },
+        );
+      }
+    },
+    [props],
+  );
 
-  render() {
-    return <View style={Styles.container} />;
-  }
-}
+  return <View style={Styles.container} />;
+};
 
 export default SplashScreenPage;
