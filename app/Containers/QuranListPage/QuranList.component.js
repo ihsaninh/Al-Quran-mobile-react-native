@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { FlatList } from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
 
@@ -8,23 +8,23 @@ import { Separator } from '../../Components/Separator/Separator.component';
 import { Routes } from '../../Navigation/Routes';
 import { keyExtractor } from '../../Utils/Helper';
 
-class QuranList extends Component {
-  componentDidMount() {
+const QuranList = props => {
+  useEffect(() => {
     SplashScreen.hide();
-    this.getDataQuran();
-  }
+    getDataQuran();
+  }, [getDataQuran]);
 
-  getDataQuran = async () => {
-    const { getQuranList } = this.props;
+  const getDataQuran = useCallback(async () => {
+    const { getQuranList } = props;
     await getQuranList();
-  };
+  }, [props]);
 
-  goToDetailpage = dataSurah => {
-    const { navigation } = this.props;
+  const goToDetailpage = dataSurah => {
+    const { navigation } = props;
     navigation.navigate(Routes.QuranDetail, { dataSurah });
   };
 
-  renderCardContent = ({ item }) => {
+  const renderCardContent = ({ item }) => {
     return (
       <CardSurahList
         surahNumber={item?.id}
@@ -32,28 +32,26 @@ class QuranList extends Component {
         surahName={item?.surat_name}
         surahMean={item?.surat_terjemahan}
         surahAyat={item?.count_ayat}
-        onPress={() => this.goToDetailpage(item)}
+        onPress={() => goToDetailpage(item)}
       />
     );
   };
 
-  render() {
-    const { dataQuran, isLoading, refreshing } = this.props;
+  const { dataQuran, isLoading, refreshing } = props;
 
-    return isLoading ? (
-      <Loading />
-    ) : (
-      <FlatList
-        data={dataQuran}
-        keyExtractor={keyExtractor}
-        renderItem={this.renderCardContent}
-        refreshing={refreshing}
-        onRefresh={this.getDataQuran}
-        ItemSeparatorComponent={Separator}
-        showsVerticalScrollIndicator={false}
-      />
-    );
-  }
-}
+  return isLoading ? (
+    <Loading />
+  ) : (
+    <FlatList
+      data={dataQuran}
+      keyExtractor={keyExtractor}
+      renderItem={renderCardContent}
+      refreshing={refreshing}
+      onRefresh={getDataQuran}
+      ItemSeparatorComponent={Separator}
+      showsVerticalScrollIndicator={false}
+    />
+  );
+};
 
 export default QuranList;
