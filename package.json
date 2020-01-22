@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
+    "android-dev": "react-native run-android --variant=devDebug --appIdSuffix=dev",
+    "android:beta": "react-native run-android --variant=betaDebug --appIdSuffix=beta",
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
@@ -44,6 +46,7 @@
     "eslint-plugin-react": "^7.16.0",
     "jest": "^24.9.0",
     "metro-react-native-babel-preset": "^0.56.3",
+    "react-native-dotenv": "^0.2.0",
     "react-test-renderer": "16.9.0"
   },
   "jest": {
