@@ -15,7 +15,10 @@ const CardSurahList = props => {
     surahAyat,
   } = props;
   return (
-    <TouchableRipple onPress={onPress} rippleColor="rgba(0, 0, 0, .05)">
+    <TouchableRipple
+      onPress={onPress}
+      rippleColor="rgba(0, 0, 0, .05)"
+      centered>
       <View style={Styles.CardStyle}>
         <View style={Styles.cardContainer}>
           <View style={Styles.numberCircleContainer}>
