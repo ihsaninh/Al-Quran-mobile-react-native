@@ -44,7 +44,7 @@ const Styles = StyleSheet.create({
     paddingRight: 10,
     fontSize: 27,
     fontFamily: FontType.arabic,
-    lineHeight: 55,
+    lineHeight: 70,
   },
   descTextLeftContainer: {
     paddingVertical: 10,
