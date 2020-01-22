@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* AlQuranMobileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* AlQuranMobileTests.m */; };
 		069E527DD9364FFDA0B10D1F /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15A4A3EA856E4A99934887A8 /* Ionicons.ttf */; };
