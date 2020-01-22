@@ -30,10 +30,10 @@ class HeaderComponent extends Component {
     );
   };
 
-  toAboutPage = () => {
+  redirectTo = route => () => {
     const { navigation } = this.props;
     this.hideMenu();
-    navigation.navigate(Routes.AboutPage);
+    navigation.navigate(route);
   };
 
   render() {
@@ -47,8 +47,12 @@ class HeaderComponent extends Component {
               ref={this.setMenuRef}
               button={this.renderButton()}
               animationDuration={0}>
-              <MenuItem onPress={this.hideMenu}>Pengaturan Aplikasi</MenuItem>
-              <MenuItem onPress={this.toAboutPage}>Tentang Aplikasi</MenuItem>
+              <MenuItem onPress={this.redirectTo(Routes.SettingsPage)}>
+                Pengaturan Aplikasi
+              </MenuItem>
+              <MenuItem onPress={this.redirectTo(Routes.AboutPage)}>
+                Tentang Aplikasi
+              </MenuItem>
               <MenuDivider />
             </Menu>
           </View>

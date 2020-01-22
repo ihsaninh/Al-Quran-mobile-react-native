@@ -2,15 +2,16 @@ import React from 'react';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
-import { Colors } from '../Themes/Colors';
-import { Strings } from '../Utils/Strings';
-import { fromRight } from '../Utils/Transition';
-import { HeaderComponent } from '../Components/HeaderSurahList/HeaderSurahList.component';
+import AboutPage from '../Containers/AboutPage/AboutPage.component';
 import QuranList from '../Containers/QuranListPage/QuranList.container';
 import QuranDetail from '../Containers/QuranDetailPage/QuranDetail.container';
+import SettingsPage from '../Containers/SettingsPage/SettingsPage.component';
 import SplashScreen from '../Containers/SplashScreenPage/SplashScreen.component';
-import AboutPage from '../Containers/AboutPage/AboutPage.component';
+import { Colors } from '../Themes/Colors';
+import { Strings } from '../Utils/Strings';
 import { FontType } from '../Themes/Fonts';
+import { fromRight } from '../Utils/Transition';
+import { HeaderComponent } from '../Components/HeaderSurahList/HeaderSurahList.component';
 
 const AppStack = createStackNavigator(
   {
@@ -28,6 +29,17 @@ const AppStack = createStackNavigator(
         },
       },
     },
+    SettingsPage: {
+      screen: SettingsPage,
+      navigationOptions: {
+        title: 'Pengaturan Aplikasi',
+        headerTitleStyle: {
+          fontFamily: FontType.semiBold,
+          fontSize: 18,
+          marginLeft: 0,
+        },
+      },
+    },
     QuranList: {
       screen: QuranList,
       navigationOptions: {
@@ -38,7 +50,6 @@ const AppStack = createStackNavigator(
     },
     QuranDetail: {
       screen: QuranDetail,
-      navigationOptions: {},
     },
   },
   {
