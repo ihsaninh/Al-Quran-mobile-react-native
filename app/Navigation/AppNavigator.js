@@ -21,7 +21,7 @@ const AppStack = createStackNavigator(
     AboutPage: {
       screen: AboutPage,
       navigationOptions: {
-        title: 'Tentang Aplikasi',
+        title: Strings.about,
         headerTitleStyle: {
           fontFamily: FontType.semiBold,
           fontSize: 18,
@@ -32,7 +32,7 @@ const AppStack = createStackNavigator(
     SettingsPage: {
       screen: SettingsPage,
       navigationOptions: {
-        title: 'Pengaturan Aplikasi',
+        title: Strings.settings,
         headerTitleStyle: {
           fontFamily: FontType.semiBold,
           fontSize: 18,
