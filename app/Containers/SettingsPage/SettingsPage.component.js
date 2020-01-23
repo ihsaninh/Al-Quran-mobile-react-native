@@ -1,5 +1,5 @@
-import React from 'react';
-import { View, Text } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, Switch } from 'react-native';
 import { TouchableRipple } from 'react-native-paper';
 
 import { Styles } from './SettingsPage.style';
@@ -31,7 +31,23 @@ const SettingsList = props => {
   );
 };
 
+const SettingsSwitch = props => {
+  const { value, onValueChange, info } = props;
+  return (
+    <View style={Styles.settingSwitchContainer}>
+      <View style={Styles.descView}>
+        <Text style={Styles.settingListTitle}>Mode Gelap</Text>
+        <Text style={Styles.settingListSubTitle}>Mode gelap {info}</Text>
+      </View>
+      <View style={Styles.switchView}>
+        <Switch value={value} onValueChange={onValueChange} />
+      </View>
+    </View>
+  );
+};
+
 const SettingsPage = () => {
+  const [switchBtn, setSwitchBtn] = useState(false);
   return (
     <View style={Styles.container}>
       <SettingsRow title="Pengaturan Umum">
@@ -48,22 +64,29 @@ const SettingsPage = () => {
         <SettingsList
           title="Jenis Huruf Arabic"
           description="LPMQ standar KEMENAG"
+          onPress={() => null}
         />
-      </SettingsRow>
-      <SettingsRow title="Pengaturan Khusus">
+        <SettingsSwitch
+          value={switchBtn}
+          onValueChange={switchValue => setSwitchBtn(switchValue)}
+          info={switchBtn ? 'hidup' : 'mati'}
+        />
         <SettingsList
           title="Wallpaper"
           description="Wallpaper default"
           onPress={() => null}
         />
+      </SettingsRow>
+      <SettingsRow title="Pengaturan Khusus">
         <SettingsList
           title="Bantuan"
           description="Butuh pertanyaan? Butuh bantuan?"
           onPress={() => null}
         />
         <SettingsList
-          title="Info Aplikasi"
-          // description="LPMQ standar KEMENAG"
+          title="Versi Aplikasi"
+          description="1.0-dev"
+          onPress={() => null}
         />
       </SettingsRow>
     </View>
