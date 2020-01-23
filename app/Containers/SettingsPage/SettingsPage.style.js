@@ -14,7 +14,7 @@ const Styles = StyleSheet.create({
     marginLeft: 20,
     marginBottom: 10,
     fontWeight: '700',
-    color: Colors.black,
+    color: '#009688',
   },
   settingListContainer: {
     marginHorizontal: 20,
@@ -25,7 +25,7 @@ const Styles = StyleSheet.create({
   },
   settingListSubTitle: {
     paddingTop: 5,
-    fontSize: 14,
+    fontSize: 13.5,
     color: '#6e848f',
   },
   settingSwitchContainer: {

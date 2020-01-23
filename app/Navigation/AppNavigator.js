@@ -34,8 +34,9 @@ const AppStack = createStackNavigator(
       navigationOptions: {
         title: Strings.settings,
         headerTitleStyle: {
-          fontFamily: FontType.semiBold,
+          // fontFamily: FontType.semiBold,
           fontSize: 18,
+          fontWeight: 'bold',
           marginLeft: 0,
         },
       },
