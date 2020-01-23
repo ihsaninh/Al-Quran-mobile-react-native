@@ -22,7 +22,7 @@ const Styles = StyleSheet.create({
     marginVertical: 15,
   },
   settingListTitle: {
-    fontSize: 17,
+    fontSize: 16,
     fontFamily: FontType.regular,
   },
   settingListSubTitle: {
