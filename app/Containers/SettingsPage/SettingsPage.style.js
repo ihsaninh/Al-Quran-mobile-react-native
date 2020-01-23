@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 import { Colors } from '../../Themes/Colors';
+import { FontType } from '../../Themes/Fonts';
 
 const Styles = StyleSheet.create({
   container: {
@@ -13,8 +14,8 @@ const Styles = StyleSheet.create({
     fontSize: 14,
     marginLeft: 20,
     marginBottom: 10,
-    fontWeight: '700',
     color: '#009688',
+    fontFamily: FontType.bold,
   },
   settingListContainer: {
     marginHorizontal: 20,
@@ -22,11 +23,13 @@ const Styles = StyleSheet.create({
   },
   settingListTitle: {
     fontSize: 17,
+    fontFamily: FontType.regular,
   },
   settingListSubTitle: {
     paddingTop: 5,
     fontSize: 13.5,
     color: '#6e848f',
+    fontFamily: FontType.regular,
   },
   settingSwitchContainer: {
     flexDirection: 'row',
