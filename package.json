@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "react-native run-android",
+    "android": "react-native run-android --appIdSuffix=release",
     "android-dev": "react-native run-android --variant=devDebug --appIdSuffix=dev",
     "android:beta": "react-native run-android --variant=betaDebug --appIdSuffix=beta",
     "ios": "react-native run-ios",
