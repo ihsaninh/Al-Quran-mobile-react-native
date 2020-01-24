@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 import { FontType } from '../../Themes/Fonts';
+import { Colors } from '../../Themes/Colors';
 
 const Styles = StyleSheet.create({
   settingListContainer: {
@@ -14,7 +15,7 @@ const Styles = StyleSheet.create({
   settingListSubTitle: {
     paddingTop: 5,
     fontSize: 13.5,
-    color: '#6e848f',
+    color: Colors.grey,
     fontFamily: FontType.regular,
   },
 });

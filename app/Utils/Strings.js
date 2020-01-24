@@ -4,7 +4,7 @@ const Strings = {
   settings: 'Pengaturan Aplikasi',
   about: 'Tentang Aplikasi',
   generalSettings: 'Pengaturan Umum',
-  specialSetting: 'Pengaturan Khusus',
+  otherSetting: 'Pengaturan Lainnya',
 };
 
 export { Strings };

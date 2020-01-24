@@ -37,7 +37,7 @@ const SettingsPage = () => {
     },
   ];
 
-  const SpecialSettings = [
+  const OtherSettings = [
     {
       title: 'Bantuan',
       description: 'Butuh pertanyaan? Butuh bantuan?',
@@ -67,8 +67,8 @@ const SettingsPage = () => {
           info={switchBtn ? 'hidup' : 'mati'}
         />
       </Row>
-      <Row title={Strings.specialSetting}>
-        {SpecialSettings.map((item, i) => (
+      <Row title={Strings.otherSetting}>
+        {OtherSettings.map((item, i) => (
           <Lists
             key={i}
             title={item.title}
