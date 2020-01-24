@@ -8,6 +8,11 @@ import { SwitchComponent } from '../../Components/Switch/SwitchComponent';
 
 const SettingsPage = () => {
   const [switchBtn, setSwitchBtn] = useState(false);
+
+  const toggleSwitch = val => {
+    setSwitchBtn(val);
+  };
+
   return (
     <View style={Styles.container}>
       <Row title="Pengaturan Umum">
@@ -26,9 +31,14 @@ const SettingsPage = () => {
           description="LPMQ standar KEMENAG"
           onPress={() => null}
         />
+        <Lists
+          title="Bahasa Aplikasi"
+          description="Bahasa Indonesia"
+          onPress={() => null}
+        />
         <SwitchComponent
           value={switchBtn}
-          onValueChange={switchValue => setSwitchBtn(switchValue)}
+          onValueChange={toggleSwitch}
           info={switchBtn ? 'hidup' : 'mati'}
         />
         <Lists
