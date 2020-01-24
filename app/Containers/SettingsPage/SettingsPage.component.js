@@ -34,11 +34,6 @@ const SettingsPage = () => {
       description: 'Bahasa Indonesia',
       onPress: () => null,
     },
-    {
-      title: 'Wallpaper',
-      description: 'Wallpaper default',
-      onPress: () => null,
-    },
   ];
 
   const SettingKhusus = [
