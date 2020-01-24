@@ -13,51 +13,71 @@ const SettingsPage = () => {
     setSwitchBtn(val);
   };
 
+  const SettingUmum = [
+    {
+      title: 'Nada Notifikasi',
+      description: 'Default (notice_audition.ogg)',
+      onPress: () => null,
+    },
+    {
+      title: 'Ukuran Font Arabic',
+      description: '17 (klik untuk menyesuaikan)',
+      onPress: () => null,
+    },
+    {
+      title: 'Jenis Huruf Arabic',
+      description: 'LPMQ standar KEMENAG',
+      onPress: () => null,
+    },
+    {
+      title: 'Bahasa Aplikasi',
+      description: 'Bahasa Indonesia',
+      onPress: () => null,
+    },
+    {
+      title: 'Wallpaper',
+      description: 'Wallpaper default',
+      onPress: () => null,
+    },
+  ];
+
+  const SettingKhusus = [
+    {
+      title: 'Bantuan',
+      description: 'Butuh pertanyaan? Butuh bantuan?',
+      onPress: () => null,
+    },
+    {
+      title: 'Versi Aplikasi',
+      description: '1.0-dev',
+      onPress: () => null,
+    },
+  ];
+
   return (
     <View style={Styles.container}>
       <Row title="Pengaturan Umum">
-        <Lists
-          title="Nada Notifikasi"
-          description="Default (notice_audition.ogg)"
-          onPress={() => null}
-        />
-        <Lists
-          title="Ukuran Font Arabic"
-          description="17 (klik untuk menyesuaikan)"
-          onPress={() => null}
-        />
-        <Lists
-          title="Jenis Huruf Arabic"
-          description="LPMQ standar KEMENAG"
-          onPress={() => null}
-        />
-        <Lists
-          title="Bahasa Aplikasi"
-          description="Bahasa Indonesia"
-          onPress={() => null}
-        />
+        {SettingUmum.map(item => (
+          <Lists
+            title={item.title}
+            description={item.description}
+            onPress={item.onPress}
+          />
+        ))}
         <SwitchComponent
           value={switchBtn}
           onValueChange={toggleSwitch}
           info={switchBtn ? 'hidup' : 'mati'}
         />
-        <Lists
-          title="Wallpaper"
-          description="Wallpaper default"
-          onPress={() => null}
-        />
       </Row>
       <Row title="Pengaturan Khusus">
-        <Lists
-          title="Bantuan"
-          description="Butuh pertanyaan? Butuh bantuan?"
-          onPress={() => null}
-        />
-        <Lists
-          title="Versi Aplikasi"
-          description="1.0-dev"
-          onPress={() => null}
-        />
+        {SettingKhusus.map(item => (
+          <Lists
+            title={item.title}
+            description={item.description}
+            onPress={item.onPress}
+          />
+        ))}
       </Row>
     </View>
   );
