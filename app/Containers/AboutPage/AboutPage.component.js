@@ -1,11 +1,16 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Image } from 'react-native';
 
 import { Styles } from './AboutPage.style';
 
 const AboutPage = () => {
   return (
     <View style={Styles.container}>
+      <Image
+        source={require('../../Assets/Images/ic_icon.png')}
+        style={Styles.appImage}
+        resizeMode="stretch"
+      />
       <Text style={Styles.appName}>Al-Quran Mobile</Text>
       <Text style={Styles.appVersion}>Version 1.0</Text>
       <Text style={Styles.appAuthor}>Ihsan Nurul Habib</Text>
