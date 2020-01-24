@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { View } from 'react-native';
 
 import { Row } from '../../Components/Row/RowComponent';
-import { Styles } from './SettingsPage.style';
 import { Lists } from '../../Components/Lists/ListsComponent';
+import { Styles } from './SettingsPage.style';
+import { Strings } from '../../Utils/Strings';
 import { SwitchComponent } from '../../Components/Switch/SwitchComponent';
 
 const SettingsPage = () => {
@@ -51,7 +52,7 @@ const SettingsPage = () => {
 
   return (
     <View style={Styles.container}>
-      <Row title="Pengaturan Umum">
+      <Row title={Strings.generalSettings}>
         {GeneralSettings.map(item => (
           <Lists
             title={item.title}
@@ -65,7 +66,7 @@ const SettingsPage = () => {
           info={switchBtn ? 'hidup' : 'mati'}
         />
       </Row>
-      <Row title="Pengaturan Khusus">
+      <Row title={Strings.specialSetting}>
         {SpecialSettings.map(item => (
           <Lists
             title={item.title}
