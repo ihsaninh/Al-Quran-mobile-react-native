@@ -13,7 +13,7 @@ const SettingsPage = () => {
     setSwitchBtn(val);
   };
 
-  const SettingUmum = [
+  const GeneralSettings = [
     {
       title: 'Nada Notifikasi',
       description: 'Default (notice_audition.ogg)',
@@ -36,7 +36,7 @@ const SettingsPage = () => {
     },
   ];
 
-  const SettingKhusus = [
+  const SpecialSettings = [
     {
       title: 'Bantuan',
       description: 'Butuh pertanyaan? Butuh bantuan?',
@@ -52,7 +52,7 @@ const SettingsPage = () => {
   return (
     <View style={Styles.container}>
       <Row title="Pengaturan Umum">
-        {SettingUmum.map(item => (
+        {GeneralSettings.map(item => (
           <Lists
             title={item.title}
             description={item.description}
@@ -66,7 +66,7 @@ const SettingsPage = () => {
         />
       </Row>
       <Row title="Pengaturan Khusus">
-        {SettingKhusus.map(item => (
+        {SpecialSettings.map(item => (
           <Lists
             title={item.title}
             description={item.description}
