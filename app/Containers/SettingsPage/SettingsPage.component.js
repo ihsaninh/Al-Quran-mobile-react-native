@@ -53,8 +53,9 @@ const SettingsPage = () => {
   return (
     <View style={Styles.container}>
       <Row title={Strings.generalSettings}>
-        {GeneralSettings.map(item => (
+        {GeneralSettings.map((item, i) => (
           <Lists
+            key={i}
             title={item.title}
             description={item.description}
             onPress={item.onPress}
@@ -67,8 +68,9 @@ const SettingsPage = () => {
         />
       </Row>
       <Row title={Strings.specialSetting}>
-        {SpecialSettings.map(item => (
+        {SpecialSettings.map((item, i) => (
           <Lists
+            key={i}
             title={item.title}
             description={item.description}
             onPress={item.onPress}
