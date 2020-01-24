@@ -22,22 +22,12 @@ const AppStack = createStackNavigator(
       screen: AboutPage,
       navigationOptions: {
         title: Strings.about,
-        headerTitleStyle: {
-          fontFamily: FontType.semiBold,
-          fontSize: 18,
-          marginLeft: 0,
-        },
       },
     },
     SettingsPage: {
       screen: SettingsPage,
       navigationOptions: {
         title: Strings.settings,
-        headerTitleStyle: {
-          fontFamily: FontType.semiBold,
-          fontSize: 18,
-          marginLeft: 0,
-        },
       },
     },
     QuranList: {
@@ -59,9 +49,14 @@ const AppStack = createStackNavigator(
         borderBottomColor: Colors.iron,
         elevation: 0,
       },
+      headerTitleStyle: {
+        fontFamily: FontType.semiBold,
+        fontSize: 18,
+        marginLeft: 0,
+      },
       headerTintColor: Colors.black,
     },
-    transitionConfig: () => fromRight(600),
+    transitionConfig: () => fromRight(700),
   },
 );
 
