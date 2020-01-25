@@ -16,13 +16,8 @@ const SettingsPage = () => {
 
   const GeneralSettings = [
     {
-      title: 'Nada Notifikasi',
-      description: 'Default (notice_audition.ogg)',
-      onPress: () => null,
-    },
-    {
       title: 'Ukuran Font Arabic',
-      description: '17 (klik untuk menyesuaikan)',
+      description: '17 px (klik untuk menyesuaikan)',
       onPress: () => null,
     },
     {

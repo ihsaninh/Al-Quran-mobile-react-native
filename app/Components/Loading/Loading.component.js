@@ -1,12 +1,12 @@
 import React from 'react';
-import { View, ActivityIndicator } from 'react-native';
+import { View } from 'react-native';
+import { ActivityIndicator, Colors } from 'react-native-paper';
 import { Styles } from './Loading.styles';
-import { Colors } from '../../Themes/Colors';
 
 const Loading = () => {
   return (
     <View style={Styles.loading}>
-      <ActivityIndicator size={50} color={Colors.grey} />
+      <ActivityIndicator animating={true} color={Colors.grey600} size={40} />
     </View>
   );
 };
