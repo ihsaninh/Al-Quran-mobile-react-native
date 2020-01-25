@@ -5,20 +5,30 @@ import { Row } from '../../Components/Row/RowComponent';
 import { Lists } from '../../Components/Lists/ListsComponent';
 import { Styles } from './SettingsPage.style';
 import { Strings } from '../../Utils/Strings';
+import { ModalDialog } from '../../Components/ModalDialog/ModalDialogComponent';
 import { SwitchComponent } from '../../Components/Switch/SwitchComponent';
 
 const SettingsPage = () => {
   const [switchBtn, setSwitchBtn] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   const toggleSwitch = val => {
     setSwitchBtn(val);
+  };
+
+  const toggleModal = () => {
+    setIsVisible(!isVisible);
+  };
+
+  const renderModalDialog = () => {
+    return <ModalDialog isVisible={isVisible} onPress={toggleModal} />;
   };
 
   const GeneralSettings = [
     {
       title: 'Ukuran Font Arabic',
       description: '17 px (klik untuk menyesuaikan)',
-      onPress: () => null,
+      onPress: () => toggleModal(),
     },
     {
       title: 'Jenis Huruf Arabic',
@@ -73,6 +83,7 @@ const SettingsPage = () => {
           />
         ))}
       </Row>
+      {renderModalDialog()}
     </View>
   );
 };

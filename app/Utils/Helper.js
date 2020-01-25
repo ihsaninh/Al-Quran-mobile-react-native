@@ -1,5 +1,6 @@
 import { Dimensions } from 'react-native';
 import NetInfo from '@react-native-community/netinfo';
+import ExtraDimensions from 'react-native-extra-dimensions-android';
 
 import { Constants } from '../Utils/Constants';
 
@@ -7,7 +8,7 @@ const { BASE_WIDTH, BASE_HEIGHT } = Constants.BASE_DIMENSIONS;
 
 const deviceWidth = Dimensions.get('window').width;
 
-const deviceHeight = Dimensions.get('window').height;
+const deviceHeight = ExtraDimensions.get('REAL_WINDOW_HEIGHT');
 
 const horizontalScale = size => (deviceWidth / BASE_WIDTH) * size;
 
