@@ -62,9 +62,10 @@ const SettingsPage = () => {
           />
         ))}
         <SwitchComponent
+          title="Mode Gelap"
+          description={switchBtn ? 'Mode gelap hidup' : 'Mode gelap mati'}
           value={switchBtn}
           onValueChange={toggleSwitch}
-          info={switchBtn ? 'hidup' : 'mati'}
         />
       </Row>
       <Row title={Strings.otherSetting}>
