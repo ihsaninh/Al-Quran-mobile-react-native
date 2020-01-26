@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StatusBar } from 'react-native';
 import { TouchableRipple } from 'react-native-paper';
 import Modal from 'react-native-modal';
 
@@ -12,12 +12,17 @@ const ModalDialog = ({ isVisible, onPress }) => {
       <Modal
         isVisible={isVisible}
         useNativeDriver
-        animationIn="fadeInRight"
-        animationOut="fadeOutRight"
+        animationIn="fadeIn"
+        animationOut="fadeOut"
         onBackdropPress={onPress}
         backdropOpacity={0.3}
         deviceHeight={deviceHeight}>
         <View style={Styles.modalContainer}>
+          <StatusBar
+            backgroundColor="rgba(0,0,0,0.3)"
+            barStyle="light-content"
+            animated
+          />
           <View style={Styles.modalTitleContainer}>
             <Text style={Styles.modalTitleText}>Warning</Text>
           </View>
@@ -41,6 +46,7 @@ const ModalDialog = ({ isVisible, onPress }) => {
               <Text style={Styles.buttonText}>OK</Text>
             </TouchableRipple>
           </View>
+          <StatusBar />
         </View>
       </Modal>
     </View>

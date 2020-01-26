@@ -24,7 +24,7 @@ class HeaderComponent extends Component {
 
   renderButton = () => {
     return (
-      <TouchableRipple onPress={this.showMenu}>
+      <TouchableRipple onPress={this.showMenu} rippleColor="rgba(0, 0, 0, .05)">
         <Icon name="more-vert" size={25} color="black" />
       </TouchableRipple>
     );
@@ -41,7 +41,9 @@ class HeaderComponent extends Component {
     return (
       <View style={[Styles.headerContainer, Styles.headerWhite]}>
         <Text style={Styles.title}>{title}</Text>
-        <TouchableRipple onPress={this.navigateToQuest}>
+        <TouchableRipple
+          onPress={this.navigateToQuest}
+          rippleColor="rgba(0, 0, 0, .05)">
           <View style={Styles.viewRowPoint}>
             <Menu
               ref={this.setMenuRef}
