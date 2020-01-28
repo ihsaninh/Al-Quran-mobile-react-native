@@ -1,7 +1,6 @@
 import React, { useEffect, useCallback } from 'react';
 import { View, Alert, BackHandler } from 'react-native';
 
-import { Styles } from './SplashScreen.style';
 import { Routes } from '../../Navigation/Routes';
 import { resetNavigationTo } from '../../Utils/Navigations';
 import { isNetworkConnected } from '../../Utils/Helper';
@@ -37,7 +36,7 @@ const SplashScreenPage = props => {
     [props],
   );
 
-  return <View style={Styles.container} />;
+  return <View />;
 };
 
 export default SplashScreenPage;

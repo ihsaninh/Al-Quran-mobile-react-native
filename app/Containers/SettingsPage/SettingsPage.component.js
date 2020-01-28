@@ -21,7 +21,15 @@ const SettingsPage = () => {
   };
 
   const renderModalDialog = () => {
-    return <ModalDialog isVisible={isVisible} onPress={toggleModal} />;
+    return (
+      <ModalDialog
+        type="Warning"
+        message=" To continue, let your device turn on location, which uses Google's
+      location service."
+        isVisible={isVisible}
+        onPress={toggleModal}
+      />
+    );
   };
 
   const GeneralSettings = [

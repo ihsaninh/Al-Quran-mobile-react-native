@@ -6,7 +6,7 @@ import Modal from 'react-native-modal';
 import { Styles } from './ModalDialog.style';
 import { deviceHeight } from '../../Utils/Helper';
 
-const ModalDialog = ({ isVisible, onPress }) => {
+const ModalDialog = ({ isVisible, onPress, type, message }) => {
   return (
     <View style={Styles.container}>
       <Modal
@@ -24,13 +24,10 @@ const ModalDialog = ({ isVisible, onPress }) => {
             animated
           />
           <View style={Styles.modalTitleContainer}>
-            <Text style={Styles.modalTitleText}>Warning</Text>
+            <Text style={Styles.modalTitleText}>{type}</Text>
           </View>
           <View style={Styles.modalContentContainer}>
-            <Text style={Styles.modalContentText}>
-              To continue, let your device turn on location, which uses Google's
-              location service.
-            </Text>
+            <Text style={Styles.modalContentText}>{message}</Text>
           </View>
           <View style={Styles.modalButtonContainer}>
             <TouchableRipple
