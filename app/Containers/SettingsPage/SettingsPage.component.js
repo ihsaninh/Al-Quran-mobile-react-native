@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
-import { View } from 'react-native';
+import { View, Linking } from 'react-native';
 
 import { Row } from '../../Components/Row/RowComponent';
 import { Lists } from '../../Components/Lists/ListsComponent';
 import { Styles } from './SettingsPage.style';
+import { Routes } from '../../Navigation/Routes';
 import { Strings } from '../../Utils/Strings';
 import { ModalDialog } from '../../Components/ModalDialog/ModalDialogComponent';
 import { SwitchComponent } from '../../Components/Switch/SwitchComponent';
 
-const SettingsPage = () => {
+const SettingsPage = ({ navigation }) => {
   const [switchBtn, setSwitchBtn] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -20,14 +21,20 @@ const SettingsPage = () => {
     setIsVisible(!isVisible);
   };
 
+  const onPressOke = () => {
+    Linking.openURL('https://apple.com');
+    setIsVisible(!isVisible);
+  };
+
   const renderModalDialog = () => {
     return (
       <ModalDialog
-        type="Warning"
-        message=" To continue, let your device turn on location, which uses Google's
-      location service."
-        isVisible={isVisible}
+        type="Selamat!"
+        message="Selamat bro, Anda mendapatkan uang tunai senilai 1 Miliar. Klik link untuk mengambil."
         onPress={toggleModal}
+        isVisible={isVisible}
+        onPressOke={onPressOke}
+        onPressCancel={toggleModal}
       />
     );
   };
@@ -41,12 +48,12 @@ const SettingsPage = () => {
     {
       title: 'Jenis Huruf Arabic',
       description: 'LPMQ standar KEMENAG',
-      onPress: () => null,
+      onPress: () => toggleModal(),
     },
     {
       title: 'Bahasa Aplikasi',
       description: 'Bahasa Indonesia',
-      onPress: () => null,
+      onPress: () => toggleModal(),
     },
   ];
 
@@ -54,12 +61,12 @@ const SettingsPage = () => {
     {
       title: 'Bantuan',
       description: 'Butuh pertanyaan? Butuh bantuan?',
-      onPress: () => null,
+      onPress: () => toggleModal(),
     },
     {
       title: 'Versi Aplikasi',
-      description: '1.0-dev',
-      onPress: () => null,
+      description: '1.0',
+      onPress: () => navigation.navigate(Routes.AboutPage),
     },
   ];
 

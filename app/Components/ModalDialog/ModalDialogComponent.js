@@ -6,14 +6,22 @@ import Modal from 'react-native-modal';
 import { Styles } from './ModalDialog.style';
 import { deviceHeight } from '../../Utils/Helper';
 
-const ModalDialog = ({ isVisible, onPress, type, message }) => {
+const ModalDialog = props => {
+  const {
+    isVisible,
+    onPress,
+    onPressCancel,
+    onPressOke,
+    type,
+    message,
+  } = props;
   return (
     <View style={Styles.container}>
       <Modal
         isVisible={isVisible}
         useNativeDriver
-        animationIn="fadeIn"
-        animationOut="fadeOut"
+        animationIn="fadeInRight"
+        animationOut="fadeOutLeft"
         onBackdropPress={onPress}
         backdropOpacity={0.3}
         deviceHeight={deviceHeight}>
@@ -31,13 +39,13 @@ const ModalDialog = ({ isVisible, onPress, type, message }) => {
           </View>
           <View style={Styles.modalButtonContainer}>
             <TouchableRipple
-              onPress={onPress}
+              onPress={onPressCancel}
               rippleColor="rgba(0, 0, 0, .05)"
               centered>
               <Text style={Styles.buttonText}>Cancel</Text>
             </TouchableRipple>
             <TouchableRipple
-              onPress={onPress}
+              onPress={onPressOke}
               rippleColor="rgba(0, 0, 0, .05)"
               centered>
               <Text style={Styles.buttonText}>OK</Text>
