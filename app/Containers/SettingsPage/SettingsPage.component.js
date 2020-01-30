@@ -23,7 +23,7 @@ const SettingsPage = ({ navigation }) => {
 
   const onPressOke = () => {
     Linking.openURL('https://apple.com');
-    setIsVisible(!isVisible);
+    setIsVisible(prevstate => setIsVisible(!prevstate));
   };
 
   const renderModalDialog = () => {
