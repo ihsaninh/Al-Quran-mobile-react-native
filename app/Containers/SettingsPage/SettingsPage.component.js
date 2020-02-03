@@ -40,26 +40,6 @@ const SettingsPage = ({ navigation }) => {
     },
   ];
 
-  const renderModalOptions = () => {
-    return (
-      <ModalOptions
-        type="Pilih Bahasa Aplikasi"
-        onPress={toggleModal}
-        isVisible={isVisible}
-        onPressCancel={toggleModal}>
-        {languageLists.map((item, i) => (
-          <RadioComponent
-            text={item.name}
-            value={item.value}
-            checked={item.checked ? 'checked' : 'unchecked'}
-            onPress={toggleModal}
-            radioOnpress={toggleModal}
-          />
-        ))}
-      </ModalOptions>
-    );
-  };
-
   const GeneralSettings = [
     {
       title: 'Ukuran Font Arabic',
@@ -90,6 +70,26 @@ const SettingsPage = ({ navigation }) => {
       onPress: () => navigation.navigate(Routes.AboutPage),
     },
   ];
+
+  const renderModalOptions = () => {
+    return (
+      <ModalOptions
+        type="Pilih Bahasa Aplikasi"
+        onPress={toggleModal}
+        isVisible={isVisible}
+        onPressCancel={toggleModal}>
+        {languageLists.map((item, i) => (
+          <RadioComponent
+            text={item.name}
+            value={item.value}
+            checked={item.checked ? 'checked' : 'unchecked'}
+            onPress={toggleModal}
+            radioOnpress={toggleModal}
+          />
+        ))}
+      </ModalOptions>
+    );
+  };
 
   return (
     <View style={Styles.container}>
