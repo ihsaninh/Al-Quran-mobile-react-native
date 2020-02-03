@@ -1,14 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { View, Text, StatusBar } from 'react-native';
-import { TouchableRipple, RadioButton } from 'react-native-paper';
+import { TouchableRipple } from 'react-native-paper';
 import Modal from 'react-native-modal';
 
 import { Styles } from './ModalOptions.style';
 import { deviceHeight } from '../../Utils/Helper';
 
 const ModalOptions = props => {
-  const [checked, setChecked] = useState('first');
-  const { isVisible, onPress, onPressCancel, type } = props;
+  const { isVisible, onPress, onPressCancel, type, children } = props;
   return (
     <View style={Styles.container}>
       <Modal
@@ -28,36 +27,7 @@ const ModalOptions = props => {
           <View style={Styles.modalTitleContainer}>
             <Text style={Styles.modalTitleText}>{type}</Text>
           </View>
-          <View style={Styles.modalOptionsContainer}>
-            <TouchableRipple
-              onPress={onPress}
-              rippleColor="rgba(0, 0, 0, .05)"
-              centered>
-              <View style={Styles.modalOptionsContent}>
-                <Text style={Styles.radioText}>Bahasa Indonesia</Text>
-                <RadioButton
-                  value="first"
-                  status={checked === 'first' ? 'checked' : 'unchecked'}
-                  onPress={onPress}
-                  color="#009688"
-                />
-              </View>
-            </TouchableRipple>
-            <TouchableRipple
-              onPress={onPress}
-              rippleColor="rgba(0, 0, 0, .05)"
-              centered>
-              <View style={Styles.modalOptionsContent}>
-                <Text style={Styles.radioText}>Bahasa Inggris</Text>
-                <RadioButton
-                  value="second"
-                  status={checked === 'second' ? 'checked' : 'unchecked'}
-                  onPress={onPress}
-                  color="#009688"
-                />
-              </View>
-            </TouchableRipple>
-          </View>
+          <View style={Styles.modalOptionsContainer}>{children}</View>
           <View style={Styles.modalButtonContainer}>
             <TouchableRipple
               onPress={onPressCancel}

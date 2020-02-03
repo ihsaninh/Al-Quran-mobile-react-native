@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
+import { TouchableRipple, RadioButton } from 'react-native-paper';
 
 import { Row } from '../../Components/Row/RowComponent';
 import { Lists } from '../../Components/Lists/ListsComponent';
@@ -21,14 +22,48 @@ const SettingsPage = ({ navigation }) => {
     setIsVisible(!isVisible);
   };
 
+  const languageLists = [
+    {
+      name: 'Bahasa Indonesia',
+      value: 'ID',
+      checked: true,
+    },
+    {
+      name: 'Bahasa Inggris',
+      value: 'EN',
+      checked: false,
+    },
+    {
+      name: 'Bahasa Jawa',
+      value: 'JW',
+      checked: false,
+    },
+  ];
+
   const renderModalOptions = () => {
     return (
       <ModalOptions
         type="Pilih Bahasa Aplikasi"
         onPress={toggleModal}
         isVisible={isVisible}
-        onPressCancel={toggleModal}
-      />
+        onPressCancel={toggleModal}>
+        {languageLists.map((item, i) => (
+          <TouchableRipple
+            onPress={toggleModal}
+            rippleColor="rgba(0, 0, 0, .05)"
+            centered>
+            <View style={Styles.modalOptionsContent}>
+              <Text style={Styles.radioText}>{item.name}</Text>
+              <RadioButton
+                value={item.value}
+                status={item.checked ? 'checked' : 'unchecked'}
+                onPress={toggleModal}
+                color="#009688"
+              />
+            </View>
+          </TouchableRipple>
+        ))}
+      </ModalOptions>
     );
   };
 

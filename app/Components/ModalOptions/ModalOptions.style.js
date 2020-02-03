@@ -28,23 +28,6 @@ const Styles = StyleSheet.create({
     overflow: 'hidden',
     marginTop: 10,
   },
-  modalOptionsContent: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginVertical: 8,
-    marginLeft: 20,
-    marginRight: 25,
-  },
-  radioText: {
-    fontSize: 16,
-    fontFamily: FontType.regular,
-    paddingTop: 8,
-  },
-  modalContentText: {
-    fontSize: 16,
-    fontFamily: FontType.regular,
-    lineHeight: 25,
-  },
   modalButtonContainer: {
     height: 50,
     flexDirection: 'row',
