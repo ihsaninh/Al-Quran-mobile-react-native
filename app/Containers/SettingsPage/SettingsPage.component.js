@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text } from 'react-native';
-import { TouchableRipple, RadioButton } from 'react-native-paper';
+import { View } from 'react-native';
 
 import { Row } from '../../Components/Row/RowComponent';
 import { Lists } from '../../Components/Lists/ListsComponent';
@@ -8,6 +7,7 @@ import { Styles } from './SettingsPage.style';
 import { Routes } from '../../Navigation/Routes';
 import { Strings } from '../../Utils/Strings';
 import { ModalOptions } from '../../Components/ModalOptions/ModalOptionsComponent';
+import { RadioComponent } from '../../Components/Radio/RadioComponent';
 import { SwitchComponent } from '../../Components/Switch/SwitchComponent';
 
 const SettingsPage = ({ navigation }) => {
@@ -48,20 +48,13 @@ const SettingsPage = ({ navigation }) => {
         isVisible={isVisible}
         onPressCancel={toggleModal}>
         {languageLists.map((item, i) => (
-          <TouchableRipple
+          <RadioComponent
+            text={item.name}
+            value={item.value}
+            checked={item.checked ? 'checked' : 'unchecked'}
             onPress={toggleModal}
-            rippleColor="rgba(0, 0, 0, .05)"
-            centered>
-            <View style={Styles.modalOptionsContent}>
-              <Text style={Styles.radioText}>{item.name}</Text>
-              <RadioButton
-                value={item.value}
-                status={item.checked ? 'checked' : 'unchecked'}
-                onPress={toggleModal}
-                color="#009688"
-              />
-            </View>
-          </TouchableRipple>
+            radioOnpress={toggleModal}
+          />
         ))}
       </ModalOptions>
     );
