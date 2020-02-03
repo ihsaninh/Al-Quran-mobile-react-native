@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { View, Linking } from 'react-native';
+import { View } from 'react-native';
 
 import { Row } from '../../Components/Row/RowComponent';
 import { Lists } from '../../Components/Lists/ListsComponent';
 import { Styles } from './SettingsPage.style';
 import { Routes } from '../../Navigation/Routes';
 import { Strings } from '../../Utils/Strings';
-import { ModalDialog } from '../../Components/ModalDialog/ModalDialogComponent';
+import { ModalOptions } from '../../Components/ModalOptions/ModalOptionsComponent';
 import { SwitchComponent } from '../../Components/Switch/SwitchComponent';
 
 const SettingsPage = ({ navigation }) => {
@@ -21,22 +21,12 @@ const SettingsPage = ({ navigation }) => {
     setIsVisible(!isVisible);
   };
 
-  const onPressOke = () => {
-    setIsVisible(!isVisible);
-    setTimeout(
-      () => Linking.openURL('https://prayertimesid.herokuapp.com/'),
-      100,
-    );
-  };
-
-  const renderModalDialog = () => {
+  const renderModalOptions = () => {
     return (
-      <ModalDialog
-        type="Info"
-        message="Mau lihat jadwal Sholat terbaru di kota Anda? Klik oke dibawah ini."
+      <ModalOptions
+        type="Pilih Bahasa Aplikasi"
         onPress={toggleModal}
         isVisible={isVisible}
-        onPressOke={onPressOke}
         onPressCancel={toggleModal}
       />
     );
@@ -101,7 +91,7 @@ const SettingsPage = ({ navigation }) => {
           />
         ))}
       </Row>
-      {renderModalDialog()}
+      {renderModalOptions()}
     </View>
   );
 };

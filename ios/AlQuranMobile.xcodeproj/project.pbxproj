@@ -5,60 +5,28 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* AlQuranMobileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* AlQuranMobileTests.m */; };
-		069E527DD9364FFDA0B10D1F /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15A4A3EA856E4A99934887A8 /* Ionicons.ttf */; };
-		122DCFA22E9A4657B758ADC9 /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C2DC2A915C3547668A222C1E /* FontAwesome5_Solid.ttf */; };
-		127F24AE33D14FD886F374EB /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 61B3F4A231A74C1C916E4F8E /* FontAwesome.ttf */; };
+		043511D3D7D1455FAD0A7039 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EAF56F4E49764F218AEFBA24 /* Roboto-Thin.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		1C87B822223C4D3F93C4EF9A /* Amiri-Slanted.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EF4E2B28CB6F436782B1C4D6 /* Amiri-Slanted.ttf */; };
-		1C9DF92F8BBC457188693F1F /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0A4DF358AD484F92A5CB8B7C /* OpenSans-Bold.ttf */; };
-		1D478D03D9F9499AA14714FD /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DDBC4EB11F04AF1A7FEAC7F /* OpenSans-SemiBold.ttf */; };
+		26A9A7A3A91E446E90FE0F08 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 936B7B51B5B9435585778991 /* Roboto-Black.ttf */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* AlQuranMobileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* AlQuranMobileTests.m */; };
-		2F601926E68E48D8ADBCB1F5 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2BC0A366A77B491FAD654EC1 /* MaterialCommunityIcons.ttf */; };
-		34F4FA44C1754A2CB286048A /* LPMQ.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5BEE59F0B0AA478CBA1A2682 /* LPMQ.ttf */; };
-		3EE6B80D93EE48DA843BCA36 /* bismillah.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8768E64F16C54FF4AFD37943 /* bismillah.ttf */; };
-		416E4C9677D14EB889294EB8 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3EC63B7BDDD042F48C4BBBD9 /* AntDesign.ttf */; };
-		4826626AE61A49D4B56CCCCA /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6EDECC22082C4E28B88F9EA9 /* FontAwesome5_Brands.ttf */; };
-		510CF571C52942C68C22C675 /* OpenSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B4860B6C964342C686F55EB2 /* OpenSans-Italic.ttf */; };
-		548034F958D2468AB0E0EA01 /* OpenSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 495AB60E1392475285B1502C /* OpenSans-LightItalic.ttf */; };
-		5691B012E19E4792869941A1 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D549358AFA194642AAD88D57 /* Zocial.ttf */; };
-		674B8CDD23104999ADD8249B /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CBBDB4CF044C454F9C68BEA2 /* Fontisto.ttf */; };
-		706FDE6A54751E40BDE40FA7 /* libPods-AlQuranMobileTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BEDFB2836E7A52E7F909826 /* libPods-AlQuranMobileTests.a */; };
-		72CFB81F44FC47E89921858E /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 876E4AE11FCB4669A9067D55 /* FontAwesome5_Regular.ttf */; };
-		79595EDF048042ECAF5493EA /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B55C7BDB5064800BE8BD331 /* Octicons.ttf */; };
-		7F8D277AE8B74E16A6685116 /* OpenSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D1D323B5280844FCB41DABA2 /* OpenSans-SemiBoldItalic.ttf */; };
-		7FF52BFC14994668880BB534 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ABE4EC57F99942D48102C1A8 /* OpenSans-Regular.ttf */; };
-		81A0D6276B1D4B759474DC79 /* hafs.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3135EC7F84784C209AC9AEFD /* hafs.ttf */; };
-		8C156B9F18744BBF95970792 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1429230FF7754BF18C7ECD52 /* SimpleLineIcons.ttf */; };
-		94EECF31F48D4FA48D015864 /* arabic-font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DEC96AAB83948518A61E001 /* arabic-font.ttf */; };
-		9A0FC9954F0D4DD9A9DB0B05 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 761476AC64C241439A2663FE /* EvilIcons.ttf */; };
-		A3A88D9662E58F6BCC578733 /* libPods-AlQuranMobile-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 010F714C242D6EAEC346214D /* libPods-AlQuranMobile-tvOSTests.a */; };
-		A4B909E140DA42E8ABB87207 /* Amiri-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7EA9CEA8977743BD885D490A /* Amiri-Regular.ttf */; };
-		AABBA831BAB7E27036A29C0E /* libPods-AlQuranMobile-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2556567CB2AE0D18C24CBA2 /* libPods-AlQuranMobile-tvOS.a */; };
-		AACE8119A5D6464C9BFBBE0F /* Amiri-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8EEE0579ABAB4AE0ACE29083 /* Amiri-Bold.ttf */; };
-		AAE8C311DB8840A2928D2231 /* OpenSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FDB28760ADEB47F49EC860A4 /* OpenSans-BoldItalic.ttf */; };
-		C0D711EBF8CA47BCB8F6EDE2 /* OpenSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C634A6B974554B6BA01834FB /* OpenSans-ExtraBold.ttf */; };
-		C16904BA1AD04DB2847B6075 /* Scheherazade.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C82589B1A56948118916666E /* Scheherazade.ttf */; };
-		CBA8A18EE1774096EE040342 /* libPods-AlQuranMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B684BF205EC51A11926A74DA /* libPods-AlQuranMobile.a */; };
-		CFA7A408E6EA42ACABB27687 /* OpenSans-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F76AFFFA4061414A8F856544 /* OpenSans-ExtraBoldItalic.ttf */; };
-		DEE0759286DE48328011EFA8 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 603E1BF6465742EE82044FEA /* Entypo.ttf */; };
-		E69AA18AC64641B8B92F376E /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9FB1FCFB8C543A599C528D0 /* Feather.ttf */; };
-		E8037ADF37ED4252ACF6DA99 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 440F3CBF101F46B6B58FA3E8 /* MaterialIcons.ttf */; };
-		EC79908EA1974368A6C4A55C /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 03A42079F6AF4B92B0CAF97C /* OpenSans-Light.ttf */; };
-		EF58CF2746464EB18FE10F3C /* Amiri-BoldSlanted.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DFC86CE96A1C461D8EAC084A /* Amiri-BoldSlanted.ttf */; };
-		F5C0294897AE42B0BA5C9953 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 141637AED1744099ADF3BE3B /* Foundation.ttf */; };
-		26A9A7A3A91E446E90FE0F08 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 936B7B51B5B9435585778991 /* Roboto-Black.ttf */; };
-		62695F00963041CB8F6FA12D /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4987E896F3434DE587A41872 /* Roboto-Bold.ttf */; };
-		45B850BE15524C06994203A2 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B297D5343FB463C8D65503C /* Roboto-Medium.ttf */; };
 		341BEEF84ECA48E3A0BACB2C /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 450F5CDA02AA4FA78454EFD0 /* Roboto-Regular.ttf */; };
-		043511D3D7D1455FAD0A7039 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EAF56F4E49764F218AEFBA24 /* Roboto-Thin.ttf */; };
+		45B850BE15524C06994203A2 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B297D5343FB463C8D65503C /* Roboto-Medium.ttf */; };
+		62695F00963041CB8F6FA12D /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4987E896F3434DE587A41872 /* Roboto-Bold.ttf */; };
+		706FDE6A54751E40BDE40FA7 /* libPods-AlQuranMobileTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BEDFB2836E7A52E7F909826 /* libPods-AlQuranMobileTests.a */; };
+		94EECF31F48D4FA48D015864 /* arabic-font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DEC96AAB83948518A61E001 /* arabic-font.ttf */; };
+		9A311B9D23E7FA76004945A7 /* LPMQ.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9A311B9C23E7FA76004945A7 /* LPMQ.ttf */; };
+		A3A88D9662E58F6BCC578733 /* libPods-AlQuranMobile-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 010F714C242D6EAEC346214D /* libPods-AlQuranMobile-tvOSTests.a */; };
+		AABBA831BAB7E27036A29C0E /* libPods-AlQuranMobile-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2556567CB2AE0D18C24CBA2 /* libPods-AlQuranMobile-tvOS.a */; };
+		CBA8A18EE1774096EE040342 /* libPods-AlQuranMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B684BF205EC51A11926A74DA /* libPods-AlQuranMobile.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,10 +52,10 @@
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* AlQuranMobileTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlQuranMobileTests.m; sourceTree = "<group>"; };
 		010F714C242D6EAEC346214D /* libPods-AlQuranMobile-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AlQuranMobile-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		03A42079F6AF4B92B0CAF97C /* OpenSans-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Light.ttf"; path = "../app/Assets/Fonts/OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		03A42079F6AF4B92B0CAF97C /* OpenSans-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Light.ttf"; path = "../app/Assets/Fonts/OpenSans-Light.ttf"; sourceTree = "<group>"; };
 		0469BA651BE025E72452992B /* Pods-AlQuranMobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlQuranMobile.release.xcconfig"; path = "Target Support Files/Pods-AlQuranMobile/Pods-AlQuranMobile.release.xcconfig"; sourceTree = "<group>"; };
-		0A4DF358AD484F92A5CB8B7C /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Bold.ttf"; path = "../app/Assets/Fonts/OpenSans-Bold.ttf"; sourceTree = "<group>"; };
-		0B55C7BDB5064800BE8BD331 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
+		0A4DF358AD484F92A5CB8B7C /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Bold.ttf"; path = "../app/Assets/Fonts/OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		0B55C7BDB5064800BE8BD331 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		0BEDFB2836E7A52E7F909826 /* libPods-AlQuranMobileTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AlQuranMobileTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07F961A680F5B00A75B9A /* AlQuranMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlQuranMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = AlQuranMobile/AppDelegate.h; sourceTree = "<group>"; };
@@ -96,56 +64,57 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = AlQuranMobile/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = AlQuranMobile/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = AlQuranMobile/main.m; sourceTree = "<group>"; };
-		141637AED1744099ADF3BE3B /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
-		1429230FF7754BF18C7ECD52 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
-		15A4A3EA856E4A99934887A8 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
-		2BC0A366A77B491FAD654EC1 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
+		141637AED1744099ADF3BE3B /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
+		1429230FF7754BF18C7ECD52 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
+		15A4A3EA856E4A99934887A8 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
+		2B297D5343FB463C8D65503C /* Roboto-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Medium.ttf"; path = "../app/Assets/Fonts/Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		2BC0A366A77B491FAD654EC1 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* AlQuranMobile-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AlQuranMobile-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* AlQuranMobile-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AlQuranMobile-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3135EC7F84784C209AC9AEFD /* hafs.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = hafs.ttf; path = ../app/Assets/Fonts/hafs.ttf; sourceTree = "<group>"; };
-		3EC63B7BDDD042F48C4BBBD9 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
-		440F3CBF101F46B6B58FA3E8 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
-		495AB60E1392475285B1502C /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-LightItalic.ttf"; path = "../app/Assets/Fonts/OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		3135EC7F84784C209AC9AEFD /* hafs.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = hafs.ttf; path = ../app/Assets/Fonts/hafs.ttf; sourceTree = "<group>"; };
+		3EC63B7BDDD042F48C4BBBD9 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
+		440F3CBF101F46B6B58FA3E8 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
+		450F5CDA02AA4FA78454EFD0 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Regular.ttf"; path = "../app/Assets/Fonts/Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		495AB60E1392475285B1502C /* OpenSans-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-LightItalic.ttf"; path = "../app/Assets/Fonts/OpenSans-LightItalic.ttf"; sourceTree = "<group>"; };
+		4987E896F3434DE587A41872 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Bold.ttf"; path = "../app/Assets/Fonts/Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		4B9A21E815D64CAF66D135DA /* Pods-AlQuranMobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlQuranMobile.debug.xcconfig"; path = "Target Support Files/Pods-AlQuranMobile/Pods-AlQuranMobile.debug.xcconfig"; sourceTree = "<group>"; };
-		5BEE59F0B0AA478CBA1A2682 /* LPMQ.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = LPMQ.ttf; path = ../app/Assets/Fonts/LPMQ.ttf; sourceTree = "<group>"; };
-		603E1BF6465742EE82044FEA /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
-		61B3F4A231A74C1C916E4F8E /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
-		6EDECC22082C4E28B88F9EA9 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
-		761476AC64C241439A2663FE /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
-		7EA9CEA8977743BD885D490A /* Amiri-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Amiri-Regular.ttf"; path = "../app/Assets/Fonts/Amiri-Regular.ttf"; sourceTree = "<group>"; };
+		5BEE59F0B0AA478CBA1A2682 /* LPMQ.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = LPMQ.ttf; path = ../app/Assets/Fonts/LPMQ.ttf; sourceTree = "<group>"; };
+		603E1BF6465742EE82044FEA /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
+		61B3F4A231A74C1C916E4F8E /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
+		6EDECC22082C4E28B88F9EA9 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
+		761476AC64C241439A2663FE /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
+		7EA9CEA8977743BD885D490A /* Amiri-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Amiri-Regular.ttf"; path = "../app/Assets/Fonts/Amiri-Regular.ttf"; sourceTree = "<group>"; };
 		8691DE5816DFA2B09C1A8B40 /* Pods-AlQuranMobile-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlQuranMobile-tvOS.release.xcconfig"; path = "Target Support Files/Pods-AlQuranMobile-tvOS/Pods-AlQuranMobile-tvOS.release.xcconfig"; sourceTree = "<group>"; };
-		8768E64F16C54FF4AFD37943 /* bismillah.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = bismillah.ttf; path = ../app/Assets/Fonts/bismillah.ttf; sourceTree = "<group>"; };
-		876E4AE11FCB4669A9067D55 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
+		8768E64F16C54FF4AFD37943 /* bismillah.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = bismillah.ttf; path = ../app/Assets/Fonts/bismillah.ttf; sourceTree = "<group>"; };
+		876E4AE11FCB4669A9067D55 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
 		8B511EACA68A6527919CF49E /* Pods-AlQuranMobileTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlQuranMobileTests.debug.xcconfig"; path = "Target Support Files/Pods-AlQuranMobileTests/Pods-AlQuranMobileTests.debug.xcconfig"; sourceTree = "<group>"; };
-		8DEC96AAB83948518A61E001 /* arabic-font.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "arabic-font.ttf"; path = "../app/Assets/Fonts/arabic-font.ttf"; sourceTree = "<group>"; };
-		8EEE0579ABAB4AE0ACE29083 /* Amiri-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Amiri-Bold.ttf"; path = "../app/Assets/Fonts/Amiri-Bold.ttf"; sourceTree = "<group>"; };
-		9DDBC4EB11F04AF1A7FEAC7F /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-SemiBold.ttf"; path = "../app/Assets/Fonts/OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		8DEC96AAB83948518A61E001 /* arabic-font.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "arabic-font.ttf"; path = "../app/Assets/Fonts/arabic-font.ttf"; sourceTree = "<group>"; };
+		8EEE0579ABAB4AE0ACE29083 /* Amiri-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Amiri-Bold.ttf"; path = "../app/Assets/Fonts/Amiri-Bold.ttf"; sourceTree = "<group>"; };
+		936B7B51B5B9435585778991 /* Roboto-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Black.ttf"; path = "../app/Assets/Fonts/Roboto-Black.ttf"; sourceTree = "<group>"; };
+		9A311B9C23E7FA76004945A7 /* LPMQ.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = LPMQ.ttf; path = ../app/Assets/Fonts/LPMQ.ttf; sourceTree = "<group>"; };
+		9DDBC4EB11F04AF1A7FEAC7F /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-SemiBold.ttf"; path = "../app/Assets/Fonts/OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		A2A649E42C7C7ED1720B2666 /* Pods-AlQuranMobile-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlQuranMobile-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-AlQuranMobile-tvOSTests/Pods-AlQuranMobile-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		ABE4EC57F99942D48102C1A8 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Regular.ttf"; path = "../app/Assets/Fonts/OpenSans-Regular.ttf"; sourceTree = "<group>"; };
-		B4860B6C964342C686F55EB2 /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Italic.ttf"; path = "../app/Assets/Fonts/OpenSans-Italic.ttf"; sourceTree = "<group>"; };
+		ABE4EC57F99942D48102C1A8 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Regular.ttf"; path = "../app/Assets/Fonts/OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		B4860B6C964342C686F55EB2 /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-Italic.ttf"; path = "../app/Assets/Fonts/OpenSans-Italic.ttf"; sourceTree = "<group>"; };
 		B684BF205EC51A11926A74DA /* libPods-AlQuranMobile.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AlQuranMobile.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C2DC2A915C3547668A222C1E /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
-		C634A6B974554B6BA01834FB /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-ExtraBold.ttf"; path = "../app/Assets/Fonts/OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
-		C82589B1A56948118916666E /* Scheherazade.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = Scheherazade.ttf; path = ../app/Assets/Fonts/Scheherazade.ttf; sourceTree = "<group>"; };
-		CBBDB4CF044C454F9C68BEA2 /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
-		D1D323B5280844FCB41DABA2 /* OpenSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-SemiBoldItalic.ttf"; path = "../app/Assets/Fonts/OpenSans-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
-		D549358AFA194642AAD88D57 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
+		C2DC2A915C3547668A222C1E /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
+		C634A6B974554B6BA01834FB /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-ExtraBold.ttf"; path = "../app/Assets/Fonts/OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		C82589B1A56948118916666E /* Scheherazade.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Scheherazade.ttf; path = ../app/Assets/Fonts/Scheherazade.ttf; sourceTree = "<group>"; };
+		CBBDB4CF044C454F9C68BEA2 /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
+		D1D323B5280844FCB41DABA2 /* OpenSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-SemiBoldItalic.ttf"; path = "../app/Assets/Fonts/OpenSans-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		D549358AFA194642AAD88D57 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		DB4AA20E55495AA40FB8CC61 /* Pods-AlQuranMobileTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlQuranMobileTests.release.xcconfig"; path = "Target Support Files/Pods-AlQuranMobileTests/Pods-AlQuranMobileTests.release.xcconfig"; sourceTree = "<group>"; };
-		DFC86CE96A1C461D8EAC084A /* Amiri-BoldSlanted.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Amiri-BoldSlanted.ttf"; path = "../app/Assets/Fonts/Amiri-BoldSlanted.ttf"; sourceTree = "<group>"; };
-		E9FB1FCFB8C543A599C528D0 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
+		DFC86CE96A1C461D8EAC084A /* Amiri-BoldSlanted.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Amiri-BoldSlanted.ttf"; path = "../app/Assets/Fonts/Amiri-BoldSlanted.ttf"; sourceTree = "<group>"; };
+		E9FB1FCFB8C543A599C528D0 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
+		EAF56F4E49764F218AEFBA24 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Thin.ttf"; path = "../app/Assets/Fonts/Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		EC00C6EC14785B117F7BAD9F /* Pods-AlQuranMobile-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlQuranMobile-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-AlQuranMobile-tvOSTests/Pods-AlQuranMobile-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
-		EF4E2B28CB6F436782B1C4D6 /* Amiri-Slanted.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Amiri-Slanted.ttf"; path = "../app/Assets/Fonts/Amiri-Slanted.ttf"; sourceTree = "<group>"; };
+		EF4E2B28CB6F436782B1C4D6 /* Amiri-Slanted.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Amiri-Slanted.ttf"; path = "../app/Assets/Fonts/Amiri-Slanted.ttf"; sourceTree = "<group>"; };
 		F12C6EA664E75B876DEA72F4 /* Pods-AlQuranMobile-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlQuranMobile-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-AlQuranMobile-tvOS/Pods-AlQuranMobile-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		F2556567CB2AE0D18C24CBA2 /* libPods-AlQuranMobile-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AlQuranMobile-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F76AFFFA4061414A8F856544 /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-ExtraBoldItalic.ttf"; path = "../app/Assets/Fonts/OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
-		FDB28760ADEB47F49EC860A4 /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-BoldItalic.ttf"; path = "../app/Assets/Fonts/OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
-		936B7B51B5B9435585778991 /* Roboto-Black.ttf */ = {isa = PBXFileReference; name = "Roboto-Black.ttf"; path = "../app/Assets/Fonts/Roboto-Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		4987E896F3434DE587A41872 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; name = "Roboto-Bold.ttf"; path = "../app/Assets/Fonts/Roboto-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		2B297D5343FB463C8D65503C /* Roboto-Medium.ttf */ = {isa = PBXFileReference; name = "Roboto-Medium.ttf"; path = "../app/Assets/Fonts/Roboto-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		450F5CDA02AA4FA78454EFD0 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; name = "Roboto-Regular.ttf"; path = "../app/Assets/Fonts/Roboto-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		EAF56F4E49764F218AEFBA24 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; name = "Roboto-Thin.ttf"; path = "../app/Assets/Fonts/Roboto-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F76AFFFA4061414A8F856544 /* OpenSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-ExtraBoldItalic.ttf"; path = "../app/Assets/Fonts/OpenSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		FDB28760ADEB47F49EC860A4 /* OpenSans-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "OpenSans-BoldItalic.ttf"; path = "../app/Assets/Fonts/OpenSans-BoldItalic.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,7 +196,6 @@
 				8B511EACA68A6527919CF49E /* Pods-AlQuranMobileTests.debug.xcconfig */,
 				DB4AA20E55495AA40FB8CC61 /* Pods-AlQuranMobileTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -289,7 +257,6 @@
 				EAF56F4E49764F218AEFBA24 /* Roboto-Thin.ttf */,
 			);
 			name = Resources;
-			path = "";
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -302,6 +269,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				9A311B9C23E7FA76004945A7 /* LPMQ.ttf */,
 				13B07FAE1A68108700A75B9A /* AlQuranMobile */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* AlQuranMobileTests */,
@@ -358,6 +326,7 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				80470C50AD69D040CD3CD026 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -436,6 +405,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -464,43 +434,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A311B9D23E7FA76004945A7 /* LPMQ.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
-				AACE8119A5D6464C9BFBBE0F /* Amiri-Bold.ttf in Resources */,
-				EF58CF2746464EB18FE10F3C /* Amiri-BoldSlanted.ttf in Resources */,
-				A4B909E140DA42E8ABB87207 /* Amiri-Regular.ttf in Resources */,
-				1C87B822223C4D3F93C4EF9A /* Amiri-Slanted.ttf in Resources */,
-				C16904BA1AD04DB2847B6075 /* Scheherazade.ttf in Resources */,
-				416E4C9677D14EB889294EB8 /* AntDesign.ttf in Resources */,
-				DEE0759286DE48328011EFA8 /* Entypo.ttf in Resources */,
-				9A0FC9954F0D4DD9A9DB0B05 /* EvilIcons.ttf in Resources */,
-				E69AA18AC64641B8B92F376E /* Feather.ttf in Resources */,
-				127F24AE33D14FD886F374EB /* FontAwesome.ttf in Resources */,
-				4826626AE61A49D4B56CCCCA /* FontAwesome5_Brands.ttf in Resources */,
-				72CFB81F44FC47E89921858E /* FontAwesome5_Regular.ttf in Resources */,
-				122DCFA22E9A4657B758ADC9 /* FontAwesome5_Solid.ttf in Resources */,
-				674B8CDD23104999ADD8249B /* Fontisto.ttf in Resources */,
-				F5C0294897AE42B0BA5C9953 /* Foundation.ttf in Resources */,
-				069E527DD9364FFDA0B10D1F /* Ionicons.ttf in Resources */,
-				2F601926E68E48D8ADBCB1F5 /* MaterialCommunityIcons.ttf in Resources */,
-				E8037ADF37ED4252ACF6DA99 /* MaterialIcons.ttf in Resources */,
-				79595EDF048042ECAF5493EA /* Octicons.ttf in Resources */,
-				8C156B9F18744BBF95970792 /* SimpleLineIcons.ttf in Resources */,
-				5691B012E19E4792869941A1 /* Zocial.ttf in Resources */,
-				81A0D6276B1D4B759474DC79 /* hafs.ttf in Resources */,
 				94EECF31F48D4FA48D015864 /* arabic-font.ttf in Resources */,
-				3EE6B80D93EE48DA843BCA36 /* bismillah.ttf in Resources */,
-				34F4FA44C1754A2CB286048A /* LPMQ.ttf in Resources */,
-				1C9DF92F8BBC457188693F1F /* OpenSans-Bold.ttf in Resources */,
-				AAE8C311DB8840A2928D2231 /* OpenSans-BoldItalic.ttf in Resources */,
-				C0D711EBF8CA47BCB8F6EDE2 /* OpenSans-ExtraBold.ttf in Resources */,
-				CFA7A408E6EA42ACABB27687 /* OpenSans-ExtraBoldItalic.ttf in Resources */,
-				510CF571C52942C68C22C675 /* OpenSans-Italic.ttf in Resources */,
-				EC79908EA1974368A6C4A55C /* OpenSans-Light.ttf in Resources */,
-				548034F958D2468AB0E0EA01 /* OpenSans-LightItalic.ttf in Resources */,
-				7FF52BFC14994668880BB534 /* OpenSans-Regular.ttf in Resources */,
-				1D478D03D9F9499AA14714FD /* OpenSans-SemiBold.ttf in Resources */,
-				7F8D277AE8B74E16A6685116 /* OpenSans-SemiBoldItalic.ttf in Resources */,
 				26A9A7A3A91E446E90FE0F08 /* Roboto-Black.ttf in Resources */,
 				62695F00963041CB8F6FA12D /* Roboto-Bold.ttf in Resources */,
 				45B850BE15524C06994203A2 /* Roboto-Medium.ttf in Resources */,
@@ -641,6 +578,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		80470C50AD69D040CD3CD026 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AlQuranMobile/Pods-AlQuranMobile-resources.sh",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Feather.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Foundation.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Octicons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Zocial.ttf",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AntDesign.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Entypo.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EvilIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Feather.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Brands.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Regular.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Solid.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Fontisto.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Foundation.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Ionicons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialCommunityIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Octicons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SimpleLineIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Zocial.ttf",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AlQuranMobile/Pods-AlQuranMobile-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {

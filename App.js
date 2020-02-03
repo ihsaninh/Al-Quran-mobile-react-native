@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { Provider } from 'react-redux';
 import { StatusBar } from 'react-native';
+import { Provider as PaperProvider } from 'react-native-paper';
 
 import { Colors } from './app/Themes/Colors';
 import AppNavigator from './app/Navigation/AppNavigator';
@@ -15,7 +16,9 @@ const App = () => {
         animated
       />
       <Provider store={store}>
-        <AppNavigator />
+        <PaperProvider>
+          <AppNavigator />
+        </PaperProvider>
       </Provider>
     </Fragment>
   );
