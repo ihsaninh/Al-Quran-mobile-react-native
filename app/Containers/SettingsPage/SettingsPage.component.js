@@ -32,7 +32,7 @@ const SettingsPage = ({ navigation }) => {
   const renderModalDialog = () => {
     return (
       <ModalDialog
-        type="Info!"
+        type="Info"
         message="Mau lihat jadwal Sholat terbaru di kota Anda? Klik oke dibawah ini."
         onPress={toggleModal}
         isVisible={isVisible}
