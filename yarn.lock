@@ -5659,10 +5659,9 @@ react-native-dotenv@^0.2.0:
   dependencies:
     babel-plugin-dotenv "0.1.1"
 
-react-native-extra-dimensions-android@^1.2.5:
+"react-native-extra-dimensions-android@git+https://github.com/ihsaninh/react-native-extra-dimensions-android":
   version "1.2.5"
-  resolved "https://registry.yarnpkg.com/react-native-extra-dimensions-android/-/react-native-extra-dimensions-android-1.2.5.tgz#8ade91029aaac7519bf305116d39019e618a60f0"
-  integrity sha512-eorFo9X1vEqAWUkgcZ300yKBG1wtgNeE7tdWAH2CE+P50FGTniJg5Sr6l1iPWG8ZskQOuF+KeiSTFlDa4vLfMw==
+  resolved "git+https://github.com/ihsaninh/react-native-extra-dimensions-android#659fb4c7dee2e828b4da6a26e0c8ba92dffbf585"
 
 react-native-gesture-handler@^1.4.1:
   version "1.4.1"

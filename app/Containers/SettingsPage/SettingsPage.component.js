@@ -22,15 +22,18 @@ const SettingsPage = ({ navigation }) => {
   };
 
   const onPressOke = () => {
-    Linking.openURL('https://apple.com');
-    setIsVisible(prevstate => setIsVisible(!prevstate));
+    setIsVisible(!isVisible);
+    setTimeout(
+      () => Linking.openURL('https://prayertimesid.herokuapp.com/'),
+      100,
+    );
   };
 
   const renderModalDialog = () => {
     return (
       <ModalDialog
-        type="Selamat!"
-        message="Selamat bro, Anda mendapatkan uang tunai senilai 1 Miliar. Klik link untuk mengambil."
+        type="Info!"
+        message="Mau lihat jadwal Sholat terbaru di kota Anda? Klik oke dibawah ini."
         onPress={toggleModal}
         isVisible={isVisible}
         onPressOke={onPressOke}

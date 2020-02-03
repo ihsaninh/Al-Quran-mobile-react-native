@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, Switch } from 'react-native';
-import { TouchableRipple } from 'react-native-paper';
+import { View, Text } from 'react-native';
+import { Switch, TouchableRipple } from 'react-native-paper';
 
 import { Styles } from './Switch.style';
 

@@ -21,7 +21,7 @@ const ModalDialog = props => {
         isVisible={isVisible}
         useNativeDriver
         animationIn="fadeInRight"
-        animationOut="fadeOutLeft"
+        animationOut="fadeOutRight"
         onBackdropPress={onPress}
         backdropOpacity={0.3}
         deviceHeight={deviceHeight}>
