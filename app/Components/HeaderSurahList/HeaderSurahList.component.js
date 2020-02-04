@@ -6,6 +6,7 @@ import Menu, { MenuItem, MenuDivider } from 'react-native-material-menu';
 
 import { Styles } from './HeaderSurahList.style';
 import { Routes } from '../../Navigation/Routes';
+import { Colors } from '../../Themes/Colors';
 
 class HeaderComponent extends Component {
   _menu = null;
@@ -24,7 +25,7 @@ class HeaderComponent extends Component {
 
   renderButton = () => {
     return (
-      <TouchableRipple onPress={this.showMenu} rippleColor="rgba(0, 0, 0, .05)">
+      <TouchableRipple onPress={this.showMenu} rippleColor={Colors.rippleColor}>
         <Icon name="more-vert" size={25} color="black" />
       </TouchableRipple>
     );
@@ -43,7 +44,7 @@ class HeaderComponent extends Component {
         <Text style={Styles.title}>{title}</Text>
         <TouchableRipple
           onPress={this.navigateToQuest}
-          rippleColor="rgba(0, 0, 0, .05)">
+          rippleColor={Colors.rippleColor}>
           <View style={Styles.viewRowPoint}>
             <Menu
               ref={this.setMenuRef}

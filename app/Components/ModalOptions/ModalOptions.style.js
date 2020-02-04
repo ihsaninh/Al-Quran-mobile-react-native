@@ -2,6 +2,7 @@ import { StyleSheet } from 'react-native';
 
 import { deviceWidth } from '../../Utils/Helper';
 import { FontType } from '../../Themes/Fonts';
+import { Colors } from '../../Themes/Colors';
 
 const Styles = StyleSheet.create({
   container: {
@@ -19,7 +20,7 @@ const Styles = StyleSheet.create({
     fontSize: 18,
     paddingLeft: 20,
     fontFamily: FontType.bold,
-    color: '#009688',
+    color: Colors.persianGreen,
     paddingTop: 20,
     textTransform: 'capitalize',
   },
@@ -41,7 +42,7 @@ const Styles = StyleSheet.create({
     paddingHorizontal: 15,
     fontFamily: FontType.semiBold,
     textTransform: 'uppercase',
-    color: '#009688',
+    color: Colors.persianGreen,
     fontSize: 15,
   },
 });

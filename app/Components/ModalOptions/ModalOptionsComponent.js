@@ -5,6 +5,7 @@ import Modal from 'react-native-modal';
 
 import { Styles } from './ModalOptions.style';
 import { deviceHeight } from '../../Utils/Helper';
+import { Colors } from '../../Themes/Colors';
 
 const ModalOptions = props => {
   const { isVisible, onPress, onPressCancel, type, children } = props;
@@ -20,7 +21,7 @@ const ModalOptions = props => {
         deviceHeight={deviceHeight}>
         <View style={Styles.modalContainer}>
           <StatusBar
-            backgroundColor="rgba(0,0,0,0.3)"
+            backgroundColor={Colors.statusbarModal}
             barStyle="light-content"
             animated
           />
@@ -31,7 +32,7 @@ const ModalOptions = props => {
           <View style={Styles.modalButtonContainer}>
             <TouchableRipple
               onPress={onPressCancel}
-              rippleColor="rgba(0, 0, 0, .05)"
+              rippleColor={Colors.rippleColor}
               centered>
               <Text style={Styles.buttonText}>Batal</Text>
             </TouchableRipple>

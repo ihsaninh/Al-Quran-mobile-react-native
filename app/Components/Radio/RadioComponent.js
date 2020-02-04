@@ -3,13 +3,14 @@ import { View, Text } from 'react-native';
 import { TouchableRipple, RadioButton } from 'react-native-paper';
 
 import { Styles } from './Radio.style';
+import { Colors } from '../../Themes/Colors';
 
 const RadioComponent = props => {
   const { text, onPress, value, status, radioOnpress } = props;
   return (
     <TouchableRipple
       onPress={onPress}
-      rippleColor="rgba(0, 0, 0, .05)"
+      rippleColor={Colors.rippleColor}
       centered>
       <View style={Styles.modalOptionsContent}>
         <Text style={Styles.radioText}>{text}</Text>
@@ -17,7 +18,7 @@ const RadioComponent = props => {
           value={value}
           status={status}
           onPress={radioOnpress}
-          color="#009688"
+          color={Colors.persianGreen}
         />
       </View>
     </TouchableRipple>

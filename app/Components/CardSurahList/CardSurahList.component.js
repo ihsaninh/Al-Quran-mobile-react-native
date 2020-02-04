@@ -4,6 +4,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import { TouchableRipple } from 'react-native-paper';
 
 import { Styles } from './CardSurahList.style';
+import { Colors } from '../../Themes/Colors';
 
 const CardSurahList = props => {
   const {
@@ -17,7 +18,7 @@ const CardSurahList = props => {
   return (
     <TouchableRipple
       onPress={onPress}
-      rippleColor="rgba(0, 0, 0, .05)"
+      rippleColor={Colors.rippleColor}
       centered>
       <View style={Styles.CardStyle}>
         <View style={Styles.cardContainer}>

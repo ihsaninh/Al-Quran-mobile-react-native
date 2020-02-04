@@ -2,6 +2,7 @@ import { StyleSheet } from 'react-native';
 
 import { deviceWidth } from '../../Utils/Helper';
 import { FontType } from '../../Themes/Fonts';
+import { Colors } from '../../Themes/Colors';
 
 const Styles = StyleSheet.create({
   container: {
@@ -15,13 +16,12 @@ const Styles = StyleSheet.create({
   },
   modalTitleContainer: {
     flex: 1,
-    // backgroundColor: 'yellow',
   },
   modalTitleText: {
     fontSize: 17,
     paddingLeft: 20,
     fontFamily: FontType.bold,
-    color: '#009688',
+    color: Colors.persianGreen,
     paddingTop: 20,
     textTransform: 'uppercase',
   },
@@ -31,7 +31,6 @@ const Styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 20,
     overflow: 'hidden',
-    // backgroundColor: 'green',
   },
   modalContentText: {
     fontSize: 16,
@@ -45,14 +44,13 @@ const Styles = StyleSheet.create({
     alignItems: 'center',
     paddingRight: 20,
     paddingBottom: 10,
-    // backgroundColor: 'lightblue',
   },
   buttonText: {
     paddingVertical: 10,
     paddingHorizontal: 20,
     fontFamily: FontType.semiBold,
     textTransform: 'uppercase',
-    color: '#009688',
+    color: Colors.persianGreen,
     fontSize: 15,
   },
 });

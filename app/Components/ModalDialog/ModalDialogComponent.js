@@ -4,6 +4,7 @@ import { TouchableRipple } from 'react-native-paper';
 import Modal from 'react-native-modal';
 
 import { Styles } from './ModalDialog.style';
+import { Colors } from '../../Themes/Colors';
 import { deviceHeight } from '../../Utils/Helper';
 
 const ModalDialog = props => {
@@ -27,7 +28,7 @@ const ModalDialog = props => {
         deviceHeight={deviceHeight}>
         <View style={Styles.modalContainer}>
           <StatusBar
-            backgroundColor="rgba(0,0,0,0.3)"
+            backgroundColor={Colors.statusbarModal}
             barStyle="light-content"
             animated
           />
@@ -40,13 +41,13 @@ const ModalDialog = props => {
           <View style={Styles.modalButtonContainer}>
             <TouchableRipple
               onPress={onPressCancel}
-              rippleColor="rgba(0, 0, 0, .05)"
+              rippleColor={Colors.rippleColor}
               centered>
               <Text style={Styles.buttonText}>Cancel</Text>
             </TouchableRipple>
             <TouchableRipple
               onPress={onPressOke}
-              rippleColor="rgba(0, 0, 0, .05)"
+              rippleColor={Colors.rippleColor}
               centered>
               <Text style={Styles.buttonText}>OK</Text>
             </TouchableRipple>

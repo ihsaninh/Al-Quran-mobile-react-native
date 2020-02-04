@@ -3,13 +3,14 @@ import { View, Text, Switch } from 'react-native';
 import { TouchableRipple } from 'react-native-paper';
 
 import { Styles } from './Switch.style';
+import { Colors } from '../../Themes/Colors';
 
 const SwitchComponent = props => {
   const { value, onValueChange, title, description } = props;
   return (
     <TouchableRipple
       onPress={() => null}
-      rippleColor="rgba(0, 0, 0, .05)"
+      rippleColor={Colors.rippleColor}
       centered>
       <View style={Styles.settingSwitchContainer}>
         <View style={Styles.descView}>

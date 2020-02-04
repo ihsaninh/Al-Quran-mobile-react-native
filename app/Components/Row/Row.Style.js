@@ -1,6 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 import { FontType } from '../../Themes/Fonts';
+import { Colors } from '../../Themes/Colors';
 
 const Styles = StyleSheet.create({
   rowContainer: {
@@ -10,7 +11,7 @@ const Styles = StyleSheet.create({
     fontSize: 14,
     marginLeft: 20,
     marginBottom: 10,
-    color: '#009688',
+    color: Colors.persianGreen,
     fontFamily: FontType.bold,
   },
 });
