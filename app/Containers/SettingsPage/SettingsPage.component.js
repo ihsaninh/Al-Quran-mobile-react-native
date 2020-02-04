@@ -13,6 +13,18 @@ import { SwitchComponent } from '../../Components/Switch/SwitchComponent';
 const SettingsPage = ({ navigation }) => {
   const [switchBtn, setSwitchBtn] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [lang, setLang] = useState({
+    id: {
+      language: 'Bahasa Indonesia',
+      checked: true,
+      code: 'id',
+    },
+    en: {
+      language: 'Bahasa Inggris',
+      checked: false,
+      code: 'en',
+    },
+  });
 
   const toggleSwitch = val => {
     setSwitchBtn(val);
@@ -22,23 +34,21 @@ const SettingsPage = ({ navigation }) => {
     setIsVisible(!isVisible);
   };
 
-  const languageLists = [
-    {
-      name: 'Bahasa Indonesia',
-      value: 'ID',
-      checked: true,
-    },
-    {
-      name: 'Bahasa Inggris',
-      value: 'EN',
-      checked: false,
-    },
-    {
-      name: 'Bahasa Jawa',
-      value: 'JW',
-      checked: false,
-    },
-  ];
+  const radioOnPress = item => () => {
+    setLang({
+      id: {
+        language: 'Bahasa Indonesia',
+        checked: item.code === 'id' ? true : false,
+        code: 'id',
+      },
+      en: {
+        language: 'Bahasa Inggris',
+        checked: item.code === 'en' ? true : false,
+        code: 'en',
+      },
+    });
+    setIsVisible(!isVisible);
+  };
 
   const GeneralSettings = [
     {
@@ -72,19 +82,21 @@ const SettingsPage = ({ navigation }) => {
   ];
 
   const renderModalOptions = () => {
+    const langs = Object.keys(lang);
     return (
       <ModalOptions
         type="Pilih Bahasa Aplikasi"
         onPress={toggleModal}
         isVisible={isVisible}
         onPressCancel={toggleModal}>
-        {languageLists.map((item, i) => (
+        {langs.map((item, i) => (
           <RadioComponent
-            text={item.name}
-            value={item.value}
-            checked={item.checked ? 'checked' : 'unchecked'}
-            onPress={toggleModal}
-            radioOnpress={toggleModal}
+            key={i}
+            text={lang[item].language}
+            value={lang[item]}
+            status={lang[item].checked ? 'checked' : 'unchecked'}
+            onPress={radioOnPress(lang[item])}
+            radioOnpress={radioOnPress(lang[item])}
           />
         ))}
       </ModalOptions>

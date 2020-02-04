@@ -25,4 +25,4 @@ const RadioComponent = props => {
   );
 };
 
-export default RadioComponent;
+export { RadioComponent };
