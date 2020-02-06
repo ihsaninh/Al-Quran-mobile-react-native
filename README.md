@@ -32,8 +32,14 @@
    $ npm install or yarn install (if you using yarn)
    ```
 3. Run Al-Quran Mobile App
+
+   - Dev
    ```
-   $ react-native run-android or react-native run-ios
+   $ react-native run-android --variant=devDebug --appIdSuffix=dev 
+   ```
+   - Beta
+   ```
+   $ react-native run-android --variant=betaDebug 
    ```
 
 ## Screenshoot
