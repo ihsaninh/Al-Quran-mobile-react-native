@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View } from 'react-native';
+import { View, Linking } from 'react-native';
 
 import { Row } from '../../Components/Row/RowComponent';
 import { Lists } from '../../Components/Lists/ListsComponent';
@@ -25,6 +25,18 @@ const SettingsPage = ({ navigation }) => {
       code: 'en',
     },
   });
+  const [font, setFont] = useState({
+    lpmq: {
+      name: 'LPMQ Standar KEMENAG',
+      checked: true,
+      code: 'lmpq',
+    },
+    ar: {
+      name: 'Arabic Font Standar Utsmani',
+      checked: false,
+      code: 'ar',
+    },
+  });
 
   const toggleSwitch = val => {
     setSwitchBtn(val);
@@ -32,6 +44,10 @@ const SettingsPage = ({ navigation }) => {
 
   const toggleModal = () => {
     setIsVisible(!isVisible);
+  };
+
+  const onPressHelp = () => {
+    Linking.openURL('https://apple.com');
   };
 
   const radioOnPress = item => () => {
@@ -72,7 +88,7 @@ const SettingsPage = ({ navigation }) => {
     {
       title: 'Bantuan',
       description: 'Butuh pertanyaan? Butuh bantuan?',
-      onPress: () => toggleModal(),
+      onPress: onPressHelp,
     },
     {
       title: 'Versi Aplikasi',
@@ -81,12 +97,12 @@ const SettingsPage = ({ navigation }) => {
     },
   ];
 
-  const renderModalOptions = () => {
+  const renderModalOptionsLang = () => {
     const langs = Object.keys(lang);
     return (
       <ModalOptions
         type="Pilih Bahasa Aplikasi"
-        onPress={toggleModal}
+        onBackdropPress={toggleModal}
         isVisible={isVisible}
         onPressCancel={toggleModal}>
         {langs.map((item, i) => (
@@ -97,6 +113,28 @@ const SettingsPage = ({ navigation }) => {
             status={lang[item].checked ? 'checked' : 'unchecked'}
             onPress={radioOnPress(lang[item])}
             radioOnpress={radioOnPress(lang[item])}
+          />
+        ))}
+      </ModalOptions>
+    );
+  };
+
+  const renderModalOptionsHuruf = () => {
+    const fonts = Object.keys(font);
+    return (
+      <ModalOptions
+        type="Pilih Jenis Huruf Arabic"
+        onBackdropPress={toggleModal}
+        isVisible={isVisible}
+        onPressCancel={toggleModal}>
+        {fonts.map((item, i) => (
+          <RadioComponent
+            key={i}
+            text={font[item].name}
+            value={font[item]}
+            status={font[item].checked ? 'checked' : 'unchecked'}
+            onPress={radioOnPress(font[item])}
+            radioOnpress={radioOnPress(font[item])}
           />
         ))}
       </ModalOptions>
@@ -131,7 +169,8 @@ const SettingsPage = ({ navigation }) => {
           />
         ))}
       </Row>
-      {renderModalOptions()}
+      {renderModalOptionsLang()}
+      {renderModalOptionsHuruf()}
     </View>
   );
 };

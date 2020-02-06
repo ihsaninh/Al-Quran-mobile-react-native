@@ -8,7 +8,7 @@ import { deviceHeight } from '../../Utils/Helper';
 import { Colors } from '../../Themes/Colors';
 
 const ModalOptions = props => {
-  const { isVisible, onPress, onPressCancel, type, children } = props;
+  const { isVisible, onBackdropPress, onPressCancel, type, children } = props;
   return (
     <View style={Styles.container}>
       <Modal
@@ -16,7 +16,7 @@ const ModalOptions = props => {
         useNativeDriver
         animationIn="fadeInRight"
         animationOut="fadeOutRight"
-        onBackdropPress={onPress}
+        onBackdropPress={onBackdropPress}
         backdropOpacity={0.3}
         deviceHeight={deviceHeight}>
         <View style={Styles.modalContainer}>

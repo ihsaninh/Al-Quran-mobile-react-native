@@ -43,7 +43,7 @@ const ModalDialog = props => {
               onPress={onPressCancel}
               rippleColor={Colors.rippleColor}
               centered>
-              <Text style={Styles.buttonText}>Cancel</Text>
+              <Text style={Styles.buttonText}>Batal</Text>
             </TouchableRipple>
             <TouchableRipple
               onPress={onPressOke}
