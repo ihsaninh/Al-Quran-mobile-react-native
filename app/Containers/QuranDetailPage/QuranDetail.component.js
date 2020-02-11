@@ -1,7 +1,9 @@
 import React, { useEffect, useCallback } from 'react';
 import { View, Text, FlatList } from 'react-native';
+import { useSelector, useDispatch } from 'react-redux';
 import get from 'lodash/get';
 
+import { getDetailQuran } from '../../Redux/Actions/QuranDetail/QuranDetail';
 import { Basmallah } from '../../Components/Basmallah/Basmallah.component';
 import { Loading } from '../../Components/Loading/Loading.component';
 import { CardAyatList } from '../../Components/CardAyatList/CardAyatList.component';
@@ -10,13 +12,20 @@ import { Constants } from '../../Utils/Constants';
 import { keyExtractor } from '../../Utils/Helper';
 import { Styles } from './QuranDetail.style';
 
-const QuranDetail = props => {
+const QuranDetail = ({ navigation }) => {
+  const dispatch = useDispatch();
+
+  const { dataAyat, isLoading, refreshing } = useSelector(state => ({
+    dataAyat: state.qurandetail.data,
+    isLoading: state.qurandetail.loading,
+    refreshing: state.qurandetail.refreshing,
+  }));
+
   useEffect(() => {
     renderDetailSurah();
   }, [renderDetailSurah]);
 
   const renderDetailSurah = useCallback(async () => {
-    const { getDetailQuran, navigation } = props;
     const surahId = get(navigation, 'state.params.dataSurah.id', '');
     const countAyat = get(navigation, 'state.params.dataSurah.count_ayat', '');
 
@@ -25,11 +34,10 @@ const QuranDetail = props => {
       countAyat,
     };
 
-    await getDetailQuran(payload);
-  }, [props]);
+    await dispatch(getDetailQuran(payload));
+  }, [dispatch, navigation]);
 
   const listHeaderComponent = () => {
-    const { navigation } = props;
     const surahId = get(navigation, 'state.params.dataSurah.id', '');
 
     switch (surahId) {
@@ -51,8 +59,6 @@ const QuranDetail = props => {
       />
     );
   };
-
-  const { dataAyat, refreshing, isLoading } = props;
 
   return isLoading ? (
     <Loading />

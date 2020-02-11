@@ -3,8 +3,8 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
 import AboutPage from '../Containers/AboutPage/AboutPage.component';
-import QuranList from '../Containers/QuranListPage/QuranList.container';
-import QuranDetail from '../Containers/QuranDetailPage/QuranDetail.container';
+import QuranList from '../Containers/QuranListPage/QuranList.component';
+import QuranDetail from '../Containers/QuranDetailPage/QuranDetail.component';
 import SettingsPage from '../Containers/SettingsPage/SettingsPage.component';
 import SplashScreen from '../Containers/SplashScreenPage/SplashScreen.component';
 import { Colors } from '../Themes/Colors';

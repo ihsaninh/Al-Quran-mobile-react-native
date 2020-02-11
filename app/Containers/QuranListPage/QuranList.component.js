@@ -1,26 +1,34 @@
 import React, { useEffect, useCallback } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { FlatList } from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
 
+import { getQuranList } from '../../Redux/Actions/QuranList/QuranList';
 import { Loading } from '../../Components/Loading/Loading.component';
 import { CardSurahList } from '../../Components/CardSurahList/CardSurahList.component';
 import { Separator } from '../../Components/Separator/Separator.component';
 import { Routes } from '../../Navigation/Routes';
 import { keyExtractor } from '../../Utils/Helper';
 
-const QuranList = props => {
+const QuranList = ({ navigation }) => {
+  const dispatch = useDispatch();
+
+  const { dataQuran, isLoading, refreshing } = useSelector(state => ({
+    dataQuran: state.quranList.data,
+    isLoading: state.quranList.loading,
+    refreshing: state.quranList.refreshing,
+  }));
+
   useEffect(() => {
     SplashScreen.hide();
     getDataQuran();
   }, [getDataQuran]);
 
   const getDataQuran = useCallback(async () => {
-    const { getQuranList } = props;
-    await getQuranList();
-  }, [props]);
+    await dispatch(getQuranList());
+  }, [dispatch]);
 
   const goToDetailpage = dataSurah => {
-    const { navigation } = props;
     navigation.navigate(Routes.QuranDetail, { dataSurah });
   };
 
@@ -36,8 +44,6 @@ const QuranList = props => {
       />
     );
   };
-
-  const { dataQuran, isLoading, refreshing } = props;
 
   return isLoading ? (
     <Loading />
