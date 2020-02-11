@@ -12,7 +12,8 @@ import { SwitchComponent } from '../../Components/Switch/SwitchComponent';
 
 const SettingsPage = ({ navigation }) => {
   const [switchBtn, setSwitchBtn] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
+  const [modalFontVisible, setModalFontVisible] = useState(false);
+  const [modalLangVisible, setModalLangVisible] = useState(false);
   const [lang, setLang] = useState({
     id: {
       language: 'Bahasa Indonesia',
@@ -42,8 +43,12 @@ const SettingsPage = ({ navigation }) => {
     setSwitchBtn(val);
   };
 
-  const toggleModal = () => {
-    setIsVisible(!isVisible);
+  const toggleModalFont = () => {
+    setModalFontVisible(!modalFontVisible);
+  };
+
+  const toggleModalLang = () => {
+    setModalLangVisible(!modalLangVisible);
   };
 
   const onPressHelp = () => {
@@ -63,24 +68,24 @@ const SettingsPage = ({ navigation }) => {
         code: 'en',
       },
     });
-    setIsVisible(!isVisible);
+    setModalLangVisible(!modalLangVisible);
   };
 
   const GeneralSettings = [
     {
       title: 'Ukuran Font Arabic',
       description: '17 px (klik untuk menyesuaikan)',
-      onPress: () => toggleModal(),
+      onPress: () => alert('hello world'),
     },
     {
       title: 'Jenis Huruf Arabic',
       description: 'LPMQ standar KEMENAG',
-      onPress: () => toggleModal(),
+      onPress: () => toggleModalFont(),
     },
     {
       title: 'Bahasa Aplikasi',
       description: 'Bahasa Indonesia',
-      onPress: () => toggleModal(),
+      onPress: () => toggleModalLang(),
     },
   ];
 
@@ -102,9 +107,9 @@ const SettingsPage = ({ navigation }) => {
     return (
       <ModalOptions
         type="Pilih Bahasa Aplikasi"
-        onBackdropPress={toggleModal}
-        isVisible={isVisible}
-        onPressCancel={toggleModal}>
+        onBackdropPress={toggleModalLang}
+        isVisible={modalLangVisible}
+        onPressCancel={toggleModalLang}>
         {langs.map((item, i) => (
           <RadioComponent
             key={i}
@@ -124,17 +129,17 @@ const SettingsPage = ({ navigation }) => {
     return (
       <ModalOptions
         type="Pilih Jenis Huruf Arabic"
-        onBackdropPress={toggleModal}
-        isVisible={isVisible}
-        onPressCancel={toggleModal}>
+        onBackdropPress={toggleModalFont}
+        isVisible={modalFontVisible}
+        onPressCancel={toggleModalFont}>
         {fonts.map((item, i) => (
           <RadioComponent
             key={i}
             text={font[item].name}
             value={font[item]}
             status={font[item].checked ? 'checked' : 'unchecked'}
-            onPress={radioOnPress(font[item])}
-            radioOnpress={radioOnPress(font[item])}
+            onPress={toggleModalFont}
+            radioOnpress={toggleModalFont}
           />
         ))}
       </ModalOptions>
