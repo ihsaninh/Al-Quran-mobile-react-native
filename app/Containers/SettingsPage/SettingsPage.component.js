@@ -30,7 +30,7 @@ const SettingsPage = ({ navigation }) => {
     lpmq: {
       name: 'LPMQ Standar KEMENAG',
       checked: true,
-      code: 'lmpq',
+      code: 'lpmq',
     },
     ar: {
       name: 'Arabic Font Standar Utsmani',
@@ -55,7 +55,7 @@ const SettingsPage = ({ navigation }) => {
     Linking.openURL('https://apple.com');
   };
 
-  const radioOnPress = item => () => {
+  const radioOnPressLang = item => () => {
     setLang({
       id: {
         language: 'Bahasa Indonesia',
@@ -71,12 +71,23 @@ const SettingsPage = ({ navigation }) => {
     setModalLangVisible(!modalLangVisible);
   };
 
+  const radioOnPressFont = item => () => {
+    setFont({
+      lpmq: {
+        name: 'LPMQ Standar KEMENAG',
+        checked: item.code === 'lpmq' ? true : false,
+        code: 'lpmq',
+      },
+      ar: {
+        name: 'Arabic Font Standar Utsmani',
+        checked: item.code === 'ar' ? true : false,
+        code: 'ar',
+      },
+    });
+    setModalFontVisible(!modalFontVisible);
+  };
+
   const GeneralSettings = [
-    {
-      title: 'Ukuran Font Arabic',
-      description: '17 px (klik untuk menyesuaikan)',
-      onPress: () => alert('hello world'),
-    },
     {
       title: 'Jenis Huruf Arabic',
       description: 'LPMQ standar KEMENAG',
@@ -116,8 +127,8 @@ const SettingsPage = ({ navigation }) => {
             text={lang[item].language}
             value={lang[item]}
             status={lang[item].checked ? 'checked' : 'unchecked'}
-            onPress={radioOnPress(lang[item])}
-            radioOnpress={radioOnPress(lang[item])}
+            onPress={radioOnPressLang(lang[item])}
+            radioOnpress={radioOnPressLang(lang[item])}
           />
         ))}
       </ModalOptions>
@@ -138,8 +149,8 @@ const SettingsPage = ({ navigation }) => {
             text={font[item].name}
             value={font[item]}
             status={font[item].checked ? 'checked' : 'unchecked'}
-            onPress={toggleModalFont}
-            radioOnpress={toggleModalFont}
+            onPress={radioOnPressFont(font[item])}
+            radioOnpress={radioOnPressFont(font[item])}
           />
         ))}
       </ModalOptions>
