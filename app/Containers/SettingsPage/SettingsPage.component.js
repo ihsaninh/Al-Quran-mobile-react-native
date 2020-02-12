@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Fragment } from 'react';
 import { View, Linking } from 'react-native';
 
 import { Row } from '../../Components/Row/RowComponent';
@@ -159,7 +159,7 @@ const SettingsPage = ({ navigation }) => {
 
   const renderSettingLists = () => {
     return (
-      <View>
+      <Fragment>
         <Row title={Strings.generalSettings}>
           {GeneralSettings.map((item, i) => (
             <Lists
@@ -186,7 +186,7 @@ const SettingsPage = ({ navigation }) => {
             />
           ))}
         </Row>
-      </View>
+      </Fragment>
     );
   };
 
