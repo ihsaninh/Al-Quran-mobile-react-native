@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { View, Text } from 'react-native';
 import { TouchableRipple } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -8,61 +8,52 @@ import { Styles } from './HeaderSurahList.style';
 import { Routes } from '../../Navigation/Routes';
 import { Colors } from '../../Themes/Colors';
 
-class HeaderComponent extends Component {
-  _menu = null;
+const HeaderComponent = ({ title, navigation }) => {
+  let _menu = null;
 
-  setMenuRef = ref => {
-    this._menu = ref;
+  const setMenuRef = ref => {
+    _menu = ref;
   };
 
-  hideMenu = () => {
-    this._menu.hide();
+  const hideMenu = () => {
+    _menu.hide();
   };
 
-  showMenu = () => {
-    this._menu.show();
+  const showMenu = () => {
+    _menu.show();
   };
 
-  renderButton = () => {
+  const renderButton = () => {
     return (
-      <TouchableRipple onPress={this.showMenu} rippleColor={Colors.rippleColor}>
+      <TouchableRipple onPress={showMenu} rippleColor={Colors.rippleColor}>
         <Icon name="more-vert" size={25} color="black" />
       </TouchableRipple>
     );
   };
 
-  redirectTo = route => () => {
-    const { navigation } = this.props;
-    this.hideMenu();
+  const redirectTo = route => () => {
+    hideMenu();
     navigation.navigate(route);
   };
 
-  render() {
-    const { title } = this.props;
-    return (
-      <View style={[Styles.headerContainer, Styles.headerWhite]}>
-        <Text style={Styles.title}>{title}</Text>
-        <TouchableRipple
-          onPress={this.navigateToQuest}
-          rippleColor={Colors.rippleColor}>
-          <View style={Styles.viewRowPoint}>
-            <Menu
-              ref={this.setMenuRef}
-              button={this.renderButton()}
-              animationDuration={0}>
-              <MenuItem onPress={this.redirectTo(Routes.SettingsPage)}>
-                Pengaturan Aplikasi
-              </MenuItem>
-              <MenuItem onPress={this.redirectTo(Routes.AboutPage)}>
-                Tentang Aplikasi
-              </MenuItem>
-              <MenuDivider />
-            </Menu>
-          </View>
-        </TouchableRipple>
-      </View>
-    );
-  }
-}
+  return (
+    <View style={[Styles.headerContainer, Styles.headerWhite]}>
+      <Text style={Styles.title}>{title}</Text>
+      <TouchableRipple onPress={() => null} rippleColor={Colors.rippleColor}>
+        <View style={Styles.viewRowPoint}>
+          <Menu ref={setMenuRef} button={renderButton()} animationDuration={0}>
+            <MenuItem onPress={redirectTo(Routes.SettingsPage)}>
+              Pengaturan Aplikasi
+            </MenuItem>
+            <MenuItem onPress={redirectTo(Routes.AboutPage)}>
+              Tentang Aplikasi
+            </MenuItem>
+            <MenuDivider />
+          </Menu>
+        </View>
+      </TouchableRipple>
+    </View>
+  );
+};
 
 export { HeaderComponent };
