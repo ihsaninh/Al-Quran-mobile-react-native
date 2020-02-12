@@ -157,34 +157,42 @@ const SettingsPage = ({ navigation }) => {
     );
   };
 
+  const renderSettingLists = () => {
+    return (
+      <View>
+        <Row title={Strings.generalSettings}>
+          {GeneralSettings.map((item, i) => (
+            <Lists
+              key={i}
+              title={item.title}
+              description={item.description}
+              onPress={item.onPress}
+            />
+          ))}
+          <SwitchComponent
+            title="Mode Gelap"
+            description={switchBtn ? 'Mode gelap hidup' : 'Mode gelap mati'}
+            value={switchBtn}
+            onValueChange={toggleSwitch}
+          />
+        </Row>
+        <Row title={Strings.otherSetting}>
+          {OtherSettings.map((item, i) => (
+            <Lists
+              key={i}
+              title={item.title}
+              description={item.description}
+              onPress={item.onPress}
+            />
+          ))}
+        </Row>
+      </View>
+    );
+  };
+
   return (
     <View style={Styles.container}>
-      <Row title={Strings.generalSettings}>
-        {GeneralSettings.map((item, i) => (
-          <Lists
-            key={i}
-            title={item.title}
-            description={item.description}
-            onPress={item.onPress}
-          />
-        ))}
-        <SwitchComponent
-          title="Mode Gelap"
-          description={switchBtn ? 'Mode gelap hidup' : 'Mode gelap mati'}
-          value={switchBtn}
-          onValueChange={toggleSwitch}
-        />
-      </Row>
-      <Row title={Strings.otherSetting}>
-        {OtherSettings.map((item, i) => (
-          <Lists
-            key={i}
-            title={item.title}
-            description={item.description}
-            onPress={item.onPress}
-          />
-        ))}
-      </Row>
+      {renderSettingLists()}
       {renderModalOptionsLang()}
       {renderModalOptionsHuruf()}
     </View>
