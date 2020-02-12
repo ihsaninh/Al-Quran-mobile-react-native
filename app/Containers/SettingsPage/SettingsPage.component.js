@@ -1,14 +1,14 @@
 import React, { useState, Fragment } from 'react';
 import { View, Linking } from 'react-native';
 
-import { Row } from '../../Components/Row/RowComponent';
-import { Lists } from '../../Components/Lists/ListsComponent';
+import { Strings } from '../../Utils/Strings';
 import { Styles } from './SettingsPage.style';
 import { Routes } from '../../Navigation/Routes';
-import { Strings } from '../../Utils/Strings';
-import { ModalOptions } from '../../Components/ModalOptions/ModalOptionsComponent';
+import { Row } from '../../Components/Row/RowComponent';
+import { Lists } from '../../Components/Lists/ListsComponent';
 import { RadioComponent } from '../../Components/Radio/RadioComponent';
 import { SwitchComponent } from '../../Components/Switch/SwitchComponent';
+import { ModalOptions } from '../../Components/ModalOptions/ModalOptionsComponent';
 
 const SettingsPage = ({ navigation }) => {
   const [switchBtn, setSwitchBtn] = useState(false);
