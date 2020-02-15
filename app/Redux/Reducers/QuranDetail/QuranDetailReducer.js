@@ -7,7 +7,8 @@ import {
 const initialState = {
   actionStatus: '',
   data: {},
-  error: '',
+  error: false,
+  errorMessage: '',
   loading: false,
   refreshing: false,
 };
@@ -18,7 +19,8 @@ const QuranDetail = (state = initialState, action) => {
       return {
         ...state,
         actionStatus: REQ_QURAN_DETAIL,
-        error: '',
+        error: false,
+        errorMessage: '',
         loading: true,
         refreshing: true,
       };
@@ -27,6 +29,7 @@ const QuranDetail = (state = initialState, action) => {
         ...state,
         actionStatus: REQ_QURAN_DETAIL_SUCCESS,
         data: action.payload,
+        error: false,
         loading: false,
         refreshing: false,
       };
@@ -34,7 +37,8 @@ const QuranDetail = (state = initialState, action) => {
       return {
         ...state,
         actionStatus: REQ_QURAN_DETAIL_FAILURE,
-        error: action.error,
+        error: true,
+        errorMessage: action.error,
         loading: false,
         refreshing: false,
       };
