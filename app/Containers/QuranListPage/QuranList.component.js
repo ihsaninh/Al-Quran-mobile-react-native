@@ -16,7 +16,7 @@ const QuranList = ({ navigation }) => {
 
   const { data, isLoading, isError, errorMessage, refreshing } = useSelector(
     state => ({
-      dataQuran: state.quranList.data,
+      data: state.quranList.data,
       isLoading: state.quranList.loading,
       isError: state.quranList.error,
       errorMessage: state.quranList.errorMessage,
