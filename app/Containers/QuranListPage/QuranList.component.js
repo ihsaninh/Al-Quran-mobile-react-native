@@ -13,19 +13,16 @@ import { keyExtractor } from '../../Utils/Helper';
 
 const QuranList = ({ navigation }) => {
   const dispatch = useDispatch();
-  const {
-    dataQuran,
-    isLoading,
-    isError,
-    errorMessage,
-    refreshing,
-  } = useSelector(state => ({
-    dataQuran: state.quranList.data,
-    isLoading: state.quranList.loading,
-    isError: state.quranList.error,
-    errorMessage: state.quranList.errorMessage,
-    refreshing: state.quranList.refreshing,
-  }));
+
+  const { data, isLoading, isError, errorMessage, refreshing } = useSelector(
+    state => ({
+      dataQuran: state.quranList.data,
+      isLoading: state.quranList.loading,
+      isError: state.quranList.error,
+      errorMessage: state.quranList.errorMessage,
+      refreshing: state.quranList.refreshing,
+    }),
+  );
 
   useEffect(() => {
     SplashScreen.hide();
@@ -68,7 +65,7 @@ const QuranList = ({ navigation }) => {
     <Loading />
   ) : (
     <FlatList
-      data={dataQuran}
+      data={data}
       keyExtractor={keyExtractor}
       renderItem={renderCardContent}
       refreshing={refreshing}
