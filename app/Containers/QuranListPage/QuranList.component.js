@@ -1,9 +1,10 @@
 import React, { useEffect, useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { FlatList } from 'react-native';
+import { FlatList, BackHandler } from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
 
 import { getQuranList } from '../../Redux/Actions/QuranList/QuranList';
+import { ModalDialog } from '../../Components/ModalDialog/ModalDialogComponent';
 import { Loading } from '../../Components/Loading/Loading.component';
 import { CardSurahList } from '../../Components/CardSurahList/CardSurahList.component';
 import { Separator } from '../../Components/Separator/Separator.component';
@@ -12,10 +13,17 @@ import { keyExtractor } from '../../Utils/Helper';
 
 const QuranList = ({ navigation }) => {
   const dispatch = useDispatch();
-
-  const { dataQuran, isLoading, refreshing } = useSelector(state => ({
+  const {
+    dataQuran,
+    isLoading,
+    isError,
+    errorMessage,
+    refreshing,
+  } = useSelector(state => ({
     dataQuran: state.quranList.data,
     isLoading: state.quranList.loading,
+    isError: state.quranList.error,
+    errorMessage: state.quranList.errorMessage,
     refreshing: state.quranList.refreshing,
   }));
 
@@ -30,6 +38,17 @@ const QuranList = ({ navigation }) => {
 
   const goToDetailpage = dataSurah => {
     navigation.navigate(Routes.QuranDetail, { dataSurah });
+  };
+
+  const renderListEmpty = () => {
+    return (
+      <ModalDialog
+        type="Peringatan"
+        isVisible={isError}
+        onPressOke={() => BackHandler.exitApp()}
+        message={errorMessage}
+      />
+    );
   };
 
   const renderCardContent = ({ item }) => {
@@ -55,6 +74,7 @@ const QuranList = ({ navigation }) => {
       refreshing={refreshing}
       onRefresh={getDataQuran}
       ItemSeparatorComponent={Separator}
+      ListEmptyComponent={renderListEmpty}
       showsVerticalScrollIndicator={false}
     />
   );

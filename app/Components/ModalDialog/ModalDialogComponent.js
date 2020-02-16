@@ -8,14 +8,7 @@ import { Colors } from '../../Themes/Colors';
 import { deviceHeight } from '../../Utils/Helper';
 
 const ModalDialog = props => {
-  const {
-    isVisible,
-    onPress,
-    onPressCancel,
-    onPressOke,
-    type,
-    message,
-  } = props;
+  const { isVisible, onPressOke, type, message } = props;
   return (
     <View style={Styles.container}>
       <Modal
@@ -23,7 +16,6 @@ const ModalDialog = props => {
         useNativeDriver
         animationIn="fadeInRight"
         animationOut="fadeOutRight"
-        onBackdropPress={onPress}
         backdropOpacity={0.3}
         deviceHeight={deviceHeight}>
         <View style={Styles.modalContainer}>
@@ -39,12 +31,6 @@ const ModalDialog = props => {
             <Text style={Styles.modalContentText}>{message}</Text>
           </View>
           <View style={Styles.modalButtonContainer}>
-            <TouchableRipple
-              onPress={onPressCancel}
-              rippleColor={Colors.rippleColor}
-              centered>
-              <Text style={Styles.buttonText}>Batal</Text>
-            </TouchableRipple>
             <TouchableRipple
               onPress={onPressOke}
               rippleColor={Colors.rippleColor}

@@ -19,13 +19,13 @@ const getQuranList = () => async dispatch => {
     } else {
       dispatch({
         type: REQ_QURAN_LIST_FAILURE,
-        error: 'Request Surah gagal',
+        error: 'Request Surah gagal. Periksa kembali koneksi jaringan Anda',
       });
     }
   } catch (error) {
     dispatch({
       type: REQ_QURAN_LIST_FAILURE,
-      error: 'Request Surah gagal',
+      error: 'Request Surah gagal. Periksa kembali koneksi jaringan Anda',
     });
   }
 };

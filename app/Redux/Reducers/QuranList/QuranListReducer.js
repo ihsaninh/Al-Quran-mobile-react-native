@@ -6,7 +6,7 @@ import {
 
 const initialState = {
   actionStatus: '',
-  data: {},
+  data: [],
   error: false,
   errorMessage: '',
   loading: false,
