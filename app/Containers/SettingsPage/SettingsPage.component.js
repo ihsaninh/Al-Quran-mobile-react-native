@@ -1,7 +1,7 @@
 import React, { useState, Fragment } from 'react';
 import { View, Linking } from 'react-native';
+import I18n from 'i18next';
 
-import { Strings } from '../../Utils/Strings';
 import { Styles } from './SettingsPage.style';
 import { Routes } from '../../Navigation/Routes';
 import { Row } from '../../Components/Row/RowComponent';
@@ -160,7 +160,7 @@ const SettingsPage = ({ navigation }) => {
   const renderSettingLists = () => {
     return (
       <Fragment>
-        <Row title={Strings.generalSettings}>
+        <Row title={I18n.t('GeneralSettings')}>
           {GeneralSettings.map((item, i) => (
             <Lists
               key={i}
@@ -176,7 +176,7 @@ const SettingsPage = ({ navigation }) => {
             onValueChange={toggleSwitch}
           />
         </Row>
-        <Row title={Strings.otherSetting}>
+        <Row title={I18n.t('OtherSetting')}>
           {OtherSettings.map((item, i) => (
             <Lists
               key={i}
@@ -200,3 +200,7 @@ const SettingsPage = ({ navigation }) => {
 };
 
 export default SettingsPage;
+
+SettingsPage.navigationOptions = () => ({
+  title: I18n.t('SettingsTitle'),
+});

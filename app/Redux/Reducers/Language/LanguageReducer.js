@@ -1,7 +1,8 @@
-import { SET_LANG_ID, SET_LANG_EN, config } from '../utils/constants';
+import { Constants } from '../../../Utils/Constants';
+import { SET_LANG_EN, SET_LANG_ID } from '../../Actions/Types';
 
 const initialState = {
-  language: config.LANGUAGE.ID,
+  language: Constants.LANGUAGE.ID,
 };
 
 const language = (state = initialState, action) => {

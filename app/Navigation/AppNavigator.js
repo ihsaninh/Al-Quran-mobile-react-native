@@ -1,4 +1,5 @@
 import React from 'react';
+import I18n from 'i18next';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
@@ -8,7 +9,6 @@ import QuranDetail from '../Containers/QuranDetailPage/QuranDetail.component';
 import SettingsPage from '../Containers/SettingsPage/SettingsPage.component';
 import SplashScreen from '../Containers/SplashScreenPage/SplashScreen.component';
 import { Colors } from '../Themes/Colors';
-import { Strings } from '../Utils/Strings';
 import { FontType } from '../Themes/Fonts';
 import { fromRight } from '../Utils/Transition';
 import { HeaderComponent } from '../Components/HeaderSurahList/HeaderSurahList.component';
@@ -20,21 +20,15 @@ const AppStack = createStackNavigator(
     },
     AboutPage: {
       screen: AboutPage,
-      navigationOptions: {
-        title: Strings.about,
-      },
     },
     SettingsPage: {
       screen: SettingsPage,
-      navigationOptions: {
-        title: Strings.settings,
-      },
     },
     QuranList: {
       screen: QuranList,
       navigationOptions: {
         header: props => (
-          <HeaderComponent title={Strings.appTitle} {...props} />
+          <HeaderComponent title={I18n.t('AppTitle')} {...props} />
         ),
       },
     },
