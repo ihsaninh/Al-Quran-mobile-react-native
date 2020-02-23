@@ -15,6 +15,10 @@ const Constants = {
     BASE_WIDTH: 360,
     BASE_HEIGHT: 640,
   },
+  LANGUAGE: {
+    EN: 'en',
+    ID: 'id',
+  },
 };
 
 export { Constants };
