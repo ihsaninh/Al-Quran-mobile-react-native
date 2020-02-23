@@ -89,25 +89,25 @@ const SettingsPage = ({ navigation }) => {
 
   const GeneralSettings = [
     {
-      title: 'Jenis Huruf Arabic',
+      title: I18n.t('FontType'),
       description: 'LPMQ standar KEMENAG',
       onPress: () => toggleModalFont(),
     },
     {
-      title: 'Bahasa Aplikasi',
-      description: 'Bahasa Indonesia',
+      title: I18n.t('AppLanguage'),
+      description: I18n.t('Indonesian'),
       onPress: () => toggleModalLang(),
     },
   ];
 
   const OtherSettings = [
     {
-      title: 'Bantuan',
-      description: 'Butuh pertanyaan? Butuh bantuan?',
+      title: I18n.t('Help'),
+      description: I18n.t('HelpDesc'),
       onPress: onPressHelp,
     },
     {
-      title: 'Versi Aplikasi',
+      title: I18n.t('AppVersion'),
       description: '1.0',
       onPress: () => navigation.navigate(Routes.AboutPage),
     },
@@ -117,7 +117,7 @@ const SettingsPage = ({ navigation }) => {
     const langs = Object.keys(lang);
     return (
       <ModalOptions
-        type="Pilih Bahasa Aplikasi"
+        type={I18n.t('ChooseLanguage')}
         onBackdropPress={toggleModalLang}
         isVisible={modalLangVisible}
         onPressCancel={toggleModalLang}>
@@ -139,7 +139,7 @@ const SettingsPage = ({ navigation }) => {
     const fonts = Object.keys(font);
     return (
       <ModalOptions
-        type="Pilih Jenis Huruf Arabic"
+        type={I18n.t('SelectArabicFont')}
         onBackdropPress={toggleModalFont}
         isVisible={modalFontVisible}
         onPressCancel={toggleModalFont}>
@@ -170,8 +170,10 @@ const SettingsPage = ({ navigation }) => {
             />
           ))}
           <SwitchComponent
-            title="Mode Gelap"
-            description={switchBtn ? 'Mode gelap hidup' : 'Mode gelap mati'}
+            title={I18n.t('DarkMode')}
+            description={
+              switchBtn ? I18n.t('DarkModeOn') : I18n.t('DarkModeOff')
+            }
             value={switchBtn}
             onValueChange={toggleSwitch}
           />

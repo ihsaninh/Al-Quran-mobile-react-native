@@ -3,6 +3,7 @@ import { View, Text } from 'react-native';
 import { TouchableRipple } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Menu, { MenuItem, MenuDivider } from 'react-native-material-menu';
+import I18n from 'i18next';
 
 import { Styles } from './HeaderSurahList.style';
 import { Routes } from '../../Navigation/Routes';
@@ -43,10 +44,10 @@ const HeaderComponent = ({ title, navigation }) => {
         <View style={Styles.viewRowPoint}>
           <Menu ref={setMenuRef} button={renderButton()} animationDuration={0}>
             <MenuItem onPress={redirectTo(Routes.SettingsPage)}>
-              Pengaturan Aplikasi
+              {I18n.t('SettingsTitle')}
             </MenuItem>
             <MenuItem onPress={redirectTo(Routes.AboutPage)}>
-              Tentang Aplikasi
+              {I18n.t('AboutTitle')}
             </MenuItem>
             <MenuDivider />
           </Menu>

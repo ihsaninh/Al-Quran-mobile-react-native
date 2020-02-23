@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, StatusBar } from 'react-native';
 import { TouchableRipple } from 'react-native-paper';
 import Modal from 'react-native-modal';
+import I18n from 'i18next';
 
 import { Styles } from './ModalOptions.style';
 import { deviceHeight } from '../../Utils/Helper';
@@ -34,7 +35,7 @@ const ModalOptions = props => {
               onPress={onPressCancel}
               rippleColor={Colors.rippleColor}
               centered>
-              <Text style={Styles.buttonText}>Batal</Text>
+              <Text style={Styles.buttonText}>{I18n.t('Cancel')}</Text>
             </TouchableRipple>
           </View>
           <StatusBar />

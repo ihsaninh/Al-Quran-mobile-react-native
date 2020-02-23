@@ -34,8 +34,8 @@ const SplashScreenPage = props => {
         dispatch(setLang(Constants.LANGUAGE.EN));
         break;
       default:
-        changeLanguage(Constants.LANGUAGE.ID);
-        dispatch(setLang(Constants.LANGUAGE.ID));
+        changeLanguage(Constants.LANGUAGE.EN);
+        dispatch(setLang(Constants.LANGUAGE.EN));
         break;
     }
   }, [dispatch]);
