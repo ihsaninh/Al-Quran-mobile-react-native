@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
+import I18n from 'i18next';
 
 import { Styles } from './AboutPage.style';
 
@@ -19,3 +20,7 @@ const AboutPage = () => {
 };
 
 export default AboutPage;
+
+AboutPage.navigationOptions = () => ({
+  title: I18n.t('AboutTitle'),
+});
