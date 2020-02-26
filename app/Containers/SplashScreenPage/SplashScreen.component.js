@@ -25,11 +25,11 @@ const SplashScreenPage = props => {
     const userLanguage = await AsyncStorage.getItem('userLanguage');
 
     switch (userLanguage) {
-      case 'id':
+      case Constants.LANGUAGE.ID:
         changeLanguage(Constants.LANGUAGE.ID);
         dispatch(setLang(Constants.LANGUAGE.ID));
         break;
-      case 'en':
+      case Constants.LANGUAGE.EN:
         changeLanguage(Constants.LANGUAGE.EN);
         dispatch(setLang(Constants.LANGUAGE.EN));
         break;
