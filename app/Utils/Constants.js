@@ -19,6 +19,16 @@ const Constants = {
     EN: 'en',
     ID: 'id',
   },
+  LangLists: [
+    {
+      title: 'Bahasa Indonesia',
+      langId: 'id',
+    },
+    {
+      title: 'Bahasa Inggris',
+      langId: 'en',
+    },
+  ],
 };
 
 export { Constants };
