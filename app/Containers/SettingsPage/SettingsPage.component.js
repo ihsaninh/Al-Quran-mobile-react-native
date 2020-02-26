@@ -1,31 +1,27 @@
 import React, { useState, Fragment } from 'react';
 import { View, Linking } from 'react-native';
+import { useDispatch, useSelector } from 'react-redux';
+import AsyncStorage from '@react-native-community/async-storage';
 import I18n from 'i18next';
 
 import { Styles } from './SettingsPage.style';
 import { Routes } from '../../Navigation/Routes';
 import { Row } from '../../Components/Row/RowComponent';
 import { Lists } from '../../Components/Lists/ListsComponent';
+import { setLang } from '../../Redux/Actions/Language/Language';
+import { changeLanguage } from '../../Utils/Translation';
 import { RadioComponent } from '../../Components/Radio/RadioComponent';
 import { SwitchComponent } from '../../Components/Switch/SwitchComponent';
 import { ModalOptions } from '../../Components/ModalOptions/ModalOptionsComponent';
 
 const SettingsPage = ({ navigation }) => {
+  const dispatch = useDispatch();
   const [switchBtn, setSwitchBtn] = useState(false);
   const [modalFontVisible, setModalFontVisible] = useState(false);
   const [modalLangVisible, setModalLangVisible] = useState(false);
-  const [lang, setLang] = useState({
-    id: {
-      language: 'Bahasa Indonesia',
-      checked: true,
-      code: 'id',
-    },
-    en: {
-      language: 'Bahasa Inggris',
-      checked: false,
-      code: 'en',
-    },
-  });
+  const { language } = useSelector(state => ({
+    language: state.language.language,
+  }));
   const [font, setFont] = useState({
     lpmq: {
       name: 'LPMQ Standar KEMENAG',
@@ -55,19 +51,12 @@ const SettingsPage = ({ navigation }) => {
     Linking.openURL('https://apple.com');
   };
 
-  const radioOnPressLang = item => () => {
-    setLang({
-      id: {
-        language: 'Bahasa Indonesia',
-        checked: item.code === 'id' ? true : false,
-        code: 'id',
-      },
-      en: {
-        language: 'Bahasa Inggris',
-        checked: item.code === 'en' ? true : false,
-        code: 'en',
-      },
-    });
+  const setLanguage = lang => async () => {
+    Promise.all([
+      changeLanguage(lang),
+      AsyncStorage.setItem('userLanguage', lang),
+      dispatch(setLang(lang)),
+    ]);
     setModalLangVisible(!modalLangVisible);
   };
 
@@ -95,7 +84,7 @@ const SettingsPage = ({ navigation }) => {
     },
     {
       title: I18n.t('AppLanguage'),
-      description: I18n.t('Indonesian'),
+      description: language === 'id' ? I18n.t('Indonesian') : I18n.t('English'),
       onPress: () => toggleModalLang(),
     },
   ];
@@ -114,26 +103,36 @@ const SettingsPage = ({ navigation }) => {
   ];
 
   const renderModalOptionsLang = () => {
-    const langs = Object.keys(lang);
     return (
       <ModalOptions
         type={I18n.t('ChooseLanguage')}
         onBackdropPress={toggleModalLang}
         isVisible={modalLangVisible}
         onPressCancel={toggleModalLang}>
-        {langs.map((item, i) => (
+        {langLists.map((item, i) => (
           <RadioComponent
             key={i}
-            text={lang[item].language}
-            value={lang[item]}
-            status={lang[item].checked ? 'checked' : 'unchecked'}
-            onPress={radioOnPressLang(lang[item])}
-            radioOnpress={radioOnPressLang(lang[item])}
+            text={item.title}
+            value={item.langId}
+            status={language === item.langId ? 'checked' : 'unchecked'}
+            onPress={setLanguage(item.langId)}
+            radioOnpress={setLanguage(item.langId)}
           />
         ))}
       </ModalOptions>
     );
   };
+
+  const langLists = [
+    {
+      title: 'Bahasa Indonesia',
+      langId: 'id',
+    },
+    {
+      title: 'Bahasa Inggris',
+      langId: 'en',
+    },
+  ];
 
   const renderModalOptionsHuruf = () => {
     const fonts = Object.keys(font);

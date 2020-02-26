@@ -22,4 +22,4 @@ const language = (state = initialState, action) => {
   }
 };
 
-export default language;
+export { language };
