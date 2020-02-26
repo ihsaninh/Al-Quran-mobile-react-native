@@ -32,7 +32,7 @@ const SettingsPage = ({ navigation }) => {
   };
 
   const onPressHelp = () => {
-    Linking.openURL('https://apple.com');
+    Linking.openURL('https://quran.kemenag.go.id/');
   };
 
   const setLanguage = lang => async () => {
