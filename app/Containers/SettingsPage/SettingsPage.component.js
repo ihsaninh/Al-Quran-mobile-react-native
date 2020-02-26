@@ -7,6 +7,7 @@ import I18n from 'i18next';
 import { Styles } from './SettingsPage.style';
 import { Routes } from '../../Navigation/Routes';
 import { Row } from '../../Components/Row/RowComponent';
+import { Constants } from '../../Utils/Constants';
 import { Lists } from '../../Components/Lists/ListsComponent';
 import { setLang } from '../../Redux/Actions/Language/Language';
 import { changeLanguage } from '../../Utils/Translation';
@@ -17,30 +18,13 @@ import { ModalOptions } from '../../Components/ModalOptions/ModalOptionsComponen
 const SettingsPage = ({ navigation }) => {
   const dispatch = useDispatch();
   const [switchBtn, setSwitchBtn] = useState(false);
-  const [modalFontVisible, setModalFontVisible] = useState(false);
   const [modalLangVisible, setModalLangVisible] = useState(false);
   const { language } = useSelector(state => ({
     language: state.language.language,
   }));
-  const [font, setFont] = useState({
-    lpmq: {
-      name: 'LPMQ Standar KEMENAG',
-      checked: true,
-      code: 'lpmq',
-    },
-    ar: {
-      name: 'Arabic Font Standar Utsmani',
-      checked: false,
-      code: 'ar',
-    },
-  });
 
   const toggleSwitch = val => {
     setSwitchBtn(val);
-  };
-
-  const toggleModalFont = () => {
-    setModalFontVisible(!modalFontVisible);
   };
 
   const toggleModalLang = () => {
@@ -48,7 +32,7 @@ const SettingsPage = ({ navigation }) => {
   };
 
   const onPressHelp = () => {
-    Linking.openURL('https://apple.com');
+    Linking.openURL('https://quran.kemenag.go.id/');
   };
 
   const setLanguage = lang => async () => {
@@ -60,27 +44,12 @@ const SettingsPage = ({ navigation }) => {
     setModalLangVisible(!modalLangVisible);
   };
 
-  const radioOnPressFont = item => () => {
-    setFont({
-      lpmq: {
-        name: 'LPMQ Standar KEMENAG',
-        checked: item.code === 'lpmq' ? true : false,
-        code: 'lpmq',
-      },
-      ar: {
-        name: 'Arabic Font Standar Utsmani',
-        checked: item.code === 'ar' ? true : false,
-        code: 'ar',
-      },
-    });
-    setModalFontVisible(!modalFontVisible);
-  };
-
   const GeneralSettings = [
     {
       title: I18n.t('FontType'),
       description: 'LPMQ standar KEMENAG',
-      onPress: () => toggleModalFont(),
+      // eslint-disable-next-line no-alert
+      onPress: () => alert('Nothing work here'),
     },
     {
       title: I18n.t('AppLanguage'),
@@ -103,13 +72,13 @@ const SettingsPage = ({ navigation }) => {
   ];
 
   const renderModalOptionsLang = () => {
+    const { LangLists } = Constants;
     return (
       <ModalOptions
         type={I18n.t('ChooseLanguage')}
-        onBackdropPress={toggleModalLang}
         isVisible={modalLangVisible}
         onPressCancel={toggleModalLang}>
-        {langLists.map((item, i) => (
+        {LangLists.map((item, i) => (
           <RadioComponent
             key={i}
             text={item.title}
@@ -117,39 +86,6 @@ const SettingsPage = ({ navigation }) => {
             status={language === item.langId ? 'checked' : 'unchecked'}
             onPress={setLanguage(item.langId)}
             radioOnpress={setLanguage(item.langId)}
-          />
-        ))}
-      </ModalOptions>
-    );
-  };
-
-  const langLists = [
-    {
-      title: 'Bahasa Indonesia',
-      langId: 'id',
-    },
-    {
-      title: 'Bahasa Inggris',
-      langId: 'en',
-    },
-  ];
-
-  const renderModalOptionsHuruf = () => {
-    const fonts = Object.keys(font);
-    return (
-      <ModalOptions
-        type={I18n.t('SelectArabicFont')}
-        onBackdropPress={toggleModalFont}
-        isVisible={modalFontVisible}
-        onPressCancel={toggleModalFont}>
-        {fonts.map((item, i) => (
-          <RadioComponent
-            key={i}
-            text={font[item].name}
-            value={font[item]}
-            status={font[item].checked ? 'checked' : 'unchecked'}
-            onPress={radioOnPressFont(font[item])}
-            radioOnpress={radioOnPressFont(font[item])}
           />
         ))}
       </ModalOptions>
@@ -195,7 +131,6 @@ const SettingsPage = ({ navigation }) => {
     <View style={Styles.container}>
       {renderSettingLists()}
       {renderModalOptionsLang()}
-      {renderModalOptionsHuruf()}
     </View>
   );
 };
