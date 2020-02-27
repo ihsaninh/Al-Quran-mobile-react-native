@@ -71,24 +71,28 @@ const SettingsPage = ({ navigation }) => {
     },
   ];
 
-  const renderModalOptionsLang = () => {
+  const renderLangLists = () => {
     const { LangLists } = Constants;
+    return LangLists.map((item, i) => (
+      <RadioComponent
+        key={i}
+        text={item.title}
+        value={item.langId}
+        status={language === item.langId ? 'checked' : 'unchecked'}
+        onPress={setLanguage(item.langId)}
+        radioOnpress={setLanguage(item.langId)}
+      />
+    ));
+  };
+
+  const renderModalOptionsLang = () => {
     return (
       <ModalOptions
         type={I18n.t('ChooseLanguage')}
         isVisible={modalLangVisible}
-        onPressCancel={toggleModalLang}>
-        {LangLists.map((item, i) => (
-          <RadioComponent
-            key={i}
-            text={item.title}
-            value={item.langId}
-            status={language === item.langId ? 'checked' : 'unchecked'}
-            onPress={setLanguage(item.langId)}
-            radioOnpress={setLanguage(item.langId)}
-          />
-        ))}
-      </ModalOptions>
+        onPressCancel={toggleModalLang}
+        renderItem={renderLangLists}
+      />
     );
   };
 

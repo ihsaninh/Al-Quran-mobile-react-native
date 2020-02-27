@@ -1,3 +1,5 @@
+import I18n from 'i18next';
+
 const Constants = {
   DATA_SURAH: {
     AL_FATIHAH: 1,
@@ -21,11 +23,11 @@ const Constants = {
   },
   LangLists: [
     {
-      title: 'Bahasa Indonesia',
+      title: 'Indonesia',
       langId: 'id',
     },
     {
-      title: 'Bahasa Inggris',
+      title: 'English',
       langId: 'en',
     },
   ],

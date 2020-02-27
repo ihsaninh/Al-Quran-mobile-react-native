@@ -9,7 +9,7 @@ import { deviceHeight } from '../../Utils/Helper';
 import { Colors } from '../../Themes/Colors';
 
 const ModalOptions = props => {
-  const { isVisible, onPressCancel, type, children } = props;
+  const { isVisible, onPressCancel, type, renderItem } = props;
   return (
     <View style={Styles.container}>
       <Modal
@@ -28,7 +28,7 @@ const ModalOptions = props => {
           <View style={Styles.modalTitleContainer}>
             <Text style={Styles.modalTitleText}>{type}</Text>
           </View>
-          <View style={Styles.modalOptionsContainer}>{children}</View>
+          <View style={Styles.modalOptionsContainer}>{renderItem()}</View>
           <View style={Styles.modalButtonContainer}>
             <TouchableRipple
               onPress={onPressCancel}
