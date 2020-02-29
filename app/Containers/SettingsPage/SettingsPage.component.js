@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from 'react';
+import React from 'react';
 import { View, Linking } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import AsyncStorage from '@react-native-community/async-storage';
@@ -17,8 +17,8 @@ import { ModalOptions } from '../../Components/ModalOptions/ModalOptionsComponen
 
 const SettingsPage = ({ navigation }) => {
   const dispatch = useDispatch();
-  const [switchBtn, setSwitchBtn] = useState(false);
-  const [modalLangVisible, setModalLangVisible] = useState(false);
+  const [switchBtn, setSwitchBtn] = React.useState(false);
+  const [modalLangVisible, setModalLangVisible] = React.useState(false);
   const { language } = useSelector(state => ({
     language: state.language.language,
   }));
@@ -98,7 +98,7 @@ const SettingsPage = ({ navigation }) => {
 
   const renderSettingLists = () => {
     return (
-      <Fragment>
+      <React.Fragment>
         <Row title={I18n.t('GeneralSettings')}>
           {GeneralSettings.map((item, i) => (
             <Lists
@@ -127,7 +127,7 @@ const SettingsPage = ({ navigation }) => {
             />
           ))}
         </Row>
-      </Fragment>
+      </React.Fragment>
     );
   };
 

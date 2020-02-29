@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback } from 'react';
+import React from 'react';
 import { View, Text, FlatList } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import get from 'lodash/get';
@@ -21,11 +21,11 @@ const QuranDetail = ({ navigation }) => {
     refreshing: state.qurandetail.refreshing,
   }));
 
-  useEffect(() => {
+  React.useEffect(() => {
     renderDetailSurah();
   }, [renderDetailSurah]);
 
-  const renderDetailSurah = useCallback(async () => {
+  const renderDetailSurah = React.useCallback(async () => {
     const surahId = get(navigation, 'state.params.dataSurah.id', '');
     const countAyat = get(navigation, 'state.params.dataSurah.count_ayat', '');
 

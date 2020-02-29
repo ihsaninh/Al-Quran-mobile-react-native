@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { FlatList, BackHandler } from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
@@ -24,12 +24,12 @@ const QuranList = ({ navigation }) => {
     }),
   );
 
-  useEffect(() => {
+  React.useEffect(() => {
     SplashScreen.hide();
     getDataQuran();
   }, [getDataQuran]);
 
-  const getDataQuran = useCallback(async () => {
+  const getDataQuran = React.useCallback(async () => {
     await dispatch(getQuranList());
   }, [dispatch]);
 

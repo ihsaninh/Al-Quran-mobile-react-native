@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback } from 'react';
+import React from 'react';
 import { View, Alert, BackHandler } from 'react-native';
 import { useDispatch } from 'react-redux';
 import AsyncStorage from '@react-native-community/async-storage';
@@ -13,15 +13,15 @@ import { Constants } from '../../Utils/Constants';
 const SplashScreenPage = props => {
   const dispatch = useDispatch();
 
-  useEffect(() => {
+  React.useEffect(() => {
     redirectPage();
   }, [redirectPage]);
 
-  useEffect(() => {
+  React.useEffect(() => {
     setLanguage();
   }, [setLanguage]);
 
-  const setLanguage = useCallback(async () => {
+  const setLanguage = React.useCallback(async () => {
     const userLanguage = await AsyncStorage.getItem('userLanguage');
 
     switch (userLanguage) {
@@ -40,11 +40,11 @@ const SplashScreenPage = props => {
     }
   }, [dispatch]);
 
-  const redirectPage = useCallback(() => {
+  const redirectPage = React.useCallback(() => {
     navigate(Routes.QuranList);
   }, [navigate]);
 
-  const navigate = useCallback(
+  const navigate = React.useCallback(
     async screen => {
       const { navigation } = props;
 
