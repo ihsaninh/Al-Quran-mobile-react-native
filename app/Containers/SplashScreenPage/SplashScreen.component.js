@@ -14,35 +14,33 @@ const SplashScreenPage = props => {
   const dispatch = useDispatch();
 
   React.useEffect(() => {
+    const redirectPage = () => {
+      navigate(Routes.QuranList);
+    };
     redirectPage();
-  }, [redirectPage]);
+  }, [navigate]);
 
   React.useEffect(() => {
+    const setLanguage = async () => {
+      const userLanguage = await AsyncStorage.getItem('userLanguage');
+
+      switch (userLanguage) {
+        case Constants.LANGUAGE.ID:
+          changeLanguage(Constants.LANGUAGE.ID);
+          await dispatch(setLang(Constants.LANGUAGE.ID));
+          break;
+        case Constants.LANGUAGE.EN:
+          changeLanguage(Constants.LANGUAGE.EN);
+          dispatch(setLang(Constants.LANGUAGE.EN));
+          break;
+        default:
+          changeLanguage(Constants.LANGUAGE.EN);
+          dispatch(setLang(Constants.LANGUAGE.EN));
+          break;
+      }
+    };
     setLanguage();
-  }, [setLanguage]);
-
-  const setLanguage = React.useCallback(async () => {
-    const userLanguage = await AsyncStorage.getItem('userLanguage');
-
-    switch (userLanguage) {
-      case Constants.LANGUAGE.ID:
-        changeLanguage(Constants.LANGUAGE.ID);
-        dispatch(setLang(Constants.LANGUAGE.ID));
-        break;
-      case Constants.LANGUAGE.EN:
-        changeLanguage(Constants.LANGUAGE.EN);
-        dispatch(setLang(Constants.LANGUAGE.EN));
-        break;
-      default:
-        changeLanguage(Constants.LANGUAGE.EN);
-        dispatch(setLang(Constants.LANGUAGE.EN));
-        break;
-    }
   }, [dispatch]);
-
-  const redirectPage = React.useCallback(() => {
-    navigate(Routes.QuranList);
-  }, [navigate]);
 
   const navigate = React.useCallback(
     async screen => {
