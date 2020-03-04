@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Linking } from 'react-native';
+import { View, Text, Linking } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import AsyncStorage from '@react-native-community/async-storage';
 import I18n from 'i18next';
@@ -18,7 +18,8 @@ import { ModalOptions } from '../../Components/ModalOptions/ModalOptionsComponen
 const SettingsPage = ({ navigation }) => {
   const dispatch = useDispatch();
   const [switchBtn, setSwitchBtn] = React.useState(false);
-  const [modalLangVisible, setModalLangVisible] = React.useState(false);
+  const [modalVisible, setModalVisible] = React.useState(false);
+  const [modalContentType, setModalContentType] = React.useState('');
   const { language } = useSelector(state => ({
     language: state.language.language,
   }));
@@ -27,8 +28,9 @@ const SettingsPage = ({ navigation }) => {
     setSwitchBtn(val);
   };
 
-  const toggleModalLang = () => {
-    setModalLangVisible(!modalLangVisible);
+  const toggleModal = type => {
+    setModalContentType(type);
+    setModalVisible(!modalVisible);
   };
 
   const onPressHelp = () => {
@@ -41,7 +43,18 @@ const SettingsPage = ({ navigation }) => {
       AsyncStorage.setItem('userLanguage', lang),
       dispatch(setLang(lang)),
     ]);
-    setModalLangVisible(!modalLangVisible);
+    setModalVisible(!modalVisible);
+  };
+
+  const renderLists = () => {
+    switch (modalContentType) {
+      case 'lang':
+        return renderLang();
+      case 'ngasal':
+        return renderNgasal();
+      default:
+        break;
+    }
   };
 
   const GeneralSettings = [
@@ -49,12 +62,12 @@ const SettingsPage = ({ navigation }) => {
       title: I18n.t('FontType'),
       description: 'LPMQ standar KEMENAG',
       // eslint-disable-next-line no-alert
-      onPress: () => alert('Nothing work here'),
+      onPress: () => toggleModal('ngasal'),
     },
     {
       title: I18n.t('AppLanguage'),
       description: language === 'id' ? I18n.t('Indonesian') : I18n.t('English'),
-      onPress: () => toggleModalLang(),
+      onPress: () => toggleModal('lang'),
     },
   ];
 
@@ -71,7 +84,7 @@ const SettingsPage = ({ navigation }) => {
     },
   ];
 
-  const renderLangLists = () => {
+  const renderLang = () => {
     const { LangLists } = Constants;
     return LangLists.map((item, i) => (
       <RadioComponent
@@ -85,13 +98,32 @@ const SettingsPage = ({ navigation }) => {
     ));
   };
 
-  const renderModalOptionsLang = () => {
+  const renderNgasal = () => {
+    return (
+      <View>
+        <Text>Hello World</Text>
+      </View>
+    );
+  };
+
+  const renderTitleOptions = () => {
+    switch (modalContentType) {
+      case 'lang':
+        return I18n.t('ChooseLanguage');
+      case 'ngasal':
+        return 'Ngasal';
+      default:
+        break;
+    }
+  };
+
+  const renderModalOptions = () => {
     return (
       <ModalOptions
-        type={I18n.t('ChooseLanguage')}
-        isVisible={modalLangVisible}
-        onPressCancel={toggleModalLang}
-        renderItem={renderLangLists}
+        type={renderTitleOptions()}
+        isVisible={modalVisible}
+        onPressCancel={toggleModal}
+        renderItem={renderLists}
       />
     );
   };
@@ -134,7 +166,7 @@ const SettingsPage = ({ navigation }) => {
   return (
     <View style={Styles.container}>
       {renderSettingLists()}
-      {renderModalOptionsLang()}
+      {renderModalOptions()}
     </View>
   );
 };
