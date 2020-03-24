@@ -1,5 +1,3 @@
-import I18n from 'i18next';
-
 const Constants = {
   DATA_SURAH: {
     AL_FATIHAH: 1,
