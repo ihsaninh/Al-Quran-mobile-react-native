@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, FlatList } from 'react-native';
+import { FlatList } from 'react-native';
 import get from 'lodash/get';
 
 import { Basmallah } from '../../Components/Basmallah/Basmallah.component';
@@ -7,8 +7,8 @@ import { Loading } from '../../Components/Loading/Loading.component';
 import { CardAyatList } from '../../Components/CardAyatList/CardAyatList.component';
 import { Separator } from '../../Components/Separator/Separator.component';
 import { Constants } from '../../Utils/Constants';
+import { HeaderSurahDetail } from '../../Components/HeaderSurahDetail/HeaderSurahDetail.component';
 import { keyExtractor } from '../../Utils/Helper';
-import { Styles } from './QuranDetail.style';
 
 function QuranDetail(props) {
   React.useEffect(() => {
@@ -84,14 +84,12 @@ QuranDetail.navigationOptions = ({
   const countAyat = dataSurah.count_ayat;
   return {
     headerTitle: (
-      <View>
-        <Text style={Styles.headerTitle}>
-          {suratName} ({suratArabic})
-        </Text>
-        <Text style={Styles.headerSubtitle}>
-          {suratTranslate} - {countAyat} Ayat
-        </Text>
-      </View>
+      <HeaderSurahDetail
+        suratName={suratName}
+        suratArabic={suratArabic}
+        suratTranslate={suratTranslate}
+        countAyat={countAyat}
+      />
     ),
   };
 };
