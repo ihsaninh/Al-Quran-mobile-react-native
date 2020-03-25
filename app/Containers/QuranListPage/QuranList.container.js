@@ -12,7 +12,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  getQuranList: () => dispatch(getQuranList),
+  getQuranList: () => dispatch(getQuranList()),
 });
 
 export default connect(

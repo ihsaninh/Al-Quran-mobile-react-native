@@ -18,13 +18,17 @@ function QuranDetail(props) {
   }, [renderDetailSurah]);
 
   const renderDetailSurah = React.useCallback(async () => {
-    const surahId = navigation.getParam('dataSurah.id', '');
-    const countAyat = navigation.getParam('dataSurah.count_ayat', '');
+    console.log(navigation);
+
+    const surahId = get(navigation, 'state.params.dataSurah.id');
+    const countAyat = get(navigation, 'state.params.dataSurah.count_ayat');
 
     const payload = {
       surahId,
       countAyat,
     };
+
+    console.log(payload);
 
     await getDetailQuran(payload);
   }, [getDetailQuran, navigation]);
