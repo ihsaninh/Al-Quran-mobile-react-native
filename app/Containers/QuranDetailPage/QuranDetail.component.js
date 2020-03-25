@@ -1,9 +1,7 @@
 import React from 'react';
 import { View, Text, FlatList } from 'react-native';
-import { useSelector, useDispatch } from 'react-redux';
 import get from 'lodash/get';
 
-import { getDetailQuran } from '../../Redux/Actions/QuranDetail/QuranDetail';
 import { Basmallah } from '../../Components/Basmallah/Basmallah.component';
 import { Loading } from '../../Components/Loading/Loading.component';
 import { CardAyatList } from '../../Components/CardAyatList/CardAyatList.component';
@@ -12,32 +10,26 @@ import { Constants } from '../../Utils/Constants';
 import { keyExtractor } from '../../Utils/Helper';
 import { Styles } from './QuranDetail.style';
 
-const QuranDetail = ({ navigation }) => {
-  const dispatch = useDispatch();
-
-  const { dataAyat, isLoading, refreshing } = useSelector(state => ({
-    dataAyat: state.qurandetail.data,
-    isLoading: state.qurandetail.loading,
-    refreshing: state.qurandetail.refreshing,
-  }));
-
+function QuranDetail(props) {
   React.useEffect(() => {
     renderDetailSurah();
   }, [renderDetailSurah]);
 
   const renderDetailSurah = React.useCallback(async () => {
-    const surahId = get(navigation, 'state.params.dataSurah.id', '');
-    const countAyat = get(navigation, 'state.params.dataSurah.count_ayat', '');
+    const { navigation, getDetailQuran } = props;
+    const surahId = navigation.getParam('dataSurah.id', '');
+    const countAyat = navigation.getParam('dataSurah.count_ayat', '');
 
     const payload = {
       surahId,
       countAyat,
     };
 
-    await dispatch(getDetailQuran(payload));
-  }, [dispatch, navigation]);
+    await getDetailQuran(payload);
+  }, [props]);
 
   const listHeaderComponent = () => {
+    const { navigation } = props;
     const surahId = get(navigation, 'state.params.dataSurah.id', '');
 
     switch (surahId) {
@@ -60,21 +52,24 @@ const QuranDetail = ({ navigation }) => {
     );
   };
 
-  return isLoading ? (
-    <Loading />
-  ) : (
-    <FlatList
-      data={dataAyat}
-      keyExtractor={keyExtractor}
-      renderItem={renderCardContent}
-      refreshing={refreshing}
-      onRefresh={renderDetailSurah}
-      ItemSeparatorComponent={Separator}
-      showsVerticalScrollIndicator={false}
-      ListHeaderComponent={listHeaderComponent}
-    />
-  );
-};
+  const renderData = () => {
+    const { dataAyat, refreshing } = props;
+    return (
+      <FlatList
+        data={dataAyat}
+        keyExtractor={keyExtractor}
+        renderItem={renderCardContent}
+        refreshing={refreshing}
+        onRefresh={renderDetailSurah}
+        ItemSeparatorComponent={Separator}
+        showsVerticalScrollIndicator={false}
+        ListHeaderComponent={listHeaderComponent}
+      />
+    );
+  };
+
+  return props.isLoading ? <Loading /> : renderData();
+}
 
 QuranDetail.navigationOptions = ({
   navigation: {
