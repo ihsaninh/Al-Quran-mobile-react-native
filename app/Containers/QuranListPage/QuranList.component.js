@@ -10,23 +10,30 @@ import { Routes } from '../../Navigation/Routes';
 import { keyExtractor } from '../../Utils/Helper';
 
 function QuranList(props) {
+  const {
+    getQuranList,
+    navigation,
+    isError,
+    errorMessage,
+    data,
+    refreshing,
+    isLoading,
+  } = props;
+
   useEffect(() => {
     SplashScreen.hide();
     getDataQuran();
   }, [getDataQuran]);
 
   const getDataQuran = useCallback(async () => {
-    const { getQuranList } = props;
     await getQuranList();
-  }, [props]);
+  }, [getQuranList]);
 
   const goToDetailpage = dataSurah => {
-    const { navigation } = props;
     navigation.navigate(Routes.QuranDetail, { dataSurah });
   };
 
   const renderListEmpty = () => {
-    const { isError, errorMessage } = props;
     return (
       <ModalDialog
         type="Peringatan"
@@ -51,7 +58,6 @@ function QuranList(props) {
   };
 
   const renderData = () => {
-    const { data, refreshing } = props;
     return (
       <FlatList
         data={data}
@@ -66,7 +72,6 @@ function QuranList(props) {
     );
   };
 
-  const isLoading = props;
   return isLoading ? <Loading /> : renderData();
 }
 

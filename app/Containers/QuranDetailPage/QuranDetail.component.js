@@ -11,12 +11,13 @@ import { HeaderSurahDetail } from '../../Components/HeaderSurahDetail/HeaderSura
 import { keyExtractor } from '../../Utils/Helper';
 
 function QuranDetail(props) {
+  const { isLoading, navigation, getDetailQuran, dataAyat, refreshing } = props;
+
   React.useEffect(() => {
     renderDetailSurah();
   }, [renderDetailSurah]);
 
   const renderDetailSurah = React.useCallback(async () => {
-    const { navigation, getDetailQuran } = props;
     const surahId = navigation.getParam('dataSurah.id', '');
     const countAyat = navigation.getParam('dataSurah.count_ayat', '');
 
@@ -26,10 +27,9 @@ function QuranDetail(props) {
     };
 
     await getDetailQuran(payload);
-  }, [props]);
+  }, [getDetailQuran, navigation]);
 
   const listHeaderComponent = () => {
-    const { navigation } = props;
     const surahId = get(navigation, 'state.params.dataSurah.id', '');
 
     switch (surahId) {
@@ -53,7 +53,6 @@ function QuranDetail(props) {
   };
 
   const renderData = () => {
-    const { dataAyat, refreshing } = props;
     return (
       <FlatList
         data={dataAyat}
@@ -68,7 +67,7 @@ function QuranDetail(props) {
     );
   };
 
-  return props.isLoading ? <Loading /> : renderData();
+  return isLoading ? <Loading /> : renderData();
 }
 
 QuranDetail.navigationOptions = ({
