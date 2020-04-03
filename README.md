@@ -53,7 +53,7 @@
 </div>
 
 ## Testing
-If you want test the application, you can install it directly by download the app on this <a href="https://drive.google.com/open?id=1nvTa4cJ1huyLHZ7ke7CCKQDnMBX8hoo9">Old Version</a>. You can make your own apk by yourself with command ``` cd android && ./gradlew clean && ./gradlew assembleRelease ```
+If you want test the application, you can install it directly by download the app on this <a href="https://drive.google.com/open?id=1opWBufyxsVw0O9RyEhdZWPT07tKqzmXb">Old Version</a>. You can make your own apk by yourself with command ``` cd android && ./gradlew clean && ./gradlew assembleRelease ```
 
 ## License
 Al Quran Mobile React Native is licensed under the <a href="http://opensource.org/licenses/MIT">MIT license</a>.
