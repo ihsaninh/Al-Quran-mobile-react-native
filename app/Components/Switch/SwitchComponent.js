@@ -25,4 +25,4 @@ const SwitchComponent = props => {
   );
 };
 
-export { SwitchComponent };
+export default SwitchComponent;

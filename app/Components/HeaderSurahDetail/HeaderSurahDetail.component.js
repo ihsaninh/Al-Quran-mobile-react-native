@@ -21,4 +21,4 @@ const HeaderSurahDetail = ({
   );
 };
 
-export { HeaderSurahDetail };
+export default HeaderSurahDetail;

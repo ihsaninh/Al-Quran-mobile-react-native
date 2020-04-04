@@ -6,4 +6,4 @@ const Separator = () => {
   return <View style={Styles.line} />;
 };
 
-export { Separator };
+export default Separator;

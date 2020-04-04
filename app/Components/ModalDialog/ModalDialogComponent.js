@@ -45,4 +45,4 @@ const ModalDialog = props => {
   );
 };
 
-export { ModalDialog };
+export default ModalDialog;

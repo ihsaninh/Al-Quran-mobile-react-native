@@ -15,4 +15,4 @@ const Row = props => {
   );
 };
 
-export { Row };
+export default Row;

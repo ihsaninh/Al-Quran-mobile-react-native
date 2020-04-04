@@ -20,4 +20,4 @@ const Lists = props => {
   );
 };
 
-export { Lists };
+export default Lists;

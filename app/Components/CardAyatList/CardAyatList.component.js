@@ -27,4 +27,4 @@ const CardAyatList = props => {
   );
 };
 
-export { CardAyatList };
+export default CardAyatList;

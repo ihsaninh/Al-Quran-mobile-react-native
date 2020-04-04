@@ -57,4 +57,4 @@ const HeaderComponent = ({ title, navigation }) => {
   );
 };
 
-export { HeaderComponent };
+export default HeaderComponent;
