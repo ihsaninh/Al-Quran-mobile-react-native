@@ -28,7 +28,7 @@
    ```
    $ git clone https://github.com/ihsaninh/Al-Quran-Mobile-React-Native.git
    ```
-2. Install all depedencies on the package.json
+2. Install all dependencies on the package.json
    ```
    $ cd Al-Quran-Mobile-React-Native
    $ npm install or yarn install (if you using yarn)
@@ -44,7 +44,7 @@
    $ react-native run-android --variant=betaDebug 
    ```
 
-## Screenshoot
+## Screenshot
 <div align="center">
     <img width="300" src="https://github.com/ihsaninh/Al-Quran-Mobile-React-Native/blob/master/ss2.jpg">
     <img width="300" src="https://github.com/ihsaninh/Al-Quran-Mobile-React-Native/blob/master/ss1.jpg">   
