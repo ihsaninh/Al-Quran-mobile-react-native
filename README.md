@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-- [Introducing](#introducing)
+- [Introduction](#introduction)
 - [Features](#features)
 - [Requirements](#requirements)
 - [How To Run](howtorun)
@@ -11,7 +11,7 @@
 - [License](#license)
 - [Author](#author)
 
-## Introducing
+## Introduction
 
 Al-Quran-Mobile-React-Native is an app Al-Quran for Mobile. Its only support Indonesian language. The data is provide by API from <a href="https://quran.kemenag.go.id/">KEMENAG RI</a>.
 
