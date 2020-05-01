@@ -55,4 +55,4 @@ const CardSurahList = props => {
   );
 };
 
-export default CardSurahList;
+export { CardSurahList };

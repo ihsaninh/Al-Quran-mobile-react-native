@@ -2,14 +2,12 @@ import React, { useEffect, useCallback } from 'react';
 import { FlatList, BackHandler } from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
 
+import { ModalDialog } from '../../Components/ModalDialog/ModalDialogComponent';
+import { Loading } from '../../Components/Loading/Loading.component';
+import { CardSurahList } from '../../Components/CardSurahList/CardSurahList.component';
+import { Separator } from '../../Components/Separator/Separator.component';
 import { Routes } from '../../Navigation/Routes';
 import { keyExtractor } from '../../Utils/Helper';
-import {
-  ModalDialog,
-  Loading,
-  CardSurahList,
-  Separator,
-} from '../../Components/';
 
 function QuranList(props) {
   const {

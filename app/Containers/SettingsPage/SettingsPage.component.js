@@ -6,16 +6,14 @@ import I18n from 'i18next';
 
 import { Styles } from './SettingsPage.style';
 import { Routes } from '../../Navigation/Routes';
+import { Row } from '../../Components/Row/RowComponent';
 import { Constants } from '../../Utils/Constants';
+import { Lists } from '../../Components/Lists/ListsComponent';
 import { setLang } from '../../Redux/Actions/Language/Language';
 import { changeLanguage } from '../../Utils/Translation';
-import {
-  Row,
-  Lists,
-  RadioComponent,
-  SwitchComponent,
-  ModalOptions,
-} from '../../Components';
+import { RadioComponent } from '../../Components/Radio/RadioComponent';
+import { SwitchComponent } from '../../Components/Switch/SwitchComponent';
+import { ModalOptions } from '../../Components/ModalOptions/ModalOptionsComponent';
 
 const SettingsPage = ({ navigation }) => {
   const dispatch = useDispatch();

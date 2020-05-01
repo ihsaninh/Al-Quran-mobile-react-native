@@ -17,4 +17,4 @@ const Basmallah = () => {
   );
 };
 
-export default Basmallah;
+export { Basmallah };

@@ -44,4 +44,4 @@ const ModalOptions = props => {
   );
 };
 
-export default ModalOptions;
+export { ModalOptions };

@@ -2,15 +2,13 @@ import React from 'react';
 import { FlatList } from 'react-native';
 import get from 'lodash/get';
 
+import { Basmallah } from '../../Components/Basmallah/Basmallah.component';
+import { Loading } from '../../Components/Loading/Loading.component';
+import { CardAyatList } from '../../Components/CardAyatList/CardAyatList.component';
+import { Separator } from '../../Components/Separator/Separator.component';
 import { Constants } from '../../Utils/Constants';
+import { HeaderSurahDetail } from '../../Components/HeaderSurahDetail/HeaderSurahDetail.component';
 import { keyExtractor } from '../../Utils/Helper';
-import {
-  Basmallah,
-  Loading,
-  CardAyatList,
-  Separator,
-  HeaderSurahDetail,
-} from '../../Components';
 
 function QuranDetail(props) {
   const { isLoading, navigation, getDetailQuran, dataAyat, refreshing } = props;
