@@ -45,7 +45,9 @@ const SettingsPage = ({ navigation }) => {
       dispatch(setLang(lang)),
     ]);
     setModalVisible(!modalVisible);
-    RNRestart.Restart();
+    setTimeout(() => {
+      RNRestart.Restart();
+    }, 500);
   };
 
   const renderLists = () => {
