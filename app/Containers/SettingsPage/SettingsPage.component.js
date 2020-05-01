@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, Linking } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
+import RNRestart from 'react-native-restart';
 import AsyncStorage from '@react-native-community/async-storage';
 import I18n from 'i18next';
 
@@ -44,6 +45,7 @@ const SettingsPage = ({ navigation }) => {
       dispatch(setLang(lang)),
     ]);
     setModalVisible(!modalVisible);
+    RNRestart.Restart();
   };
 
   const renderLists = () => {
@@ -62,7 +64,7 @@ const SettingsPage = ({ navigation }) => {
       title: I18n.t('FontType'),
       description: 'LPMQ standar KEMENAG',
       // eslint-disable-next-line no-alert
-      onPress: () => toggleModal('ngasal'),
+      onPress: () => alert('Not Ready'),
     },
     {
       title: I18n.t('AppLanguage'),

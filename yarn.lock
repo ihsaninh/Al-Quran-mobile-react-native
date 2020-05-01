@@ -5716,6 +5716,11 @@ react-native-render-html@^4.2.0:
     html-entities "^1.2.0"
     htmlparser2 "^4.0.0"
 
+react-native-restart@^0.0.15:
+  version "0.0.15"
+  resolved "https://registry.yarnpkg.com/react-native-restart/-/react-native-restart-0.0.15.tgz#a2dcb26d0a8b14d1ed796b49e27da6d75bba3bba"
+  integrity sha512-HkypkbHhcO5rylmMEil7eMwJubaZ4UDE4o3+IWAls9oASnGmal/0s2WATRIHDKtGcMoeJUUfbbbqAzlpOfqiAw==
+
 react-native-safe-area-view@^0.14.1, react-native-safe-area-view@^0.14.6:
   version "0.14.8"
   resolved "https://registry.yarnpkg.com/react-native-safe-area-view/-/react-native-safe-area-view-0.14.8.tgz#ef33c46ff8164ae77acad48c3039ec9c34873e5b"
