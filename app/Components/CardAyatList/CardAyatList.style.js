@@ -6,7 +6,7 @@ import { FontType } from '../../Themes/Fonts';
 const Styles = StyleSheet.create({
   CardStyle: {
     height: 'auto',
-    margin: 10,
+    padding: 10,
   },
   cardContainer: {
     flex: 1,

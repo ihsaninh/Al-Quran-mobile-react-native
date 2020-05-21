@@ -1,5 +1,18 @@
-import React from 'react';
-import { FlatList } from 'react-native';
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useState, useEffect, useRef, Fragment } from 'react';
+import {
+  FlatList,
+  View,
+  Text,
+  TouchableNativeFeedback,
+  StyleSheet,
+  StatusBar,
+  Share,
+  ToastAndroid,
+} from 'react-native';
+import RBSheet from 'react-native-raw-bottom-sheet';
+import Clipboard from '@react-native-community/clipboard';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import get from 'lodash/get';
 
 import { Basmallah } from '../../Components/Basmallah/Basmallah.component';
@@ -9,16 +22,19 @@ import { Separator } from '../../Components/Separator/Separator.component';
 import { Constants } from '../../Utils/Constants';
 import { HeaderSurahDetail } from '../../Components/HeaderSurahDetail/HeaderSurahDetail.component';
 import { keyExtractor } from '../../Utils/Helper';
+import { FontType } from '../../Themes/Fonts';
+import { Colors } from '../../Themes/Colors';
 
 function QuranDetail(props) {
-  const { isLoading, navigation, getDetailQuran, dataAyat, refreshing } = props;
+  const refRBSheet = useRef();
+  const [rbSheetData, setRbSheetData] = useState({});
 
-  React.useEffect(() => {
+  useEffect(() => {
     renderDetailSurah();
-  }, [renderDetailSurah]);
+  }, []);
 
-  const renderDetailSurah = React.useCallback(async () => {
-    console.log(navigation);
+  const renderDetailSurah = async () => {
+    const { getDetailQuran, navigation } = props;
 
     const surahId = get(navigation, 'state.params.dataSurah.id');
     const countAyat = get(navigation, 'state.params.dataSurah.count_ayat');
@@ -28,12 +44,71 @@ function QuranDetail(props) {
       countAyat,
     };
 
-    console.log(payload);
-
     await getDetailQuran(payload);
-  }, [getDetailQuran, navigation]);
+  };
+
+  const openBottomSheet = item => () => {
+    setRbSheetData(item);
+    refRBSheet.current.open();
+  };
+
+  const onTapShare = async () => {
+    try {
+      const result = await Share.share({
+        message: `${rbSheetData.aya_text}\n\n${
+          rbSheetData.translation_aya_text
+        }`,
+      });
+      if (result.action === Share.sharedAction) {
+        if (!result.activityType) {
+          ToastAndroid.show(
+            'Pilih aplikasi untuk membagikan',
+            ToastAndroid.SHORT,
+          );
+          setTimeout(() => {
+            refRBSheet.current.close();
+          }, 0);
+        }
+      }
+    } catch (error) {
+      // error
+    }
+  };
+
+  const onTapCopy = () => {
+    Clipboard.setString(
+      `${rbSheetData.aya_text}\n\n${rbSheetData.translation_aya_text}`,
+    );
+    ToastAndroid.show('Ayat disalin', ToastAndroid.SHORT);
+    refRBSheet.current.close();
+  };
+
+  const quranOptions = [
+    {
+      icon: 'play',
+      title: 'Mainkan Surat',
+      action: () => null,
+    },
+    {
+      icon: 'book-open-variant',
+      title: 'Lihat Tafsir',
+      action: () => null,
+    },
+    {
+      icon: 'content-copy',
+      title: 'Salin Ayat',
+      action: () => onTapCopy(),
+    },
+    {
+      icon: 'share-variant',
+      title: 'Bagikan Ayat',
+      action: () => onTapShare(),
+    },
+  ];
 
   const listHeaderComponent = () => {
+    const { navigation } = props;
+
     const surahId = get(navigation, 'state.params.dataSurah.id', '');
 
     switch (surahId) {
@@ -52,11 +127,62 @@ function QuranDetail(props) {
         ayatNumber={item?.aya_number}
         ayatText={item?.aya_text}
         ayatTranslate={item?.translation_aya_text}
+        onPress={openBottomSheet(item)}
       />
     );
   };
 
+  const renderQuranOptions = () => {
+    const { navigation } = props;
+    const surahName = get(navigation, 'state.params.dataSurah.surat_name', '');
+    return (
+      <View style={Styles.bsContainer}>
+        <StatusBar
+          backgroundColor={Colors.statusbarModal}
+          barStyle="light-content"
+          animated={false}
+        />
+        <Text style={Styles.bsTextInfo}>
+          QS. {surahName}: Ayat {rbSheetData.aya_number}
+        </Text>
+        {quranOptions.map((item, i) => (
+          <TouchableNativeFeedback onPress={item.action} key={i}>
+            <View style={Styles.bsItemContainer}>
+              <Icon name={item.icon} size={24} color="black" />
+              <Text style={Styles.bsItemText}>{item.title}</Text>
+            </View>
+          </TouchableNativeFeedback>
+        ))}
+      </View>
+    );
+  };
+
+  const renderBottomSheet = () => {
+    return (
+      <RBSheet
+        ref={refRBSheet}
+        closeOnDragDown={true}
+        height={300}
+        duration={250}
+        closeOnPressMask={true}
+        customStyles={{
+          container: {
+            backgroundColor: 'white',
+          },
+          draggableIcon: {
+            display: 'none',
+          },
+          wrapper: {
+            backgroundColor: Colors.statusbarModal,
+          },
+        }}>
+        {renderQuranOptions()}
+      </RBSheet>
+    );
+  };
+
   const renderData = () => {
+    const { dataAyat, refreshing } = props;
     return (
       <FlatList
         data={dataAyat}
@@ -71,7 +197,14 @@ function QuranDetail(props) {
     );
   };
 
-  return isLoading ? <Loading /> : renderData();
+  return props.isLoading ? (
+    <Loading />
+  ) : (
+    <Fragment>
+      {renderData()}
+      {renderBottomSheet()}
+    </Fragment>
+  );
 }
 
 QuranDetail.navigationOptions = ({
@@ -96,5 +229,28 @@ QuranDetail.navigationOptions = ({
     ),
   };
 };
+
+const Styles = StyleSheet.create({
+  bsContainer: {
+    flex: 1,
+    marginTop: 20,
+  },
+  bsItemContainer: {
+    flexDirection: 'row',
+    paddingVertical: 16,
+    paddingHorizontal: 20,
+    alignItems: 'center',
+  },
+  bsItemText: {
+    fontSize: 15,
+    paddingLeft: 16,
+    fontFamily: FontType.regular,
+  },
+  bsTextInfo: {
+    textAlign: 'center',
+    fontFamily: FontType.bold,
+    paddingBottom: 20,
+  },
+});
 
 export default QuranDetail;

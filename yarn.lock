@@ -952,6 +952,11 @@
     wcwidth "^1.0.1"
     ws "^1.1.0"
 
+"@react-native-community/clipboard@^1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@react-native-community/clipboard/-/clipboard-1.2.2.tgz#956b29df141199fd9ed47e820baf9693f9f50b55"
+  integrity sha512-WJkJSWA/fhuBhHL3rh6UDdB8+AZNMvAHoyo/ERnNxl9KZqruq7K+AIaQQlggEAsIVBIhjKt65fT+Zynj7gF8Cg==
+
 "@react-native-community/eslint-config@^0.0.5":
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/@react-native-community/eslint-config/-/eslint-config-0.0.5.tgz#584f6493258202a57efc22e7be66966e43832795"
@@ -5701,10 +5706,17 @@ react-native-paper@^3.4.0:
     color "^3.1.2"
     react-native-safe-area-view "^0.14.6"
 
-react-native-reanimated@^1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-1.3.0.tgz#581cdb0bd1ff05e7304b116af712ded0c7665ede"
-  integrity sha512-KFno6D0q09kx71IDuPa4qeC1t1msALsCMuli3/EN3YDf8XoM2CG53yzhVHMFtmcW0IUCySugHgxQiuT5BzwOPA==
+react-native-raw-bottom-sheet@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-raw-bottom-sheet/-/react-native-raw-bottom-sheet-2.2.0.tgz#d11dabb86aadb014273767ef7b554924b13633c5"
+  integrity sha512-qL4JKIqvbcVxbkKzeh51hjV7suoJN3ouxzvLmOg0FBUV1yiJAfEbacjQdtRCI6+OU5pyGFBIifLsTXcFDwHggg==
+
+react-native-reanimated@^1.8.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-1.8.0.tgz#0b5719b20c1fed9aaf8afd9a12e21c9bd46ee428"
+  integrity sha512-vGTt94lE5fsZmfMwERWFIsCr5LHsyllOESeNvlKryLgAg7h4cnJ5XSmVSy4L3qogdgFYCL6HEgY+s7tQmKXiiQ==
+  dependencies:
+    fbjs "^1.0.0"
 
 react-native-render-html@^4.2.0:
   version "4.2.0"
