@@ -1,13 +1,13 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect, useRef, Fragment } from 'react';
 import {
-  FlatList,
   View,
   Text,
-  TouchableNativeFeedback,
+  FlatList,
   StyleSheet,
   StatusBar,
   Share,
+  TouchableNativeFeedback,
   ToastAndroid,
 } from 'react-native';
 import RBSheet from 'react-native-raw-bottom-sheet';
@@ -28,6 +28,28 @@ import { Colors } from '../../Themes/Colors';
 function QuranDetail(props) {
   const refRBSheet = useRef();
   const [rbSheetData, setRbSheetData] = useState({});
+  const [quranOptions] = useState([
+    {
+      icon: 'play',
+      title: 'Mainkan Surat',
+      action: () => null,
+    },
+    {
+      icon: 'book-open-variant',
+      title: 'Lihat Tafsir',
+      action: () => null,
+    },
+    {
+      icon: 'content-copy',
+      title: 'Salin Ayat',
+      action: () => onTapCopy(),
+    },
+    {
+      icon: 'share-variant',
+      title: 'Bagikan Ayat',
+      action: () => onTapShare(),
+    },
+  ]);
 
   useEffect(() => {
     renderDetailSurah();
@@ -83,29 +105,6 @@ function QuranDetail(props) {
     refRBSheet.current.close();
   };
 
-  const quranOptions = [
-    {
-      icon: 'play',
-      title: 'Mainkan Surat',
-      action: () => null,
-    },
-    {
-      icon: 'book-open-variant',
-      title: 'Lihat Tafsir',
-      action: () => null,
-    },
-    {
-      icon: 'content-copy',
-      title: 'Salin Ayat',
-      action: () => onTapCopy(),
-    },
-    {
-      icon: 'share-variant',
-      title: 'Bagikan Ayat',
-      action: () => onTapShare(),
-    },
-  ];
-
   const listHeaderComponent = () => {
     const { navigation } = props;
 
@@ -139,7 +138,7 @@ function QuranDetail(props) {
       <View style={Styles.bsContainer}>
         <StatusBar
           backgroundColor={Colors.statusbarModal}
-          barStyle="light-content"
+          barStyle="dark-content"
           animated={false}
         />
         <Text style={Styles.bsTextInfo}>

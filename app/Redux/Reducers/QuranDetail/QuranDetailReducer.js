@@ -23,6 +23,7 @@ const QuranDetail = (state = initialState, action) => {
         errorMessage: '',
         loading: true,
         refreshing: true,
+        data: initialState.data,
       };
     case REQ_QURAN_DETAIL_SUCCESS:
       return {
@@ -41,6 +42,7 @@ const QuranDetail = (state = initialState, action) => {
         errorMessage: action.error,
         loading: false,
         refreshing: false,
+        data: initialState.data,
       };
     default:
       return state;
