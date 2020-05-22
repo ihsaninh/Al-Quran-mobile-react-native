@@ -24,6 +24,7 @@ import { HeaderSurahDetail } from '../../Components/HeaderSurahDetail/HeaderSura
 import { keyExtractor } from '../../Utils/Helper';
 import { FontType } from '../../Themes/Fonts';
 import { Colors } from '../../Themes/Colors';
+import { RbSheetStyle } from '../../Themes/Styles';
 
 function QuranDetail(props) {
   const refRBSheet = useRef();
@@ -139,7 +140,7 @@ function QuranDetail(props) {
         <StatusBar
           backgroundColor={Colors.statusbarModal}
           barStyle="dark-content"
-          animated={false}
+          animated
         />
         <Text style={Styles.bsTextInfo}>
           QS. {surahName}: Ayat {rbSheetData.aya_number}
@@ -164,17 +165,7 @@ function QuranDetail(props) {
         height={300}
         duration={250}
         closeOnPressMask={true}
-        customStyles={{
-          container: {
-            backgroundColor: 'white',
-          },
-          draggableIcon: {
-            display: 'none',
-          },
-          wrapper: {
-            backgroundColor: Colors.statusbarModal,
-          },
-        }}>
+        customStyles={RbSheetStyle}>
         {renderQuranOptions()}
       </RBSheet>
     );
