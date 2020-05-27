@@ -29,7 +29,12 @@ import { RbSheetStyle } from '../../Themes/Styles';
 function QuranDetail(props) {
   const refRBSheet = useRef();
   const [rbSheetData, setRbSheetData] = useState({});
-  const [quranOptions] = useState([
+
+  useEffect(() => {
+    renderDetailSurah();
+  }, []);
+
+  const quranOptions = [
     {
       icon: 'play',
       title: 'Mainkan Surat',
@@ -50,11 +55,7 @@ function QuranDetail(props) {
       title: 'Bagikan Ayat',
       action: () => onTapShare(),
     },
-  ]);
-
-  useEffect(() => {
-    renderDetailSurah();
-  }, []);
+  ];
 
   const renderDetailSurah = async () => {
     const { getDetailQuran, navigation } = props;
@@ -71,6 +72,7 @@ function QuranDetail(props) {
   };
 
   const openBottomSheet = item => () => {
+    console.log(item);
     setRbSheetData(item);
     refRBSheet.current.open();
   };
@@ -99,6 +101,7 @@ function QuranDetail(props) {
   };
 
   const onTapCopy = () => {
+    console.log(rbSheetData);
     Clipboard.setString(
       `${rbSheetData.aya_text}\n\n${rbSheetData.translation_aya_text}`,
     );

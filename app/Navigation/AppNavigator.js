@@ -38,6 +38,7 @@ const AppStack = createStackNavigator(
   },
   {
     defaultNavigationOptions: {
+      headerPressColorAndroid: Colors.rippleColor,
       headerStyle: {
         borderBottomWidth: 0.5,
         borderBottomColor: Colors.iron,
