@@ -1,0 +1,21 @@
+{
+  "Ayat": "ayat",
+  "AppTitle": "Al-Quran Mobile",
+  "SettingsTitle": "Pengaturan Aplikasi",
+  "AboutTitle": "Tentang Aplikasi",
+  "GeneralSettings": "Pengaturan Umum",
+  "OtherSetting": "Pengaturan Lainnya",
+  "FontType": "Jenis Huruf Arabic",
+  "AppLanguage": "Bahasa Aplikasi",
+  "English": "English",
+  "Indonesian": "Indonesia",
+  "Help": "Bantuan",
+  "HelpDesc": "Butuh pertanyaan? Butuh bantuan?",
+  "AppVersion": "Versi Aplikasi",
+  "ChooseLanguage": "Pilih Bahasa Aplikasi",
+  "SelectArabicFont": "Pilih Jenis Huruf Arabic",
+  "DarkMode": "Mode Gelap",
+  "DarkModeOff": "Mode Gelap Hidup",
+  "DarkModeOn": "Mode Gelap Mati",
+  "Cancel": "Batal"
+}

@@ -1,0 +1,21 @@
+{
+  "Ayat": "ayat",
+  "AppTitle": "Al-Quran Mobile",
+  "SettingsTitle": "Settings",
+  "AboutTitle": "About",
+  "GeneralSettings": "Genaral Settings",
+  "OtherSetting": "Other Settings",
+  "FontType": "Arabic Font Type",
+  "AppLanguage": "Language",
+  "English": "English",
+  "Indonesian": "Indonesia",
+  "Help": "Help",
+  "HelpDesc": "Need a question? Need help?",
+  "AppVersion": "App Version",
+  "ChooseLanguage": "Select Language",
+  "SelectArabicFont": "Select Arabic Font Type",
+  "DarkMode": "Dark Mode",
+  "DarkModeOff": "Dark Mode Off",
+  "DarkModeOn": "Dark Mode On",
+  "Cancel": "Cancel"
+}
