@@ -1,5 +1,9 @@
 import { combineReducers } from 'redux';
 
-const appReducer = combineReducers({});
+import { quranListReducer } from './QuranList/QuranList.reducer';
+
+const appReducer = combineReducers({
+  quranListReducer
+});
 
 export { appReducer };

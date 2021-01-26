@@ -1,3 +1,17 @@
-import Quran from '../View/Quran.view';
+import { connect } from 'react-redux';
 
-export default Quran;
+import Quran from '../View/Quran.view';
+import { getQuranList } from '../../../Redux/Actions';
+
+const mapStateToProps = ({ quranListReducer }) => ({
+  data: quranListReducer.data,
+  isLoading: quranListReducer.loading,
+  isError: quranListReducer.error,
+  errorMessage: quranListReducer.errorMessage
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  getQuranList: () => dispatch(getQuranList())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Quran);

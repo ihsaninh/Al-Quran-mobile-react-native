@@ -1,52 +1,47 @@
-import React, { Component } from 'react';
-import { View, Text } from 'react-native';
-import Icon from 'react-native-vector-icons/Feather';
-import OctIcon from 'react-native-vector-icons/Octicons';
+import React, { useEffect } from 'react';
+import { View, FlatList } from 'react-native';
 
 import { Styles } from '../Style/Quran.style';
-import { Colors } from '../../../Themes/Colors';
+import { Header } from '../../../Components/Header/View/Header.view';
+import { QuranList } from '../../../Components/QuranList/View/QuranList.view';
 
-class Quran extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+const Quran = ({ getQuranList, data, isLoading }) => {
+  useEffect(() => {
+    fetchQuranList();
+  }, []);
 
-  renderHeader = () => {
-    return (
-      <View style={Styles.headerContainer}>
-        <View style={Styles.headerLeftContainer}>
-          <Icon name="align-left" size={26} style={Styles.rightIcon} />
-          <Text style={Styles.headerTitle}>Quran App</Text>
-        </View>
-        <View style={Styles.headerRightContainer}>
-          <Icon name="search" size={24} style={Styles.leftIcon} />
-        </View>
-      </View>
-    );
+  const fetchQuranList = async () => {
+    await getQuranList();
   };
 
-  renderLastRead = () => {
-    return (
-      <View style={Styles.lastReadContainer}>
-        <View style={Styles.lastReadTextContainer}>
-          <OctIcon name="book" size={24} color={Colors.amethyst} />
-          <Text style={Styles.textLastRead}>Terakhir baca</Text>
-        </View>
-        <Text style={Styles.textLastReadSurah}>AL-Fatihah</Text>
-        <Text style={Styles.textLastReadAyah}>Ayat No: 3</Text>
-      </View>
-    );
+  const keyExtractor = (_, index) => index.toString();
+
+  const renderHeader = () => {
+    return <Header title="Quran App" onPressSearch={() => null} />;
   };
 
-  render() {
-    return (
-      <View style={Styles.container}>
-        {this.renderHeader()}
-        {this.renderLastRead()}
-      </View>
-    );
-  }
-}
+  const renderItem = ({ item }) => {
+    return <QuranList data={item} onPress={() => null} />;
+  };
+
+  const renderSeparator = () => {
+    return <View style={Styles.separator} />;
+  };
+
+  return (
+    <View style={Styles.container}>
+      {renderHeader()}
+      <FlatList
+        data={data}
+        renderItem={renderItem}
+        refreshing={isLoading}
+        onRefresh={fetchQuranList}
+        keyExtractor={keyExtractor}
+        showsVerticalScrollIndicator={false}
+        ItemSeparatorComponent={renderSeparator}
+      />
+    </View>
+  );
+};
 
 export default Quran;

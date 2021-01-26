@@ -3,7 +3,8 @@ const FontsFamily = {
   light: 'Poppins-Light',
   medium: 'Poppins-Medium',
   semiBold: 'Poppins-SemiBold',
-  bold: 'Poppins-Bold'
+  bold: 'Poppins-Bold',
+  lpmq: 'LPMQ'
 };
 
 export { FontsFamily };

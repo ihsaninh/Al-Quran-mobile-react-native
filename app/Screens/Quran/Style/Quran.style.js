@@ -9,34 +9,11 @@ const Styles = StyleSheet.create({
     backgroundColor: Colors.white,
     paddingHorizontal: 16
   },
-  headerContainer: {
-    height: 70,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center'
-  },
-  headerLeftContainer: {
-    flexDirection: 'row'
-  },
-  rightIcon: {
-    color: Colors.santasGray
-  },
-  leftIcon: {
-    color: Colors.santasGray
-  },
-  headerTitle: {
-    fontFamily: FontsFamily.bold,
-    fontSize: 24,
-    color: Colors.amethyst,
-    paddingLeft: 16
-  },
   lastReadContainer: {
     height: 150,
     borderRadius: 10,
     backgroundColor: '#F9F9F9',
     padding: 16
-    // borderColor: Colors.amethyst,
-    // borderWidth: 1
   },
   textLastRead: {
     fontFamily: FontsFamily.light,
@@ -59,6 +36,10 @@ const Styles = StyleSheet.create({
     fontSize: 15,
     paddingTop: 1,
     color: Colors.amethyst
+  },
+  separator: {
+    height: 1,
+    backgroundColor: '#f1f1f1'
   }
 });
 
