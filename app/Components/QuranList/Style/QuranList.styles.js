@@ -5,9 +5,13 @@ import { FontsFamily } from '../../../Themes/Fonts';
 
 const Styles = StyleSheet.create({
   listSurahContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
     height: 90
+  },
+  listSurahContent: {
+    flex: 1,
+    alignItems: 'center',
+    flexDirection: 'row',
+    paddingHorizontal: 16
   },
   versesNumberContainer: {
     flex: 1

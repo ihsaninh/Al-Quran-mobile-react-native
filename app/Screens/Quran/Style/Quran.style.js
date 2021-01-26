@@ -6,8 +6,8 @@ import { FontsFamily } from '../../../Themes/Fonts';
 const Styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.white,
-    paddingHorizontal: 16
+    backgroundColor: Colors.white
+    // paddingHorizontal: 16
   },
   lastReadContainer: {
     height: 150,
