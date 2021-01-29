@@ -5915,6 +5915,11 @@ react-native-modal@^11.6.1:
     prop-types "^15.6.2"
     react-native-animatable "1.3.3"
 
+react-native-popup-menu-android@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/react-native-popup-menu-android/-/react-native-popup-menu-android-1.0.3.tgz#09b4ea44ec6971606e258d7ffd5a89788afb7495"
+  integrity sha512-DzEU0Ejl/kMZz6FJ7Mks8se4jceJZk9QINHILNU9GQFrjP4mxodZ9HiqVbs9F+xUE4NCOE8Ib36MxxdfLRw1OQ==
+
 react-native-reanimated@^1.13.2:
   version "1.13.2"
   resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-1.13.2.tgz#1ae5457b24b4913d173a5a064bb28eae7783d293"

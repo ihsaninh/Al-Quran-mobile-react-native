@@ -53,10 +53,21 @@ const Styles = StyleSheet.create({
     backgroundColor: Colors.athensGray,
     borderRadius: 16,
     paddingHorizontal: 16,
-    fontSize: 15
+    paddingBottom: 8,
+    fontSize: 14,
+    color: Colors.tundora,
+    fontFamily: FontsFamily.medium
   },
   borderButton: {
-    borderRadius: 10
+    borderRadius: 10,
+    marginRight: 8
+  },
+  headerMenu: {
+    flexDirection: 'row'
+  },
+  moreButton: {
+    borderRadius: 10,
+    marginRight: -10
   }
 });
 
