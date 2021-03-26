@@ -28,7 +28,8 @@ const Quran = ({ getQuranList, data, isLoading, isError, navigation }) => {
   const onSearchSurah = (text) => {
     if (text) {
       const newData = currentlyData.filter((item) => {
-        const itemData = item.name.transliteration.id.toUpperCase();
+        const surahName = item.name.transliteration.id;
+        const itemData = surahName.toUpperCase();
         const textData = text.toUpperCase();
         return itemData.indexOf(textData) > -1;
       });

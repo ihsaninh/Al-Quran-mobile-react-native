@@ -1,33 +1,33 @@
 import {
-  REQ_QURAN_LIST,
-  REQ_QURAN_LIST_SUCCESS,
-  REQ_QURAN_LIST_FAILED
+  REQ_QURAN_DETAIL,
+  REQ_QURAN_DETAIL_SUCCESS,
+  REQ_QURAN_DETAIL_FAILED
 } from '../../ActionTypes';
 
 const initialState = {
-  data: [],
+  data: {},
   error: false,
   errorMessage: '',
   loading: false
 };
 
-const quranListReducer = (state = initialState, action) => {
+const quranDetailReducer = (state = initialState, action) => {
   switch (action.type) {
-    case REQ_QURAN_LIST:
+    case REQ_QURAN_DETAIL:
       return {
         ...state,
         error: false,
         errorMessage: '',
         loading: true
       };
-    case REQ_QURAN_LIST_SUCCESS:
+    case REQ_QURAN_DETAIL_SUCCESS:
       return {
         ...state,
         data: action.payload,
         error: false,
         loading: false
       };
-    case REQ_QURAN_LIST_FAILED:
+    case REQ_QURAN_DETAIL_FAILED:
       return {
         ...state,
         error: true,
@@ -39,4 +39,4 @@ const quranListReducer = (state = initialState, action) => {
   }
 };
 
-export { quranListReducer };
+export { quranDetailReducer };

@@ -36,7 +36,7 @@ const Styles = StyleSheet.create({
   },
   surahName: {
     fontFamily: FontsFamily.semiBold,
-    color: '#666',
+    color: Colors.grisaille,
     fontSize: 18
   },
   surahInfo: {

@@ -63,7 +63,7 @@ export const CustomTabTar = ({ state, descriptors, navigation }) => {
               <Icon
                 name={icon}
                 size={18}
-                color={isFocused ? Colors.manhattan : Colors.amethyst}
+                color={isFocused ? Colors.white : Colors.amethyst}
               />
             </View>
           </TouchableNativeFeedback>

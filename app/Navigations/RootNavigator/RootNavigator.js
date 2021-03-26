@@ -46,7 +46,7 @@ const RootNavigator = () => {
         name="QuranDetail"
         component={QuranDetail}
         options={({ route: { params } }) => ({
-          title: params.name,
+          title: '',
           headerBackImage: () => (
             <BackIcon name="chevron-left" size={30} color={Colors.santasGray} />
           )
