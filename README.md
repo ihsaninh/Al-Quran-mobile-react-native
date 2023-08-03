@@ -48,7 +48,7 @@ Al-Quran-Mobile-React-Native is an app Al-Quran for Mobile. Its only support Ind
    $ react-native run-android --variant=betaDebug 
    ```
 
-## Screenshot
+## Screenshots
 <div align="center">
     <img width="300" src="https://github.com/ihsaninh/Al-Quran-Mobile-React-Native/blob/master/ss2.jpg">
     <img width="300" src="https://github.com/ihsaninh/Al-Quran-Mobile-React-Native/blob/master/ss1.jpg">   
